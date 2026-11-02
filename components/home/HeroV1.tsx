@@ -6,28 +6,21 @@ import { site } from "@/lib/site";
 
 const keywords = ["OTR box truck freight", "Box truck dispatch", "Hotshot dispatch", "Last mile delivery", "First mile pickup", "White glove", "Liftgate delivery", "Atlanta, GA"];
 
+const fade =
+  "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 14%, black 34%), linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)";
+const heroMask: React.CSSProperties = {
+  maskImage: fade,
+  WebkitMaskImage: fade,
+  maskComposite: "intersect",
+  WebkitMaskComposite: "source-in",
+};
+
 /** The original (v1) homepage hero, with its spec bar and keyword marquee. */
 export default function HeroV1() {
   return (
     <>
       {/* ============ 1. HERO ============ */}
       <section className="relative overflow-hidden bg-ink text-white">
-        {/* Full-bleed photo of the Moorish Xpress fleet on the highway */}
-        <div className="absolute inset-0 overflow-hidden">
-          <Image
-            src="/images/hero-fleet-highway-rtl.jpg"
-            alt="Moorish Xpress yellow box trucks with liftgates driving on the highway at sunrise"
-            fill
-            priority
-            sizes="100vw"
-            className="animate-kenburns object-cover object-[28%_center] lg:object-[center_40%]"
-          />
-        </div>
-        {/* Legibility: full tint on mobile; on desktop a left-side wash, photo clear on the right */}
-        <div className="absolute inset-0 bg-ink/70 lg:bg-transparent" />
-        <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(12,12,14,0.85)_0%,rgba(12,12,14,0.55)_35%,rgba(12,12,14,0)_60%)] lg:block" />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-ink/70 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent" />
         <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-red/25 blur-[120px]" />
 
         <div className="container-x relative grid min-h-[min(82svh,760px)] items-center gap-12 pb-24 pt-16 lg:grid-cols-12 lg:pb-28 lg:pt-20">
@@ -57,13 +50,25 @@ export default function HeroV1() {
             </a>
           </div>
 
-          {/* Spec badges floating over the trucks (desktop) */}
-          <div className="relative hidden h-full lg:col-span-6 lg:block">
-            <div className="animate-float absolute right-0 top-[4%] rounded-xl border border-white/15 bg-ink/75 p-4 shadow-2xl backdrop-blur-md">
+          {/* Fleet photo: starts where the text box ends and runs to the right edge.
+              Shown whole (no cropping), melting out of the black on its left side. */}
+          <div className="relative -mx-4 sm:-mx-6 lg:col-span-6 lg:-ml-12 lg:mr-[calc(-1*(max(0px,(100vw-80rem)/2)+2rem))]">
+            <div className="relative aspect-[1672/941] w-full" style={heroMask}>
+              <Image
+                src="/images/hero-fleet-highway-rtl.jpg"
+                alt="Moorish Xpress yellow box trucks with liftgates driving on the highway at sunrise"
+                fill
+                priority
+                sizes="(min-width:1024px) 55vw, 100vw"
+                className="animate-drive object-cover"
+              />
+            </div>
+            {/* Spec badges over the photo */}
+            <div className="animate-float absolute right-6 top-[6%] hidden rounded-xl border border-white/15 bg-ink/75 p-4 shadow-2xl backdrop-blur-md sm:block lg:right-10">
               <p className="text-xs uppercase tracking-widest text-white/60">GVWR up to</p>
               <p className="font-display text-3xl font-bold text-gold">33,000 lb</p>
             </div>
-            <div className="animate-float absolute bottom-[4%] right-[8%] rounded-xl bg-white/95 p-4 text-ink shadow-2xl backdrop-blur [animation-delay:1.5s]">
+            <div className="animate-float absolute bottom-[4%] right-6 hidden rounded-xl bg-white/95 p-4 text-ink shadow-2xl backdrop-blur [animation-delay:1.5s] sm:block lg:right-16">
               <p className="flex items-center gap-2 font-display text-lg font-semibold uppercase"><IconLift className="h-5 w-5 text-red" />Liftgate + air ride</p>
               <p className="text-xs text-steel">Standard on every truck</p>
             </div>
