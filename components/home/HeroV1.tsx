@@ -15,12 +15,12 @@ export default function HeroV1() {
         {/* Full-bleed photo of the Moorish Xpress fleet on the highway */}
         <div className="absolute inset-0 overflow-hidden">
           <Image
-            src="/images/hero-moorish-fleet-highway.jpg"
-            alt="Moorish Xpress yellow box trucks driving on the highway at sunrise"
+            src="/images/hero-fleet-highway-rtl.jpg"
+            alt="Moorish Xpress yellow box trucks with liftgates driving on the highway at sunrise"
             fill
             priority
             sizes="100vw"
-            className="animate-kenburns object-cover object-[72%_center] lg:object-[center_40%]"
+            className="animate-kenburns object-cover object-[28%_center] lg:object-[center_40%]"
           />
         </div>
         {/* Legibility: full tint on mobile; on desktop a left-side wash, photo clear on the right */}
