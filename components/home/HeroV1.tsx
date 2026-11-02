@@ -11,20 +11,34 @@ export default function HeroV1() {
   return (
     <>
       {/* ============ 1. HERO ============ */}
-      <section className="relative overflow-hidden bg-ink-gradient text-white">
-        <div className="absolute inset-0 bg-grid opacity-50" />
-        <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-red/30 blur-[120px]" />
-        <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-gold/20 blur-[120px]" />
+      <section className="relative overflow-hidden bg-ink text-white">
+        {/* Full-bleed photo of the Moorish Xpress fleet on the highway */}
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="/images/hero-moorish-fleet-highway.jpg"
+            alt="Moorish Xpress yellow box trucks driving on the highway at sunrise"
+            fill
+            priority
+            sizes="100vw"
+            className="animate-kenburns object-cover object-[72%_center] lg:object-[center_40%]"
+          />
+        </div>
+        {/* Legibility: full tint on mobile; on desktop a left-side wash, photo clear on the right */}
+        <div className="absolute inset-0 bg-ink/70 lg:bg-transparent" />
+        <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(12,12,14,0.85)_0%,rgba(12,12,14,0.55)_35%,rgba(12,12,14,0)_60%)] lg:block" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-ink/70 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent" />
+        <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-red/25 blur-[120px]" />
 
-        <div className="container-x relative grid items-center gap-12 pb-24 pt-16 lg:grid-cols-12 lg:pb-32 lg:pt-20">
-          <div className="lg:col-span-6">
+        <div className="container-x relative grid min-h-[min(82svh,760px)] items-center gap-12 pb-24 pt-16 lg:grid-cols-12 lg:pb-28 lg:pt-20">
+          <div className="lg:col-span-6 lg:rounded-3xl lg:border lg:border-white/10 lg:bg-ink/45 lg:p-10 lg:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] lg:backdrop-blur-xl">
             <p className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm font-semibold text-gold">
               <IconTruck className="h-4 w-4" /> Atlanta box truck carrier + dispatch
             </p>
             <h1 className="mt-6 text-5xl font-bold uppercase leading-[0.98] sm:text-6xl xl:text-7xl">
               When you need it <span className="text-red-gradient">there</span> <span className="text-gold-gradient">now.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85 [text-shadow:0_2px_12px_rgba(0,0,0,0.5)]">
               Moorish Xpress, LLC is an asset-based box truck carrier in Atlanta, Georgia. We haul OTR, first mile, last mile and white glove freight for shippers and brokers, and we dispatch box trucks and hotshots for owner-operators.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
@@ -43,22 +57,13 @@ export default function HeroV1() {
             </a>
           </div>
 
-          <div className="relative lg:col-span-6">
-            <div className="animate-drive relative">
-              <div className="absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-red via-transparent to-gold opacity-70 blur-md" />
-              <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-coal">
-                <Image src="/images/moorish-box-truck.jpg" alt="Moorish Xpress yellow 26 ft box truck with tuck-under liftgate parked at an Atlanta warehouse dock" width={1122} height={395} priority className="h-72 w-full object-cover object-left sm:h-96" />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-5 pt-16">
-                  <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">Our fleet · Atlanta, GA</p>
-                </div>
-              </div>
-            </div>
-            {/* Floating spec badges */}
-            <div className="animate-float absolute -left-4 top-6 hidden rounded-xl border border-white/10 bg-ink/90 p-4 shadow-2xl backdrop-blur sm:block">
-              <p className="text-xs uppercase tracking-widest text-white/50">GVWR up to</p>
+          {/* Spec badges floating over the trucks (desktop) */}
+          <div className="relative hidden h-full lg:col-span-6 lg:block">
+            <div className="animate-float absolute right-0 top-[4%] rounded-xl border border-white/15 bg-ink/75 p-4 shadow-2xl backdrop-blur-md">
+              <p className="text-xs uppercase tracking-widest text-white/60">GVWR up to</p>
               <p className="font-display text-3xl font-bold text-gold">33,000 lb</p>
             </div>
-            <div className="animate-float absolute -right-3 -bottom-6 rounded-xl bg-white p-4 text-ink shadow-2xl [animation-delay:1.5s]">
+            <div className="animate-float absolute bottom-[4%] right-[8%] rounded-xl bg-white/95 p-4 text-ink shadow-2xl backdrop-blur [animation-delay:1.5s]">
               <p className="flex items-center gap-2 font-display text-lg font-semibold uppercase"><IconLift className="h-5 w-5 text-red" />Liftgate + air ride</p>
               <p className="text-xs text-steel">Standard on every truck</p>
             </div>
@@ -66,7 +71,7 @@ export default function HeroV1() {
         </div>
 
         {/* Flyer-style spec bar */}
-        <div className="relative border-t border-white/10 bg-black/40 backdrop-blur">
+        <div className="relative border-t border-white/10 bg-black/55 backdrop-blur-md">
           <div className="container-x grid grid-cols-2 divide-white/10 py-6 md:grid-cols-4 md:divide-x">
             {[
               { k: "26 ft", v: "Box trucks" },
