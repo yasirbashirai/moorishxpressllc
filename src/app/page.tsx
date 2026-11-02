@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Bento from "@/components/concepts/command-center/Bento";
 import FadeIn from "@/components/concepts/command-center/FadeIn";
-import Hero from "@/components/concepts/cinematic/Hero";
+import HeroV1 from "@/components/home/HeroV1";
 import ConsoleSection from "@/components/concepts/command-center/ConsoleSection";
 import OperatorDashboard from "@/components/concepts/command-center/OperatorDashboard";
 import ScrollRail from "@/components/concepts/command-center/ScrollRail";
@@ -16,7 +16,7 @@ import { Faq } from "@/components/ui";
 import { homeFaqs, site, trucks } from "@/lib/site";
 import { faqSchema } from "@/lib/schema";
 
-// Homepage v2: Concept B (Command Center) with the cinematic hero from Concept A.
+// Homepage v2: Concept B (Command Center) with the original v1 hero.
 // Title/description come from the root layout defaults.
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
@@ -54,7 +54,7 @@ export default function HomePage() {
     <div className="bg-[#f6f6f8]">
       <JsonLd data={faqSchema(homeFaqs)} />
       <ScrollRail />
-      <Hero />
+      <HeroV1 />
       <ConsoleSection />
 
       {/* ============ FACT STRIP ============ */}
