@@ -43,8 +43,8 @@ export default function DispatchPage() {
         eyebrow="Professional freight dispatch services"
         title={<>Box truck & hotshot <span className="text-gold">dispatch</span> that keeps you loaded.</>}
         intro="Dispatch is an equal half of our business. We are a box truck carrier that also dispatches for independent owner-operators, small trucking companies and new carriers. We find the loads, negotiate the rates and handle the paperwork, so you can focus on driving."
-        image="/images/dispatch-office.jpg"
-        imageAlt="Moorish Xpress dispatch office in Atlanta"
+        image="/images/hero-fleet-highway-rtl.jpg"
+        imageAlt="Moorish Xpress yellow 26 ft box trucks on the highway, kept moving by our dispatch desk"
         crumbs={[{ href: "/", label: "Home" }, { href: "/dispatch", label: "Dispatch Services" }]}
       >
         <Button href="#signup" variant="gold">Dispatch My Truck</Button>

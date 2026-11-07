@@ -26,15 +26,15 @@ export const site = {
     instagram: "https://www.instagram.com/moorishxpressllc/",
     linkedin: "https://www.linkedin.com/company/146762894/",
   },
-  // BBB badge: Jude will supply the official badge file and his BBB profile link.
-  // Drop the badge into /public/images/ and fill both fields; it then shows on the
-  // homepage and footer automatically. Hidden while empty so we never show an
-  // unofficial or inaccurate BBB status.
+  // Official BBB seal supplied by the client (Nov 2026), used exactly as BBB issues it:
+  // hotlinked from BBB's seal server and linked to the BBB business profile.
+  // Note: the profile is listed as "Els & Beys Investments, LLC"; client confirmed to use it.
   bbb: {
-    profileUrl: "",
-    badgeSrc: "", // e.g. "/images/bbb-badge.png"
-    badgeWidth: 200,
-    badgeHeight: 76,
+    profileUrl: "https://www.bbb.org/us/ga/atlanta/profile/real-estate-investing/els-beys-investments-llc-0443-28164016/#sealclick",
+    badgeSrc: "https://seal-atlanta.bbb.org/seals/black-seal-187-130-bbb-28164016.png",
+    badgeAlt: "Els & Beys Investments, LLC BBB Business Review",
+    badgeWidth: 187,
+    badgeHeight: 130,
   },
   // FMCSA numbers: add once confirmed by the client. Hidden while empty.
   usdot: "",
@@ -277,8 +277,8 @@ export const services: Service[] = [
     metaTitle: "Hotshot Dispatch Services | Dispatcher for Hotshot Owner-Operators",
     metaDescription:
       "Hotshot dispatch services for owner-operators. Moorish Xpress finds hotshot loads, negotiates rates, handles broker setup and keeps your truck moving.",
-    image: "/images/box-trucks-highway.jpg",
-    imageAlt: "Box truck and flatbed truck driving side by side on the highway",
+    image: "/images/hero-fleet-highway-rtl.jpg",
+    imageAlt: "Yellow 26 ft box trucks on the highway, loaded and moving",
     intro:
       "Hotshot freight moves fast and pays for speed, but only if the truck stays loaded. We find hotshot loads that fit your trailer and weight limits, negotiate the rate and handle broker setup so you can stay on the road.",
     points: [
@@ -308,8 +308,8 @@ export const services: Service[] = [
     metaTitle: "Freight Documentation & Load Coordination | Rate Cons, BOLs, PODs",
     metaDescription:
       "Moorish Xpress manages rate confirmations, Bills of Lading, Proofs of Delivery and shipment updates as part of our transportation and dispatching services.",
-    image: "/images/dispatch-office.jpg",
-    imageAlt: "Moorish Xpress dispatch office where loads and paperwork are coordinated",
+    image: "/images/box-trucks-loading-dock.jpg",
+    imageAlt: "Box trucks at a warehouse loading dock, where BOLs are signed at pickup",
     intro:
       "Paperwork is where loads get delayed and payments get stuck. As part of our transportation and dispatching services, we manage rate confirmations, Bills of Lading (BOLs), Proofs of Delivery (PODs) and shipment updates, so every load is documented from booking to payment.",
     points: [

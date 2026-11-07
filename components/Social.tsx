@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { site } from "@/lib/site";
 import { IconFacebook, IconInstagram, IconLinkedin } from "./icons";
 
@@ -42,17 +41,18 @@ export function SocialLinks({ tone = "dark", size = "md", className = "" }: { to
  * so the site never shows an unofficial or inaccurate BBB status.
  */
 export function BbbBadge({ className = "" }: { className?: string }) {
-  const { profileUrl, badgeSrc, badgeWidth, badgeHeight } = site.bbb;
+  const { profileUrl, badgeSrc, badgeAlt, badgeWidth, badgeHeight } = site.bbb;
   if (!profileUrl || !badgeSrc) return null;
+  // Plain <img> on purpose: BBB requires its seal served unmodified from its own server.
   return (
     <a
       href={profileUrl}
       target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`${site.name} BBB business profile (opens in a new tab)`}
+      rel="nofollow noopener"
       className={`inline-block rounded-lg bg-white p-2 transition hover:-translate-y-0.5 ${className}`}
     >
-      <Image src={badgeSrc} alt={`${site.name} BBB business profile`} width={badgeWidth} height={badgeHeight} className="h-14 w-auto" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={badgeSrc} alt={badgeAlt} width={badgeWidth} height={badgeHeight} style={{ border: 0 }} className="h-16 w-auto" />
     </a>
   );
 }

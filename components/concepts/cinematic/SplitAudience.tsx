@@ -24,7 +24,7 @@ const sides = [
     text: "Box truck and hotshot dispatch from a carrier that runs the same lanes. Loads that fit, rates negotiated, paperwork handled.",
     bullets: ["You approve every load", "Rate negotiation on every load", "Broker setup and paperwork done"],
     cta: { href: "/dispatch#signup", label: "Dispatch my truck" },
-    image: "/images/box-trucks-highway.jpg",
+    image: "/images/hero-fleet-highway-rtl.jpg",
     alt: "Owner-operator trucks lined up in a yard",
     tone: "gold" as const,
   },

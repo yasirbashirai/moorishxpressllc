@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { QuoteForm } from "@/components/forms";
 import { IconArrow, IconClock, IconHeadset, IconMail, IconMap, IconPhone } from "@/components/icons";
-import { SocialLinks } from "@/components/Social";
+import { BbbBadge, SocialLinks } from "@/components/Social";
 import { PageHero } from "@/components/ui";
 import { fullAddress, site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -68,6 +68,8 @@ export default function ContactPage() {
               </span>
               <SocialLinks tone="light" size="lg" />
             </div>
+
+            <BbbBadge className="border border-line" />
 
             <div className="overflow-hidden rounded-xl border border-line">
               <iframe

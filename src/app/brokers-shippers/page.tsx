@@ -44,8 +44,8 @@ export default function BrokersShippersPage() {
         eyebrow="Brokers & shippers"
         title={<>Your box truck carrier <span className="text-gold">out of Atlanta.</span></>}
         intro="Freight brokers, direct shippers, manufacturers, warehouses, distribution centers and logistics companies: when you need reliable 26 ft box truck transportation, we haul it with our own trucks."
-        image="/images/box-trucks-highway.jpg"
-        imageAlt="Box trucks driving on an interstate highway"
+        image="/images/box-truck-otr-highway.jpg"
+        imageAlt="26 ft box truck hauling freight on an interstate highway"
         crumbs={[{ href: "/", label: "Home" }, { href: "/brokers-shippers", label: "Brokers & Shippers" }]}
       >
         <Button href="#quote">Send Us a Load</Button>
