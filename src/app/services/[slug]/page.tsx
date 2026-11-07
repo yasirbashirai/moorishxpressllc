@@ -34,7 +34,7 @@ export default async function ServicePage({ params }: Props) {
   if (!s) notFound();
 
   const isDispatch = s.group === "dispatch";
-  const parent = isDispatch ? { href: "/dispatch", label: "Dispatch" } : { href: "/services", label: "Carrier Services" };
+  const parent = isDispatch ? { href: "/dispatch", label: "Dispatch Services" } : { href: "/services", label: "Freight Services" };
   const others = services.filter((x) => x.slug !== s.slug && x.group === s.group);
 
   const serviceSchema = {
@@ -44,7 +44,7 @@ export default async function ServicePage({ params }: Props) {
     serviceType: s.keyword,
     description: s.metaDescription,
     provider: { "@id": `${site.url}/#business` },
-    areaServed: ["Georgia", "Southeast United States", "Texas", "Midwest", "Northeast"],
+    areaServed: ["Georgia", "Southern United States", "Texas", "Tennessee", "North Carolina", "South Carolina", "Oklahoma", "Virginia", "Midwest United States", "Northeast United States"],
     url: `${site.url}/services/${s.slug}`,
   };
 
@@ -120,7 +120,7 @@ export default async function ServicePage({ params }: Props) {
       {/* Related services */}
       <section className="bg-fog py-20">
         <div className="container-x">
-          <SectionHeading eyebrow="Related" title={isDispatch ? "More dispatch services" : "More carrier services"} />
+          <SectionHeading eyebrow="Related" title={isDispatch ? "More dispatch services" : "More freight services"} />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {others.map((o) => (
               <Link key={o.slug} href={`/services/${o.slug}`} className="group overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
@@ -137,8 +137,8 @@ export default async function ServicePage({ params }: Props) {
             {isDispatch && (
               <Link href="/services" className="flex flex-col justify-center rounded-2xl bg-red-gradient p-8 text-white">
                 <h3 className="text-2xl font-bold uppercase">Need freight hauled?</h3>
-                <p className="mt-2 text-white/85">See our own carrier services out of Atlanta.</p>
-                <span className="mt-4 inline-flex items-center gap-2 font-display font-semibold uppercase">Carrier services <IconArrow className="h-5 w-5" /></span>
+                <p className="mt-2 text-white/85">See our 26 ft box truck freight services out of Atlanta.</p>
+                <span className="mt-4 inline-flex items-center gap-2 font-display font-semibold uppercase">Freight services <IconArrow className="h-5 w-5" /></span>
               </Link>
             )}
           </div>

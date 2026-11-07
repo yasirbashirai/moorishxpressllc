@@ -1,11 +1,12 @@
 // Single source of truth for Moorish Xpress business details and service content.
 // Edit here and every page, the footer, schema and sitemap update together.
+// Content follows the client's "Website Development Requirements" brief (Nov 2026).
 
 export const site = {
   name: "Moorish Xpress, LLC",
   shortName: "Moorish Xpress",
   tagline: "When you need it there now",
-  url: "https://www.moorishxpress.com",
+  url: "https://moorishxpressllc.com",
   phone: "(678) 968-7511",
   phoneHref: "tel:+16789687511",
   email: "loads@moorishxpress.com",
@@ -19,11 +20,21 @@ export const site = {
     country: "US",
   },
   mapsUrl: "https://maps.google.com/?q=2920+Campbellton+Rd+SW+Atlanta+GA+30311",
-  // TODO: paste the exact page URLs from Jude/his VA. Empty links stay hidden.
+  // Official pages supplied by the client. Every icon opens in a new tab. (No Twitter/X.)
   social: {
-    facebook: "",
-    instagram: "",
-    linkedin: "",
+    facebook: "https://www.facebook.com/profile.php?id=61595701983981",
+    instagram: "https://www.instagram.com/moorishxpressllc/",
+    linkedin: "https://www.linkedin.com/company/146762894/",
+  },
+  // BBB badge: Jude will supply the official badge file and his BBB profile link.
+  // Drop the badge into /public/images/ and fill both fields; it then shows on the
+  // homepage and footer automatically. Hidden while empty so we never show an
+  // unofficial or inaccurate BBB status.
+  bbb: {
+    profileUrl: "",
+    badgeSrc: "", // e.g. "/images/bbb-badge.png"
+    badgeWidth: 200,
+    badgeHeight: 76,
   },
   // FMCSA numbers: add once confirmed by the client. Hidden while empty.
   usdot: "",
@@ -34,26 +45,40 @@ export const site = {
 
 export const fullAddress = `${site.address.street}, ${site.address.city}, ${site.address.region} ${site.address.zip}`;
 
+/** Company description supplied by the client (used on About + footer). */
+export const companyDescription = [
+  "Moorish Xpress, LLC is an Atlanta, Georgia-based freight transportation and truck dispatch company. We provide freight hauling services with our 26 ft box trucks and professional dispatch services for owner-operators and small trucking companies.",
+  "We work with both freight brokers and shippers to meet their freight transportation needs, while helping carriers find loads, coordinate trips and manage communication and paperwork. Our dispatch approach focuses on securing competitive rates, reducing empty miles and keeping trucks moving efficiently.",
+  "We believe strong business relationships start with clear communication, attention to detail and consistent follow-through. Whether you have freight to move or need dispatch support, let's talk about your next load.",
+];
+
 export const nav = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Carrier Services" },
-  { href: "/dispatch", label: "Dispatch" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "About Us" },
+  { href: "/services", label: "Freight Services" },
+  { href: "/dispatch", label: "Dispatch Services" },
+  { href: "/brokers-shippers", label: "Brokers & Shippers" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact" },
+];
+
+/** Secondary pages linked from the footer only. */
+export const moreLinks = [
   { href: "/reviews", label: "Reviews" },
   { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
+  { href: "/dispatch#signup", label: "Dispatch Sign-Up" },
 ];
 
 /** The two truck types in the fleet. Used by the spec toggle and the load-fit checker. */
 export const trucks = [
   {
     id: "cdl",
-    name: "CDL Class B Box Truck",
+    name: "Class B CDL Box Truck",
     gvwr: 33000,
     badge: "Heavy-load option",
     summary:
-      "Our 33,000 lb GVWR box truck runs under a Class B CDL, so it can legally carry heavier freight than a standard non-CDL box truck.",
-    specs: ["26 ft box", "33,000 lb GVWR", "Class B CDL driver", "Tuck-under liftgate", "Air-ride suspension"],
+      "Our 26 ft box truck rated at 33,000 lb GVWR is operated by a Class B CDL holder, so it can legally carry heavier freight than a standard non-CDL box truck.",
+    specs: ["26 ft box truck", "33,000 lb GVWR", "Class B CDL driver", "Tuck-under liftgate", "Air-ride suspension"],
   },
   {
     id: "noncdl",
@@ -61,8 +86,8 @@ export const trucks = [
     gvwr: 26000,
     badge: "Everyday freight",
     summary:
-      "Our 26,000 lb GVWR box trucks are built for palletized and boxed freight, dock or no dock, across regional and long-haul lanes.",
-    specs: ["Box truck", "26,000 lb GVWR", "Non-CDL", "Tuck-under liftgate", "Air-ride suspension"],
+      "Our 26 ft non-CDL box trucks rated at 26,000 lb GVWR are built for palletized and boxed freight, dock or no dock, on regional and long-distance lanes.",
+    specs: ["26 ft box truck", "26,000 lb GVWR", "Non-CDL driver", "Tuck-under liftgate", "Air-ride suspension"],
   },
 ] as const;
 
@@ -83,152 +108,155 @@ export type Service = {
 };
 
 export const services: Service[] = [
+  /* ---------------- Freight transportation (our own trucks) ---------------- */
   {
     slug: "otr-box-truck-freight",
     group: "carrier",
-    title: "OTR Box Truck Freight",
-    short: "Over-the-road box truck hauling from Atlanta across the Southeast, South, Midwest and Northeast.",
-    keyword: "OTR box truck carrier",
-    metaTitle: "OTR Box Truck Carrier Atlanta GA | Long Haul Box Truck Freight",
+    title: "OTR Freight Transportation",
+    short: "Long-distance, interstate freight hauling in our 26 ft box trucks, from Atlanta, GA to the Midwest, the Northeast and the Southern states.",
+    keyword: "OTR box truck freight transportation",
+    metaTitle: "OTR Box Truck Freight Transportation | Interstate Freight Carrier Atlanta GA",
     metaDescription:
-      "Moorish Xpress is an Atlanta-based OTR box truck carrier hauling freight across the Southeast, South, Midwest and Northeast. 33,000 lb GVWR option, liftgate, 24/7.",
-    image: "/images/otr-truck-highway.jpg",
-    imageAlt: "Truck on an open highway hauling over-the-road freight",
+      "Over-the-road box truck freight from Atlanta, GA. Moorish Xpress hauls long-distance, interstate freight in 26 ft box trucks to the Midwest, the Northeast and the Southern states. Open 24/7.",
+    image: "/images/box-truck-otr-highway.jpg",
+    imageAlt: "26 ft box truck hauling over-the-road freight on an interstate highway at sunset",
     intro:
-      "When your freight needs to leave Georgia and arrive on time, a dedicated box truck is often the fastest, simplest option. We run over-the-road lanes out of Atlanta into the Southeast, Texas and the South, the Midwest and the Northeast.",
+      "Our primary focus is over-the-road freight in 26 ft box trucks. When your freight needs to leave Georgia and arrive on time, we run long-distance, interstate lanes out of Atlanta into the Midwest, the Northeast and the Southern states, including Texas, Tennessee, the Carolinas, Oklahoma and Virginia.",
     points: [
-      "Dedicated truck: your load is not sitting in a terminal waiting for a consolidation",
-      "33,000 lb GVWR CDL box truck for heavier loads, plus 26,000 lb non-CDL trucks",
-      "Tuck-under liftgate on every truck for non-dock pickups and deliveries",
-      "Air-ride suspension for freight that should not bounce for 600 miles",
-      "Direct line to dispatch 24/7 for check calls and updates",
+      "Dedicated 26 ft box truck: your freight is not waiting in a terminal for consolidation",
+      "33,000 lb GVWR Class B CDL box truck for heavier loads, plus 26,000 lb GVWR non-CDL box trucks",
+      "Tuck-under liftgate on every truck for pickups and deliveries without a dock",
+      "Air-ride suspension for a smoother ride on long-distance runs",
+      "Direct line to dispatch 24/7 for check calls and shipment updates",
     ],
-    idealFor: ["Freight brokers with box truck loads on the board", "Shippers moving partial or full box truck loads", "Expedited regional and multi-state runs"],
+    idealFor: ["Freight brokers with box truck loads on the board", "Shippers moving long-distance box truck loads", "Interstate runs from Atlanta, GA"],
     faqs: [
       {
         q: "Which states do you run OTR?",
-        a: "We are based in Atlanta and run lanes across the Southeast, Texas, Oklahoma and the South, the Midwest and the Northeast. Call or send a quote request with your lane and we will confirm availability.",
+        a: "We are based in Atlanta, Georgia and run lanes across the Midwest, the Northeast and the Southern states, including Texas, Tennessee, North Carolina, South Carolina, Oklahoma and Virginia. Send us your lane and we will confirm availability.",
       },
       {
         q: "How much can your box trucks carry?",
-        a: "We run a 33,000 lb GVWR Class B CDL box truck and 26,000 lb GVWR non-CDL box trucks. Payload depends on the truck, so share your weight and pallet count and we will match the right unit.",
+        a: "We run 26 ft box trucks: a 33,000 lb GVWR box truck operated by a Class B CDL holder and 26,000 lb GVWR non-CDL box trucks. Payload depends on the truck, so share your weight and pallet count and we will match the right unit.",
       },
     ],
   },
   {
-    slug: "first-mile-freight",
+    slug: "palletized-freight-transportation",
     group: "carrier",
-    title: "First Mile Pickup",
-    short: "Pickups from manufacturers, suppliers and warehouses moved to the dock, terminal or DC on time.",
-    keyword: "first mile delivery Atlanta",
-    metaTitle: "First Mile Freight Pickup Atlanta | Box Truck First Mile Delivery",
+    title: "Palletized Freight Transportation",
+    short: "Palletized commercial goods moved for freight brokers, shippers, warehouses and distribution centers.",
+    keyword: "palletized freight transportation services",
+    metaTitle: "Palletized Freight Transportation Atlanta GA | Long Distance Pallet Shipping",
     metaDescription:
-      "First mile freight pickup in Atlanta and the Southeast. Moorish Xpress moves product from suppliers and warehouses to terminals, DCs and cross-docks by box truck.",
-    image: "/images/first-mile-dock-pickup.jpg",
-    imageAlt: "Trucks backed into a warehouse loading dock for first mile pickup",
+      "Palletized freight transportation from Atlanta, GA. 26 ft box trucks with a tuck-under liftgate and air-ride suspension move pallets for brokers, shippers, warehouses and distribution centers.",
+    image: "/images/box-trucks-loading-dock.jpg",
+    imageAlt: "Two box trucks parked at a warehouse loading dock ready for palletized freight",
     intro:
-      "The first mile sets the pace for the whole shipment. We pick up from suppliers, manufacturers and warehouses and get product to the cross-dock, terminal or distribution center when it is expected.",
+      "We move palletized commercial goods between factories, warehouses and distribution centers, short haul or long distance. From first-mile pickups at the supplier to last-mile delivery at the receiver, our 26 ft box trucks with tuck-under liftgates handle docks and ground-level locations alike.",
     points: [
-      "Supplier and warehouse pickups across metro Atlanta and the region",
-      "Liftgate pickups where there is no dock",
-      "Appointment-based pickups that respect cut-off times",
-      "Clear BOL and pickup documentation",
+      "Palletized freight for brokers, shippers, warehouses and distribution centers",
+      "Tuck-under liftgate for pickups and deliveries with or without a dock",
+      "First-mile pickups and last-mile deliveries as part of the run",
+      "Clear BOL at pickup and proof of delivery (POD) at drop-off",
     ],
-    idealFor: ["Manufacturers shipping to a DC", "E-commerce sellers moving inventory", "3PLs needing reliable feeder capacity"],
+    idealFor: ["Manufacturers shipping to a distribution center", "Warehouses with scheduled outbound shipments", "3PLs needing reliable box truck capacity"],
     faqs: [
       {
-        q: "Can you pick up without a loading dock?",
-        a: "Yes. Every one of our trucks has a tuck-under liftgate, so ground-level pickups are not a problem.",
+        q: "Can you pick up or deliver without a loading dock?",
+        a: "Yes. Every one of our trucks has a tuck-under liftgate, so ground-level pickups and deliveries are not a problem.",
       },
       {
-        q: "Do you handle recurring pickups?",
-        a: "Yes. Tell us the schedule and volume and we will set up recurring pickups at a dedicated rate.",
+        q: "Do you handle recurring shipments?",
+        a: "Yes. Tell us the schedule, lanes and volume and we will talk about setting up recurring pickups.",
       },
     ],
   },
   {
-    slug: "last-mile-delivery",
+    slug: "partial-truckload-freight",
     group: "carrier",
-    title: "Last Mile Delivery",
-    short: "Final delivery to stores, job sites, businesses and residences, liftgate included.",
-    keyword: "last mile box truck delivery",
-    metaTitle: "Last Mile Box Truck Delivery Atlanta GA | Liftgate Delivery",
+    title: "Partial Truckload (PTL) Freight",
+    short: "Smaller shipments that do not need the whole truck, subject to available capacity and route compatibility.",
+    keyword: "partial truckload freight transportation",
+    metaTitle: "Partial Truckload (PTL) Freight Transportation | Box Truck Carrier Atlanta GA",
     metaDescription:
-      "Last mile box truck delivery in Atlanta and across the Southeast. Liftgate delivery to businesses, job sites and residences. Moorish Xpress, open 24/7.",
-    image: "/images/last-mile-delivery-truck.jpg",
-    imageAlt: "Truck on the road completing a last mile delivery",
+      "Partial truckload freight transportation by box truck from Atlanta, GA. Ship a few pallets without paying for the whole truck, subject to capacity and route.",
+    image: "/images/box-truck-city-delivery.jpg",
+    imageAlt: "White box truck making a partial truckload delivery in the city",
     intro:
-      "Last mile is where customers notice the service. We deliver to retail stores, offices, job sites and residential addresses, with a liftgate so freight comes off the truck safely even without a dock.",
+      "Not every shipment needs a full truck. When your freight takes up only part of a 26 ft box truck, we can move it as a partial truckload, subject to available capacity and route compatibility.",
     points: [
-      "Liftgate delivery to ground-level locations",
-      "Business, job-site and residential deliveries",
-      "Delivery appointments and call-ahead on request",
-      "Proof of delivery shared quickly",
+      "Ship a few pallets without paying for the whole truck",
+      "Subject to available capacity and route compatibility",
+      "Same equipment standard: tuck-under liftgate and air-ride suspension on every truck",
+      "Direct communication with dispatch from pickup to delivery",
     ],
-    idealFor: ["Retail and furniture deliveries", "Construction and job-site materials", "Brokers needing a final-mile partner"],
+    idealFor: ["Shippers with a few pallets to move", "Brokers with partial box truck loads", "Freight that fits our existing lanes"],
     faqs: [
       {
-        q: "Do you deliver to residential addresses?",
-        a: "Yes. Liftgate delivery makes residential and other non-dock deliveries simple. Let us know about any access limits when you request a quote.",
+        q: "How do I know if my partial load fits?",
+        a: "Send us your pallet count, dimensions, weight and lane. We will check available capacity and route compatibility and let you know quickly.",
       },
       {
-        q: "Can the driver call ahead?",
-        a: "Yes. Ask for a call-ahead or appointment when you book and we will build it into the run.",
+        q: "Is partial truckload cheaper than a full truck?",
+        a: "Usually, because you only pay for the space your freight uses. The final rate depends on the lane, timing and how your freight fits with our route.",
       },
     ],
   },
   {
-    slug: "white-glove-delivery",
+    slug: "u-box-container-transportation",
     group: "carrier",
-    title: "White Glove Delivery",
-    short: "Careful handling for high-value, fragile and sensitive freight, from pickup to placement.",
-    keyword: "white glove freight delivery",
-    metaTitle: "White Glove Freight Delivery Atlanta | Careful Box Truck Transport",
+    title: "U-Haul U-Box Transportation",
+    short: "Long-distance transportation of U-Haul U-Box containers, subject to equipment suitability and load requirements.",
+    keyword: "U-Haul U-Box transportation services",
+    metaTitle: "U-Haul U-Box Transportation Services | Long Distance Box Truck Atlanta GA",
     metaDescription:
-      "White glove freight delivery from Atlanta. Air-ride box trucks, liftgate, careful handling and communication for fragile, high-value and sensitive shipments.",
-    image: "/images/white-glove-freight.jpg",
-    imageAlt: "Clean white truck used for careful white glove freight",
+      "Long-distance transportation of U-Haul U-Box containers by 26 ft box truck from Atlanta, GA, subject to equipment suitability and load requirements.",
+    image: "/images/box-truck-warehouse.jpg",
+    imageAlt: "Box truck parked beside a warehouse, ready for long-distance container transport",
     intro:
-      "Some freight needs more than a dock-to-dock move. For fragile, high-value or sensitive items we handle with care, use air-ride trucks, and stay in touch with you until it is delivered.",
+      "We transport U-Haul U-Box containers long distance in our 26 ft box trucks. Every move is subject to equipment suitability and load requirements, so we confirm the details with you before we book.",
     points: [
-      "Air-ride suspension to reduce shock and vibration",
-      "Liftgate handling instead of hand-dropping off the deck",
-      "Blanket-wrapping and securing on request",
-      "Direct communication with the driver and dispatch",
+      "Long-distance U-Box container transportation",
+      "26 ft box trucks with tuck-under liftgate and air-ride suspension",
+      "Subject to equipment suitability and load requirements",
+      "Clear communication from pickup to delivery",
     ],
-    idealFor: ["Fixtures, displays and furniture", "Medical, retail and office equipment", "Trade show and event freight"],
+    idealFor: ["Long-distance U-Box moves", "Customers relocating out of state", "Shipments that fit our lanes"],
     faqs: [
       {
-        q: "What does white glove include?",
-        a: "Careful loading, securing, liftgate handling and clear communication. If you need inside delivery or placement, tell us in your quote request and we will confirm what we can do for that load.",
+        q: "Are you part of U-Haul?",
+        a: "No. Moorish Xpress, LLC is an independent carrier and is not affiliated with U-Haul. We transport U-Box containers as a hauling service.",
       },
       {
-        q: "Is white glove more expensive?",
-        a: "It usually takes more time and care than a standard delivery, so it is priced per job. Send your details and we will quote it clearly upfront.",
+        q: "What do you need to quote a U-Box move?",
+        a: "The number of containers, the pickup and delivery locations, approximate weight and your timing. We will confirm equipment suitability and load requirements before we book.",
       },
     ],
   },
+
+  /* ---------------- Dispatch services (for other carriers) ---------------- */
   {
     slug: "box-truck-dispatch",
     group: "dispatch",
-    title: "Box Truck Dispatch",
-    short: "We find, negotiate and book box truck loads so owner-operators can focus on driving.",
-    keyword: "box truck dispatch service",
-    metaTitle: "Box Truck Dispatch Service | Dispatcher for Box Truck Owner-Operators",
+    title: "Professional Freight Dispatching",
+    short: "Load searching, broker communication, rate negotiation, scheduling and shipment coordination for owner-operators and small trucking companies.",
+    keyword: "professional freight dispatch services",
+    metaTitle: "Professional Freight Dispatch Services | Box Truck Dispatching Atlanta GA",
     metaDescription:
-      "Box truck dispatch from a carrier that runs box trucks every day. Moorish Xpress finds loads, negotiates rates and handles broker paperwork for owner-operators.",
-    image: "/images/dispatch-owner-operator-fleet.jpg",
-    imageAlt: "Row of trucks parked at a yard for owner-operators using dispatch services",
+      "Professional freight and box truck dispatching for owner-operators and small trucking companies. Load searching, rate negotiation, broker communication and scheduling.",
+    image: "/images/moorish-box-truck.jpg",
+    imageAlt: "Moorish Xpress yellow 26 ft box truck at a warehouse",
     intro:
-      "We are a box truck carrier ourselves, so we dispatch the way we would want to be dispatched. We look for loads that fit your truck, your lanes and your home time, and we handle the back-and-forth with brokers.",
+      "We are a box truck carrier ourselves, so we dispatch the way we would want to be dispatched. For independent owner-operators, small trucking companies and new carriers, we find loads that fit your truck, your lanes and your schedule, and we handle the back-and-forth with brokers.",
     points: [
       "Load searching across load boards and broker relationships",
-      "Rate negotiation aimed at your target rate per mile",
-      "Broker setup packets, rate confirmations and paperwork",
-      "Lane planning around your home base and schedule",
+      "Rate negotiation aimed at competitive rates and fewer empty miles",
+      "Broker communication, setup packets and rate confirmations",
+      "Scheduling, route planning and shipment coordination",
       "One dispatcher who knows your truck and your goals",
     ],
-    idealFor: ["26 ft box truck owner-operators", "New authorities building broker relationships", "Small fleets that need a dispatch desk"],
+    idealFor: ["26 ft box truck owner-operators", "Small trucking companies and fleets", "New and growing carriers"],
     faqs: [
       {
         q: "Do you force loads on drivers?",
@@ -236,7 +264,7 @@ export const services: Service[] = [
       },
       {
         q: "What do I need to get started?",
-        a: "Your active MC/DOT authority, insurance certificate, W-9 and truck details. Fill in the dispatch sign-up form and we will walk you through the rest.",
+        a: "Your active MC/DOT authority, certificate of insurance, W-9 and truck details. Fill in the dispatch sign-up form and we will walk you through the rest.",
       },
     ],
   },
@@ -244,19 +272,19 @@ export const services: Service[] = [
     slug: "hotshot-dispatch",
     group: "dispatch",
     title: "Hotshot Dispatch",
-    short: "Dispatch for hotshot owner-operators: loads, rates and paperwork handled.",
-    keyword: "hotshot dispatch service",
-    metaTitle: "Hotshot Dispatch Service | Dispatcher for Hotshot Owner-Operators",
+    short: "Dispatch for hotshot owner-operators: loads, rates, broker setup and paperwork handled.",
+    keyword: "hotshot dispatch services",
+    metaTitle: "Hotshot Dispatch Services | Dispatcher for Hotshot Owner-Operators",
     metaDescription:
-      "Hotshot dispatch service for owner-operators. Moorish Xpress finds hotshot loads, negotiates rates, handles broker setup and keeps your truck moving.",
-    image: "/images/hotshot-flatbed-dispatch.jpg",
-    imageAlt: "Flatbed truck ready for hotshot freight dispatch",
+      "Hotshot dispatch services for owner-operators. Moorish Xpress finds hotshot loads, negotiates rates, handles broker setup and keeps your truck moving.",
+    image: "/images/box-trucks-highway.jpg",
+    imageAlt: "Box truck and flatbed truck driving side by side on the highway",
     intro:
       "Hotshot freight moves fast and pays for speed, but only if the truck stays loaded. We find hotshot loads that fit your trailer and weight limits, negotiate the rate and handle broker setup so you can stay on the road.",
     points: [
       "Hotshot and flatbed load searching",
       "Rate negotiation and backhaul planning",
-      "Broker packets, rate cons and paperwork",
+      "Broker packets, rate confirmations and paperwork",
       "Load planning around trailer length and weight",
     ],
     idealFor: ["Hotshot owner-operators", "Gooseneck and flatbed trailers", "Drivers who want fewer empty miles"],
@@ -268,6 +296,37 @@ export const services: Service[] = [
       {
         q: "How do I pay for dispatch?",
         a: "We explain our dispatch fee clearly before we start, so you know exactly what you pay on every load. Contact us for current dispatch rates.",
+      },
+    ],
+  },
+  {
+    slug: "freight-documentation-load-coordination",
+    group: "dispatch",
+    title: "Freight Documentation & Load Coordination",
+    short: "Rate confirmations, Bills of Lading (BOLs), Proofs of Delivery (PODs) and shipment updates, managed as part of every load.",
+    keyword: "truck dispatching and load coordination",
+    metaTitle: "Freight Documentation & Load Coordination | Rate Cons, BOLs, PODs",
+    metaDescription:
+      "Moorish Xpress manages rate confirmations, Bills of Lading, Proofs of Delivery and shipment updates as part of our transportation and dispatching services.",
+    image: "/images/dispatch-office.jpg",
+    imageAlt: "Moorish Xpress dispatch office where loads and paperwork are coordinated",
+    intro:
+      "Paperwork is where loads get delayed and payments get stuck. As part of our transportation and dispatching services, we manage rate confirmations, Bills of Lading (BOLs), Proofs of Delivery (PODs) and shipment updates, so every load is documented from booking to payment.",
+    points: [
+      "Rate confirmations reviewed and organized",
+      "Bills of Lading (BOLs) checked at pickup",
+      "Proofs of Delivery (PODs) collected and sent quickly",
+      "Shipment updates for brokers, shippers and carriers",
+    ],
+    idealFor: ["Owner-operators who want less office work", "Small fleets without a back office", "Brokers who want clean, fast paperwork"],
+    faqs: [
+      {
+        q: "Is documentation included with dispatch?",
+        a: "Yes. Managing rate confirmations, BOLs, PODs and shipment updates is part of our dispatching service, and part of every load we haul ourselves.",
+      },
+      {
+        q: "Why does fast POD delivery matter?",
+        a: "Brokers and factoring companies usually need the POD before they pay. Sending it quickly helps carriers get paid faster.",
       },
     ],
   },
@@ -289,7 +348,7 @@ export const regions = [
 export const homeFaqs = [
   {
     q: "Are you a carrier or a broker?",
-    a: "We are an asset-based carrier. Moorish Xpress operates its own box trucks out of Atlanta, and we also offer dispatch services for other box truck and hotshot owner-operators.",
+    a: "We are an asset-based carrier. Moorish Xpress operates its own 26 ft box trucks out of Atlanta, and we also offer dispatch services for other box truck and hotshot owner-operators.",
   },
   {
     q: "What is the difference between your CDL and non-CDL box trucks?",
@@ -306,5 +365,86 @@ export const homeFaqs = [
   {
     q: "Do you only dispatch box trucks?",
     a: "We dispatch box trucks and hotshots. If you run another equipment type, reach out and we will tell you honestly if we are a fit.",
+  },
+];
+
+/** Full FAQ page, grouped by audience. Each group also feeds FAQPage schema. */
+export const faqGroups = [
+  {
+    id: "general",
+    title: "About Moorish Xpress",
+    items: [
+      homeFaqs[0],
+      {
+        q: "Where are you located?",
+        a: "Our office is at 2920 Campbellton Rd SW, Atlanta, GA 30311. We haul freight from Atlanta, GA to the Midwest, the Northeast and the Southern states.",
+      },
+      homeFaqs[3],
+    ],
+  },
+  {
+    id: "freight",
+    title: "Freight transportation",
+    items: [
+      homeFaqs[1],
+      {
+        q: "What freight services do you offer?",
+        a: "Over-the-road (OTR) freight transportation, palletized freight transportation, partial truckload (PTL) freight and U-Haul U-Box container transportation, all in 26 ft box trucks.",
+      },
+      {
+        q: "Which areas do you cover?",
+        a: "We run long-distance, interstate lanes from Atlanta into the Midwest, the Northeast and the Southern states, including Texas, Tennessee, North Carolina, South Carolina, Oklahoma and Virginia.",
+      },
+      {
+        q: "Do your trucks have liftgates?",
+        a: "Yes. Every truck has a tuck-under liftgate and air-ride suspension, for convenient loading and a smoother ride.",
+      },
+      {
+        q: "Do you offer partial truckload?",
+        a: "Yes, for smaller shipments that do not need the whole truck, subject to available capacity and route compatibility.",
+      },
+    ],
+  },
+  {
+    id: "brokers",
+    title: "Brokers & shippers",
+    items: [
+      homeFaqs[2],
+      {
+        q: "How do I get your carrier setup packet?",
+        a: "Email loads@moorishxpress.com or call (678) 968-7511 and we will send our carrier packet the same day.",
+      },
+      {
+        q: "Do you work directly with shippers?",
+        a: "Yes. We work with freight brokers today and we welcome direct contracts with shippers, manufacturers, warehouses and distribution centers.",
+      },
+      {
+        q: "How will I get updates on my load?",
+        a: "Our dispatch is available 24/7 for check calls. We confirm pickup, send updates in transit, and share the proof of delivery (POD) quickly after delivery.",
+      },
+    ],
+  },
+  {
+    id: "dispatch",
+    title: "Dispatch services",
+    items: [
+      homeFaqs[4],
+      {
+        q: "Who do you dispatch for?",
+        a: "Independent owner-operators, small trucking companies, and new and growing carriers running box trucks or hotshots.",
+      },
+      {
+        q: "What does your dispatch service include?",
+        a: "Load sourcing, freight rate negotiation, broker communication, route and shipment coordination, and freight documentation support: rate confirmations, BOLs and PODs.",
+      },
+      {
+        q: "Do I approve every load?",
+        a: "Yes. You approve every load before it is booked. There is no forced dispatch.",
+      },
+      {
+        q: "What do I need to get started?",
+        a: "An active MC/DOT authority, certificate of insurance, W-9 and your truck details. Fill in the dispatch sign-up form or call us.",
+      },
+    ],
   },
 ];

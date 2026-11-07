@@ -19,7 +19,7 @@ export const posts: Post[] = [
     slug: "cdl-vs-non-cdl-box-truck-26000-vs-33000-gvwr",
     title: "CDL vs Non-CDL Box Trucks: 26,000 vs 33,000 lb GVWR Explained",
     description:
-      "What GVWR means, why a 33,000 lb CDL box truck can carry heavier freight than a 26,000 lb non-CDL truck, and how to pick the right one for your load.",
+      "What GVWR means, why a 33,000 lb GVWR CDL box truck can carry heavier freight than a 26,000 lb GVWR non-CDL box truck, and how to pick the right one for your load.",
     keyword: "CDL box truck 33000 GVWR",
     category: "Shippers",
     date: "2026-10-30",
@@ -44,18 +44,18 @@ export const posts: Post[] = [
       {
         heading: "What a 33,000 lb GVWR box truck means for your freight",
         paragraphs: [
-          "Moorish Xpress runs a 33,000 lb GVWR box truck driven under a Class B CDL, alongside our 26,000 lb non-CDL box trucks. The CDL truck gives shippers and brokers an option for dense, heavy freight that would overload a standard box truck.",
+          "Moorish Xpress runs a 26 ft box truck rated at 33,000 lb GVWR, operated by a Class B CDL holder, alongside our 26 ft non-CDL box trucks rated at 26,000 lb GVWR. The CDL truck gives shippers and brokers an option for dense, heavy freight that would overload a standard box truck.",
         ],
         list: [
           "Heavy palletized product like beverages, paper, tile or hardware",
           "Loads that would otherwise need two box trucks",
-          "Freight that is too heavy for a box truck but too small for a 53 ft trailer",
+          "Freight that is too heavy for a standard box truck but too small for a 53 ft trailer",
         ],
       },
       {
         heading: "How to choose the right truck",
         paragraphs: [
-          "Share your total weight, pallet count and pallet dimensions when you request a quote. Our quote form gives you an instant suggested truck, and dispatch confirms the right unit before pickup. All our trucks have a tuck-under liftgate and air-ride suspension, whichever class you need.",
+          "Share your total weight, pallet count and pallet dimensions when you request a quote. Our quote form suggests a truck instantly, and dispatch confirms the right unit before pickup. All of our trucks have a tuck-under liftgate and air-ride suspension, whichever class you need.",
         ],
       },
     ],
@@ -144,15 +144,15 @@ export const posts: Post[] = [
   },
   {
     slug: "liftgate-last-mile-delivery-atlanta",
-    title: "Last Mile Delivery in Atlanta: When You Need a Liftgate Box Truck",
+    title: "Last-Mile Delivery in Atlanta: When You Need a Liftgate Box Truck",
     description:
-      "When last mile freight needs a liftgate, what to tell your carrier, and how box trucks make non-dock deliveries in Atlanta simple.",
+      "When last-mile freight needs a liftgate, what to tell your carrier, and how box trucks make non-dock deliveries in Atlanta simple.",
     keyword: "last mile delivery Atlanta",
     category: "Shippers",
     date: "2026-10-18",
     readMins: 4,
     intro:
-      "Many last mile addresses have no loading dock: retail stores, job sites, offices and homes. That is where a liftgate box truck earns its place.",
+      "Many last-mile addresses have no loading dock: retail stores, job sites, offices and homes. That is where a liftgate box truck earns its place.",
     sections: [
       {
         heading: "Signs you need a liftgate",
@@ -160,7 +160,7 @@ export const posts: Post[] = [
         list: ["No dock, or a dock that is too high or too low", "Ground-level storefront or job-site delivery", "Residential address", "Heavy pallets that cannot be hand-unloaded"],
       },
       {
-        heading: "Why box trucks fit last mile in a city like Atlanta",
+        heading: "Why box trucks fit last-mile delivery in a city like Atlanta",
         paragraphs: [
           "A 26 ft box truck can reach places a tractor-trailer cannot: tight streets, small lots and downtown loading zones. With a tuck-under liftgate, the driver can bring pallets to ground level safely.",
         ],
@@ -171,9 +171,9 @@ export const posts: Post[] = [
         list: ["Delivery address and receiving hours", "Contact name and phone on site", "Any access limits like low clearance or gated entry", "Whether you want a call-ahead"],
       },
       {
-        heading: "Our last mile service",
+        heading: "Last-mile delivery with Moorish Xpress",
         paragraphs: [
-          "Every Moorish Xpress truck has a tuck-under liftgate and air-ride suspension. We handle last mile across metro Atlanta and as the final leg of longer regional runs.",
+          "Every Moorish Xpress truck has a tuck-under liftgate and air-ride suspension. Last-mile drops are handled as part of the run, across metro Atlanta and as the final leg of our longer runs.",
         ],
       },
     ],
@@ -217,44 +217,6 @@ export const posts: Post[] = [
         heading: "We work with both",
         paragraphs: [
           "We haul for shippers directly and for freight brokers. If you are a broker with box truck freight on your board, ask for our carrier setup packet.",
-        ],
-      },
-    ],
-    cta: "quote",
-  },
-  {
-    slug: "white-glove-freight-delivery-what-to-expect",
-    title: "White Glove Freight Delivery: What It Includes and When You Need It",
-    description:
-      "What white glove freight delivery includes, which shipments need it, and how to prepare. A guide for shippers moving fragile or high-value freight.",
-    keyword: "white glove freight delivery",
-    category: "Shippers",
-    date: "2026-10-06",
-    readMins: 4,
-    intro:
-      "Not every shipment can be treated like another pallet on the dock. White glove service is about care, communication and getting fragile freight there in one piece.",
-    sections: [
-      {
-        heading: "What white glove usually means",
-        paragraphs: ["White glove can mean different things to different carriers, so always confirm the details. It often includes:"],
-        list: ["Careful loading and securing", "Blanket wrapping for exposed surfaces", "Liftgate handling instead of hand-dropping", "Call-ahead and appointment delivery", "Inside delivery or placement, when agreed in advance"],
-      },
-      {
-        heading: "Freight that benefits from white glove",
-        paragraphs: [
-          "Retail fixtures and displays, furniture, office and medical equipment, and trade show freight are all common white glove shipments. Anything expensive, fragile or hard to replace is a candidate.",
-        ],
-      },
-      {
-        heading: "Why air-ride suspension matters",
-        paragraphs: [
-          "Air-ride suspension absorbs road shock far better than standard spring suspension. For fragile freight over long distances, that difference shows up as fewer damage claims.",
-        ],
-      },
-      {
-        heading: "Booking white glove with Moorish Xpress",
-        paragraphs: [
-          "Tell us what you are shipping and what needs to happen at delivery. We will confirm exactly what is included and quote it upfront, before the truck is dispatched.",
         ],
       },
     ],

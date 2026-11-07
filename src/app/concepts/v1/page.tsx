@@ -11,7 +11,7 @@ import { Button, Faq, SectionHeading } from "@/components/ui";
 import { carrierServices, dispatchServices, homeFaqs, site } from "@/lib/site";
 import { faqSchema } from "@/lib/schema";
 
-const keywords = ["OTR box truck freight", "Box truck dispatch", "Hotshot dispatch", "Last mile delivery", "First mile pickup", "White glove", "Liftgate delivery", "Atlanta, GA"];
+const keywords = ["OTR box truck freight", "Box truck dispatch", "Hotshot dispatch", "Last mile delivery", "First mile pickup", "Liftgate delivery", "Atlanta, GA"];
 
 const steps = [
   { Icon: IconDoc, title: "Send the load", text: "Use the quote form or call. Pickup, delivery, weight and timing is all we need to start." },
@@ -42,7 +42,7 @@ export default function HomePageV1() {
               When you need it <span className="text-red-gradient">there</span> <span className="text-gold-gradient">now.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75">
-              Moorish Xpress, LLC is an asset-based box truck carrier in Atlanta, Georgia. We haul OTR, first mile, last mile and white glove freight for shippers and brokers, and we dispatch box trucks and hotshots for owner-operators.
+              Moorish Xpress, LLC is an asset-based box truck carrier in Atlanta, Georgia. We haul OTR, palletized and partial truckload freight for shippers and brokers, and we dispatch box trucks and hotshots for owner-operators.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Button href="/contact#quote">Get a Freight Quote</Button>

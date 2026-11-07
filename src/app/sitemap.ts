@@ -4,7 +4,7 @@ import { posts } from "@/lib/posts";
 
 // XML sitemap for search engines: core pages, every service and every article
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["", "/services", "/dispatch", "/about", "/reviews", "/blog", "/contact"].map((p) => ({
+  const pages = ["", "/about", "/services", "/dispatch", "/brokers-shippers", "/faq", "/contact", "/reviews", "/blog"].map((p) => ({
     url: `${site.url}${p}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { QuoteForm } from "@/components/forms";
-import { IconArrow, IconClock, IconFacebook, IconHeadset, IconInstagram, IconLinkedin, IconMail, IconMap, IconPhone } from "@/components/icons";
+import { IconArrow, IconClock, IconHeadset, IconMail, IconMap, IconPhone } from "@/components/icons";
+import { SocialLinks } from "@/components/Social";
 import { PageHero } from "@/components/ui";
 import { fullAddress, site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -13,12 +14,6 @@ export const metadata: Metadata = {
     "Contact Moorish Xpress, LLC at 2920 Campbellton Rd SW, Atlanta, GA 30311. Call (678) 968-7511 or email loads@moorishxpress.com. Dispatch open 24/7.",
   alternates: { canonical: "/contact" },
 };
-
-const socials = [
-  { href: site.social.facebook, label: "Facebook", Icon: IconFacebook },
-  { href: site.social.instagram, label: "Instagram", Icon: IconInstagram },
-  { href: site.social.linkedin, label: "LinkedIn", Icon: IconLinkedin },
-].filter((s) => s.href);
 
 export default function ContactPage() {
   const cards = [
@@ -34,7 +29,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title={<>Let&apos;s talk <span className="text-gold">freight.</span></>}
-        intro="Send a load, ask for our carrier packet, or sign up for dispatch. We answer 24/7."
+        intro="Send a load, ask for our carrier packet, or sign up for dispatch. Whether you have freight to move or need dispatch support, let's talk about your next load. We answer 24/7."
         crumbs={[{ href: "/", label: "Home" }, { href: "/contact", label: "Contact" }]}
       />
 
@@ -66,13 +61,13 @@ export default function ContactPage() {
               <IconArrow className="h-6 w-6 transition-transform group-hover:translate-x-1" />
             </Link>
 
-            {socials.length > 0 && (
-              <div className="flex gap-3 pt-2">
-                {socials.map(({ href, label, Icon }) => (
-                  <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="flex h-11 w-11 items-center justify-center rounded-md bg-ink text-white hover:bg-red"><Icon /></a>
-                ))}
-              </div>
-            )}
+            <div className="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-line bg-white p-5">
+              <span>
+                <span className="block text-xs uppercase tracking-widest text-steel">Follow Moorish Xpress</span>
+                <span className="font-semibold text-ink">Instagram · Facebook · LinkedIn</span>
+              </span>
+              <SocialLinks tone="light" size="lg" />
+            </div>
 
             <div className="overflow-hidden rounded-xl border border-line">
               <iframe

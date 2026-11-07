@@ -56,7 +56,11 @@ export function SectionHeading({
   );
 }
 
-/** Dark photo hero for inner pages, with breadcrumb. */
+/**
+ * Photo hero for inner pages, with breadcrumb.
+ * `bright` shows the photo at full strength with only a soft left-side scrim
+ * (used on About so the yellow truck and branding stay visible).
+ */
 export function PageHero({
   eyebrow,
   title,
@@ -65,6 +69,8 @@ export function PageHero({
   imageAlt,
   crumbs,
   children,
+  bright = false,
+  imagePosition = "center",
 }: {
   eyebrow: string;
   title: React.ReactNode;
@@ -73,12 +79,31 @@ export function PageHero({
   imageAlt?: string;
   crumbs: { href: string; label: string }[];
   children?: React.ReactNode;
+  bright?: boolean;
+  imagePosition?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-ink text-white">
-      {image && <Image src={image} alt={imageAlt || ""} fill priority sizes="100vw" className="animate-kenburns object-cover opacity-45" />}
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30" />
-      <div className="absolute inset-0 bg-grid opacity-40" />
+    <section className={`relative overflow-hidden text-white ${bright ? "bg-[#2a2a30]" : "bg-ink"}`}>
+      {image && (
+        <Image
+          src={image}
+          alt={imageAlt || ""}
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectPosition: imagePosition }}
+          className={`animate-kenburns object-cover ${bright ? "opacity-100" : "opacity-45"}`}
+        />
+      )}
+      {bright ? (
+        // Light scrim: only behind the text column, so the photo stays bright and welcoming
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent lg:via-black/20" />
+      ) : (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30" />
+          <div className="absolute inset-0 bg-grid opacity-40" />
+        </>
+      )}
       <div className="container-x relative py-20 sm:py-28">
         <nav className="flex flex-wrap gap-2 text-sm text-white/60" aria-label="Breadcrumb">
           {crumbs.map((c, i) => (
@@ -89,8 +114,8 @@ export function PageHero({
           ))}
         </nav>
         <p className="eyebrow mt-8 flex items-center gap-3 text-gold"><span className="h-0.5 w-8 bg-current" />{eyebrow}</p>
-        <h1 className="mt-4 max-w-4xl text-5xl font-bold uppercase leading-[1.02] sm:text-6xl lg:text-7xl">{title}</h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75">{intro}</p>
+        <h1 className={`mt-4 max-w-4xl ${bright ? "[text-shadow:0_4px_24px_rgba(0,0,0,0.55)]" : ""} text-5xl font-bold uppercase leading-[1.02] sm:text-6xl lg:text-7xl`}>{title}</h1>
+        <p className={`mt-6 max-w-2xl text-lg leading-relaxed ${bright ? "text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.6)]" : "text-white/75"}`}>{intro}</p>
         {children && <div className="mt-9 flex flex-wrap gap-4">{children}</div>}
       </div>
       <div className="relative h-1.5 bg-red-gradient" />

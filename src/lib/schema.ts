@@ -3,7 +3,7 @@ import { site, services, regions } from "./site";
 // Structured data shared by every page (helps Google show local + service results)
 export const businessSchema = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "MovingCompany"],
+  "@type": "LocalBusiness",
   "@id": `${site.url}/#business`,
   name: site.name,
   alternateName: site.shortName,

@@ -60,7 +60,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-steel sm:text-xl">
-            An asset-based box truck carrier in Atlanta, Georgia. We haul OTR, first mile, last mile and white glove freight, and we dispatch box trucks and hotshots for owner-operators.
+            An asset-based box truck carrier in Atlanta, Georgia. We haul OTR, palletized and partial truckload freight, and we dispatch box trucks and hotshots for owner-operators.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a href="#quote" className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-red-gradient px-7 py-4 font-display text-base font-semibold uppercase tracking-wider text-white shadow-[0_14px_40px_-10px_rgba(215,20,26,0.6)] transition hover:-translate-y-0.5 sm:w-auto">
@@ -84,7 +84,7 @@ export default function Hero() {
 
           <Chip className="-left-36 top-36">
             <p className="text-[0.65rem] font-bold uppercase tracking-wider text-steel">Every truck</p>
-            <p className="font-display text-lg font-semibold uppercase text-ink">Liftgate + air ride</p>
+            <p className="font-display text-lg font-semibold uppercase text-ink">Liftgate + air-ride</p>
           </Chip>
           <Chip className="-right-32 top-12" delay={0.4}>
             <p className="text-[0.65rem] font-bold uppercase tracking-wider text-steel">GVWR up to</p>

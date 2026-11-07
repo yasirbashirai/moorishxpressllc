@@ -1,6 +1,6 @@
 import s from "./editorial.module.css";
 
-const words = ["OTR Box Truck Freight", "Box Truck Dispatch", "Last Mile", "First Mile", "Hotshot Dispatch", "White Glove", "Liftgate Delivery", "24/7"];
+const words = ["OTR Box Truck Freight", "Box Truck Dispatch", "Last Mile", "First Mile", "Hotshot Dispatch", "Liftgate Delivery", "24/7"];
 
 function Band({ tone, reverse }: { tone: "red" | "gold"; reverse?: boolean }) {
   const list = [...words, ...words];

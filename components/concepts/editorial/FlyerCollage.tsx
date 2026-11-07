@@ -38,7 +38,7 @@ export default function FlyerCollage() {
           {/* tape strips */}
           <motion.div style={{ rotate: r2, y: y2 }} className="absolute right-0 top-6 w-[58%] border-[6px] border-white bg-white shadow-[0_30px_60px_-15px_rgba(0,0,0,0.45)]">
             <div className="relative aspect-[4/3]">
-              <Image src="/images/first-mile-dock-pickup.jpg" alt="Trucks at a loading dock" fill sizes="320px" className="object-cover grayscale contrast-125" />
+              <Image src="/images/box-trucks-loading-dock.jpg" alt="Trucks at a loading dock" fill sizes="320px" className="object-cover grayscale contrast-125" />
             </div>
             <p className="bg-white pt-2 font-display text-xs uppercase tracking-[0.25em] text-ink">Dock · First mile</p>
           </motion.div>

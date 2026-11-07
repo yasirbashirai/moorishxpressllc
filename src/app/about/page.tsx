@@ -6,20 +6,20 @@ import QuoteSection from "@/components/QuoteSection";
 import Reveal from "@/components/Reveal";
 import { IconClock, IconHand, IconLift, IconShield, IconTruck, IconUsers } from "@/components/icons";
 import { Button, PageHero, SectionHeading } from "@/components/ui";
-import { site } from "@/lib/site";
+import { companyDescription, site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About Moorish Xpress | Atlanta Box Truck Carrier & Dispatch Company",
+  title: "About Moorish Xpress | Atlanta Freight Transportation & Truck Dispatch Company",
   description:
-    "Moorish Xpress, LLC is an Atlanta, GA box truck carrier and dispatch company led by Jude Hood. Asset-based, 24/7, with liftgate and air-ride trucks.",
+    "Moorish Xpress, LLC is an Atlanta, Georgia-based freight transportation and truck dispatch company led by Jude Hood. 26 ft box trucks with tuck-under liftgates and air-ride suspension, open 24/7.",
   alternates: { canonical: "/about" },
 };
 
 const values = [
   { Icon: IconClock, t: "Speed with discipline", d: "When you need it there now, we move fast, but we never cut corners on safety or paperwork." },
   { Icon: IconShield, t: "Honest capacity", d: "We only commit to loads our trucks and schedule can handle. No overpromising." },
-  { Icon: IconHand, t: "Care for the freight", d: "Liftgates and air-ride suspension so freight is loaded, hauled and delivered gently." },
+  { Icon: IconHand, t: "Care for the freight", d: "Tuck-under liftgates and air-ride suspension, so freight is loaded, hauled and delivered gently." },
   { Icon: IconUsers, t: "Partnership", d: "Shippers, brokers and owner-operators: we build long-term relationships, not one-off transactions." },
 ];
 
@@ -30,9 +30,11 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About us"
         title={<>Atlanta-built. <span className="text-gold">Operator-led.</span></>}
-        intro="Moorish Xpress, LLC is a box truck carrier and dispatch company based on Campbellton Road in Atlanta, Georgia. We haul freight with our own trucks and dispatch for owner-operators who want to grow."
+        intro="Moorish Xpress, LLC is a freight transportation and truck dispatch company based on Campbellton Road in Atlanta, Georgia. We haul freight in our own 26 ft box trucks and dispatch for owner-operators and small trucking companies."
         image="/images/moorish-box-truck.jpg"
-        imageAlt="Moorish Xpress branded yellow box truck at a warehouse"
+        imageAlt="Moorish Xpress branded yellow 26 ft box truck at a warehouse"
+        bright
+        imagePosition="30% center"
         crumbs={[{ href: "/", label: "Home" }, { href: "/about", label: "About" }]}
       >
         <Button href="#quote">Work With Us</Button>
@@ -44,7 +46,7 @@ export default function AboutPage() {
           <Reveal className="relative">
             <div className="absolute -left-4 -top-4 h-full w-full rounded-3xl bg-hazard opacity-20" />
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
-              <Image src="/images/about-truck-terminal.jpg" alt="Freight truck at a terminal, the kind of work Moorish Xpress does every day" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover" />
+              <Image src="/images/box-truck-otr-highway.jpg" alt="26 ft box truck on a long-distance freight run, the kind of work Moorish Xpress does every day" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover object-[70%_center]" />
             </div>
             <div className="absolute -bottom-6 -right-2 rounded-2xl bg-ink p-6 text-white shadow-2xl sm:-right-6">
               <p className="font-display text-sm uppercase tracking-widest text-gold">Founder & owner</p>
@@ -55,14 +57,9 @@ export default function AboutPage() {
           <Reveal delay={100}>
             <SectionHeading eyebrow="Our story" title={<>From behind the wheel <span className="text-red">to running the desk.</span></>} />
             <div className="mt-6 space-y-5 text-lg leading-relaxed text-steel">
+              {companyDescription.map((p) => <p key={p.slice(0, 24)}>{p}</p>)}
               <p>
-                Moorish Xpress was started by {site.owner}, a Class B CDL holder who spent months learning the box truck business from experienced owner-operators before putting his own trucks on the road.
-              </p>
-              <p>
-                Today we run our own box trucks out of Atlanta, including a 33,000 lb GVWR CDL truck that can carry heavier loads than a standard non-CDL box truck. Every truck has a tuck-under liftgate and air-ride suspension.
-              </p>
-              <p>
-                Because we know what it takes to keep a box truck loaded and profitable, we also dispatch for other box truck and hotshot owner-operators. Our goal is simple: be the carrier shippers and brokers can count on, and the dispatcher drivers trust.
+                {site.owner} spent months learning the box truck business from experienced owner-operators before putting his own trucks on the road. Today we run 26 ft box trucks out of Atlanta: non-CDL trucks rated at 26,000 lb GVWR and a heavier-duty truck rated at 33,000 lb GVWR, operated by a Class B CDL holder. Every truck has a tuck-under liftgate and air-ride suspension.
               </p>
             </div>
           </Reveal>
@@ -100,7 +97,7 @@ export default function AboutPage() {
             {[
               ["Who hauls your freight", "Our own truck", "Whoever takes the load"],
               ["Who you talk to", "The carrier's dispatch", "An agent in between"],
-              ["Equipment known upfront", "Yes: liftgate + air ride", "Varies by carrier"],
+              ["Equipment known upfront", "Yes: liftgate + air-ride", "Varies by carrier"],
               ["Availability", "24/7 direct line", "Office hours, often"],
             ].map(([k, a, b], i) => (
               <div key={k} className={`grid grid-cols-3 text-sm sm:text-base ${i % 2 ? "bg-fog" : "bg-white"}`}>

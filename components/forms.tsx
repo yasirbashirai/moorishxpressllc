@@ -56,8 +56,8 @@ function Success({ title, text, onReset }: { title: string; text: string; onRese
 export function truckFit(weightLbs: number) {
   if (!weightLbs) return null;
   // Practical payload guides, not legal limits: confirmed per load by dispatch.
-  if (weightLbs <= 10000) return { truck: "Non-CDL box truck (26,000 lb GVWR)", note: "Fits our standard box truck. Liftgate and air ride included.", tone: "ok" as const };
-  if (weightLbs <= 16000) return { truck: "CDL Class B box truck (33,000 lb GVWR)", note: "Heavier load: our 33,000 lb GVWR truck is the right fit.", tone: "ok" as const };
+  if (weightLbs <= 10000) return { truck: "26 ft non-CDL box truck (26,000 lb GVWR)", note: "Fits our standard non-CDL box truck. Tuck-under liftgate and air-ride suspension included.", tone: "ok" as const };
+  if (weightLbs <= 16000) return { truck: "26 ft Class B CDL box truck (33,000 lb GVWR)", note: "Heavier load: our 33,000 lb GVWR Class B CDL box truck is the right fit. Tuck-under liftgate and air-ride suspension included.", tone: "ok" as const };
   return { truck: "Let's talk about this one", note: "This may be more than one box truck can carry. Send it anyway and we will plan it with you.", tone: "warn" as const };
 }
 
@@ -66,12 +66,12 @@ export function truckFit(weightLbs: number) {
 /* need to quote without a back-and-forth phone call.                  */
 /* ------------------------------------------------------------------ */
 
-const serviceOptions = ["OTR / long haul", "First mile pickup", "Last mile delivery", "White glove", "Not sure yet"];
+const serviceOptions = ["OTR / long distance", "Palletized freight", "Partial truckload (PTL)", "U-Haul U-Box transport", "Not sure yet"];
 
 export function QuoteForm({ title = "Get a freight quote", dark = false }: { title?: string; dark?: boolean }) {
   const [step, setStep] = useState(0);
   const [status, setStatus] = useState<Status>("idle");
-  const [data, setData] = useState<Record<string, string>>({ role: "Shipper", service: "OTR / long haul", liftgate: "Not sure" });
+  const [data, setData] = useState<Record<string, string>>({ role: "Shipper", service: "OTR / long distance", liftgate: "Not sure" });
 
   const set = (k: string, v: string) => setData((d) => ({ ...d, [k]: v }));
   const fit = truckFit(Number(data.weight));
@@ -145,7 +145,7 @@ export function QuoteForm({ title = "Get a freight quote", dark = false }: { tit
               </select>
             </Field>
             <div className="grid grid-cols-2 gap-3">
-              <Field name="weight" text="Total weight (lbs)">
+              <Field name="weight" text="Total weight (lb)">
                 <input id="weight" type="number" min={0} inputMode="numeric" placeholder="e.g. 8000" value={data.weight || ""} onChange={(e) => set("weight", e.target.value)} className={input} />
               </Field>
               <Field name="pallets" text="Pallets / pieces">
@@ -272,7 +272,7 @@ export function DispatchForm() {
         <Field name="d-equipment" text="Equipment">
           <select id="d-equipment" name="equipment" className={input}>
             <option>26 ft box truck (non-CDL)</option>
-            <option>Box truck (CDL / over 26,000 lb)</option>
+            <option>Box truck (CDL, over 26,000 lb GVWR)</option>
             <option>Box truck (under 26 ft)</option>
             <option>Hotshot (CDL)</option>
             <option>Hotshot (non-CDL)</option>

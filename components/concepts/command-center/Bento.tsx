@@ -9,10 +9,11 @@ import { services } from "@/lib/site";
 const layout: Record<string, string> = {
   "otr-box-truck-freight": "md:col-span-2 lg:col-span-4 lg:row-span-2",
   "box-truck-dispatch": "lg:col-span-2 lg:row-span-2",
-  "first-mile-freight": "lg:col-span-2",
-  "last-mile-delivery": "lg:col-span-2",
-  "white-glove-delivery": "lg:col-span-2",
-  "hotshot-dispatch": "md:col-span-2 lg:col-span-6",
+  "palletized-freight-transportation": "lg:col-span-2",
+  "partial-truckload-freight": "lg:col-span-2",
+  "u-box-container-transportation": "lg:col-span-2",
+  "hotshot-dispatch": "lg:col-span-3",
+  "freight-documentation-load-coordination": "lg:col-span-3",
 };
 
 /** One service tile with pointer-driven 3D tilt and image parallax. */
@@ -30,7 +31,7 @@ function Tile({ slug, i }: { slug: string; i: number }) {
   const glare = useTransform([sx, sy] as never, ([x, y]: number[]) => `radial-gradient(500px circle at ${x * 100}% ${y * 100}%, rgba(255,255,255,0.22), transparent 45%)`);
 
   const big = slug === "otr-box-truck-freight";
-  const wide = slug === "hotshot-dispatch";
+  const wide = slug === "hotshot-dispatch" || slug === "freight-documentation-load-coordination";
   const dispatch = s.group === "dispatch";
 
   return (
@@ -60,7 +61,7 @@ function Tile({ slug, i }: { slug: string; i: number }) {
 
         <div className="absolute left-5 top-5 z-20 flex items-center gap-2">
           <span className={`rounded-full px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.18em] backdrop-blur-md ${dispatch ? "bg-gold text-ink" : "bg-white/15 text-white ring-1 ring-white/25"}`}>
-            {dispatch ? "Dispatch" : "Carrier"}
+            {dispatch ? "Dispatch" : "Freight"}
           </span>
         </div>
 

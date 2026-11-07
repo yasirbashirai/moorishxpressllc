@@ -25,7 +25,7 @@ const promises = [
   { Icon: IconClock, t: "On-time pickups", d: "We show up when we say we will, or we call you before it matters." },
   { Icon: IconPhone, t: "Check calls without chasing", d: "Updates at pickup, in transit and at delivery." },
   { Icon: IconDoc, t: "Paperwork done right", d: "Clean BOLs, quick PODs and invoices that match the rate con." },
-  { Icon: IconShield, t: "Freight treated with care", d: "Liftgate handling and air-ride suspension on every truck." },
+  { Icon: IconShield, t: "Freight treated with care", d: "Tuck-under liftgate and air-ride suspension on every truck." },
 ];
 
 export default function ReviewsPage() {

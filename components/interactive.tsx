@@ -17,8 +17,8 @@ const audiences = [
     tab: "I have freight to move",
     Icon: IconTruck,
     title: "Shippers & freight brokers",
-    text: "You need a reliable box truck carrier that answers the phone, shows up on time and keeps you updated. We run our own trucks out of Atlanta, so you deal directly with the carrier.",
-    bullets: ["Direct carrier, not a middleman", "CDL 33,000 lb GVWR + non-CDL box trucks", "Liftgate and air ride on every truck", "Carrier setup packet ready for brokers"],
+    text: "You need a reliable box truck carrier that answers the phone, shows up on time and keeps you updated. We run our own 26 ft box trucks out of Atlanta, so you deal directly with the carrier.",
+    bullets: ["Direct carrier, not a middleman", "Class B CDL (33,000 lb GVWR) + non-CDL (26,000 lb GVWR) box trucks", "Tuck-under liftgate and air-ride suspension on every truck", "Carrier setup packet ready for brokers"],
     cta: { href: "/contact#quote", label: "Get a Freight Quote" },
     variant: "red" as const,
   },
@@ -93,7 +93,7 @@ export function TruckSpecs() {
       <div className="relative">
         <div className="absolute -inset-4 -z-10 rounded-3xl bg-gold-gradient opacity-25 blur-2xl" />
         <div className="relative overflow-hidden rounded-2xl border border-white/10">
-          <Image src="/images/moorish-box-truck.jpg" alt="Moorish Xpress 26 ft box truck with liftgate at a loading dock" width={1122} height={395} className="h-auto w-full" />
+          <Image src="/images/moorish-box-truck.jpg" alt="Moorish Xpress 26 ft box truck with tuck-under liftgate at a loading dock" width={1122} height={395} className="h-auto w-full" />
           <div className="absolute left-4 top-4 rounded-md bg-ink/85 px-3 py-1.5 font-display text-xs uppercase tracking-widest text-gold backdrop-blur">Our truck · Atlanta, GA</div>
         </div>
         {/* GVWR gauge */}
@@ -105,7 +105,7 @@ export function TruckSpecs() {
           <div className="mt-4 h-3 overflow-hidden rounded-full bg-white/10">
             <div className="h-full rounded-full bg-gold-gradient transition-all duration-700 ease-out" style={{ width: `${pct}%` }} />
           </div>
-          <div className="mt-2 flex justify-between text-xs text-white/50"><span>0</span><span>26,000 non-CDL limit</span><span>33,000</span></div>
+          <div className="mt-2 flex justify-between text-xs text-white/50"><span>0</span><span>26,000 lb non-CDL limit</span><span>33,000</span></div>
         </div>
       </div>
 
@@ -117,7 +117,7 @@ export function TruckSpecs() {
               onClick={() => setId(x.id)}
               className={`rounded-md px-4 py-2.5 font-display text-sm font-semibold uppercase tracking-wider transition ${id === x.id ? "bg-gold-gradient text-ink" : "text-white/70 hover:text-white"}`}
             >
-              {x.id === "cdl" ? "CDL Class B" : "Non-CDL"}
+              {x.id === "cdl" ? "Class B CDL" : "Non-CDL"}
             </button>
           ))}
         </div>

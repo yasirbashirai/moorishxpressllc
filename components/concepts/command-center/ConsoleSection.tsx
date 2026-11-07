@@ -61,7 +61,7 @@ export default function ConsoleSection() {
 
           <Chip className="-left-36 top-36">
             <p className="text-[0.65rem] font-bold uppercase tracking-wider text-steel">Every truck</p>
-            <p className="font-display text-lg font-semibold uppercase text-ink">Liftgate + air ride</p>
+            <p className="font-display text-lg font-semibold uppercase text-ink">Liftgate + air-ride</p>
           </Chip>
           <Chip className="-right-32 top-12" delay={0.4}>
             <p className="text-[0.65rem] font-bold uppercase tracking-wider text-steel">GVWR up to</p>

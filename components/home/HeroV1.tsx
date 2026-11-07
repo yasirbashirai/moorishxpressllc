@@ -4,7 +4,7 @@ import { IconLift, IconPhone, IconTruck } from "@/components/icons";
 import { Button } from "@/components/ui";
 import { site } from "@/lib/site";
 
-const keywords = ["OTR box truck freight", "Box truck dispatch", "Hotshot dispatch", "Last mile delivery", "First mile pickup", "White glove", "Liftgate delivery", "Atlanta, GA"];
+const keywords = ["OTR box truck freight", "Palletized freight", "Partial truckload", "U-Box transportation", "Box truck dispatch", "Hotshot dispatch", "Load coordination", "Atlanta, GA"];
 
 const fade =
   "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 14%, black 34%), linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)";
@@ -31,7 +31,7 @@ export default function HeroV1() {
         <div className="absolute inset-y-0 left-[calc(max(0px,(100vw-80rem)/2)+2rem+(min(100vw,80rem)-4rem-3rem)*5/12+3rem-5rem)] hidden aspect-[1672/941] lg:block" style={bannerMask}>
           <Image
             src="/images/hero-fleet-highway-rtl.jpg"
-            alt="Moorish Xpress yellow box trucks with liftgates driving on the highway at sunrise"
+            alt="Moorish Xpress yellow 26 ft box trucks with tuck-under liftgates driving on the highway at sunrise"
             fill
             priority
             sizes="70vw"
@@ -47,7 +47,7 @@ export default function HeroV1() {
               When you need it <span className="text-red-gradient">there</span> <span className="text-gold-gradient">now.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed lg:text-base text-white/85 [text-shadow:0_2px_12px_rgba(0,0,0,0.5)]">
-              Moorish Xpress, LLC is an asset-based box truck carrier in Atlanta, Georgia. We haul OTR, first mile, last mile and white glove freight for shippers and brokers, and we dispatch box trucks and hotshots for owner-operators.
+              Moorish Xpress, LLC is an Atlanta, Georgia-based freight transportation and truck dispatch company. We haul OTR and palletized freight in our 26 ft box trucks for brokers and shippers, and we dispatch box trucks and hotshots for owner-operators and small trucking companies.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button href="#quote" className="lg:px-5 lg:py-3.5 lg:text-sm">Get a Freight Quote</Button>
@@ -79,7 +79,7 @@ export default function HeroV1() {
               <p className="font-display text-3xl font-bold text-gold">33,000 lb</p>
             </div>
             <div className="animate-float absolute bottom-0 right-0 rounded-xl bg-white/95 p-4 text-ink shadow-2xl backdrop-blur [animation-delay:1.5s]">
-              <p className="flex items-center gap-2 font-display text-lg font-semibold uppercase"><IconLift className="h-5 w-5 text-red" />Liftgate + air ride</p>
+              <p className="flex items-center gap-2 font-display text-lg font-semibold uppercase"><IconLift className="h-5 w-5 text-red" />Liftgate + air-ride</p>
               <p className="text-xs text-steel">Standard on every truck</p>
             </div>
           </div>
@@ -92,7 +92,7 @@ export default function HeroV1() {
           <div className="container-x grid grid-cols-2 divide-white/10 py-6 md:grid-cols-4 md:divide-x">
             {[
               { k: "26 ft", v: "Box trucks" },
-              { k: "33,000 lb", v: "CDL Class B GVWR" },
+              { k: "33,000 lb", v: "GVWR (Class B CDL)" },
               { k: "24/7", v: "Dispatch & check calls" },
               { k: "2 in 1", v: "Carrier + dispatch" },
             ].map((s) => (

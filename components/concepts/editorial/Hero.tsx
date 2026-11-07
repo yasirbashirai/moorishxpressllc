@@ -106,7 +106,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8, ease }}
           >
-            <strong className="font-semibold text-ink">Moorish Xpress, LLC</strong> is an asset-based box truck carrier in Atlanta. We haul OTR, first mile, last mile and white glove freight, and we dispatch box trucks and hotshots for owner-operators.
+            <strong className="font-semibold text-ink">Moorish Xpress, LLC</strong> is an asset-based box truck carrier in Atlanta. We haul OTR, palletized and partial truckload freight, and we dispatch box trucks and hotshots for owner-operators.
           </motion.p>
           <motion.div
             className="flex flex-wrap items-center gap-3 lg:col-span-7 lg:justify-end"

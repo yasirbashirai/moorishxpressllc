@@ -11,9 +11,9 @@ import { dispatchServices, site } from "@/lib/site";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Box Truck & Hotshot Dispatch Service | Truck Dispatcher Atlanta GA",
+  title: "Truck Dispatching Services for Owner-Operators | Box Truck & Hotshot Dispatch Atlanta GA",
   description:
-    "Box truck and hotshot dispatch service from Moorish Xpress, an Atlanta box truck carrier. We find loads, negotiate rates, handle broker setup and paperwork. Sign up today.",
+    "Professional freight dispatch services for owner-operators and small trucking companies. Box truck and hotshot dispatch from Atlanta, GA: load sourcing, rate negotiation, broker communication and paperwork.",
   alternates: { canonical: "/dispatch" },
 };
 
@@ -23,7 +23,7 @@ const includes = [
   { Icon: IconDoc, t: "Broker setup & paperwork", d: "Carrier packets, rate confirmations, BOLs and PODs, organized and sent on time." },
   { Icon: IconHeadset, t: "A dispatcher who knows you", d: "One point of contact who learns your truck, your home time and your goals." },
   { Icon: IconShield, t: "You stay in control", d: "No forced dispatch. You approve every load before it is booked." },
-  { Icon: IconCheck, t: "Carrier perspective", d: "We run box trucks too, so we know what a good load looks like from the driver's seat." },
+  { Icon: IconCheck, t: "Carrier perspective", d: "We run our own 26 ft box trucks, so we know what a good load looks like from the driver's seat." },
 ];
 
 const faqs = [
@@ -37,15 +37,15 @@ export default function DispatchPage() {
   return (
     <>
       <JsonLd data={faqSchema(faqs)} />
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Dispatch", path: "/dispatch" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Dispatch Services", path: "/dispatch" }])} />
 
       <PageHero
-        eyebrow="Truck dispatch services"
+        eyebrow="Professional freight dispatch services"
         title={<>Box truck & hotshot <span className="text-gold">dispatch</span> that keeps you loaded.</>}
-        intro="We are a box truck carrier that also dispatches for owner-operators. We find the loads, negotiate the rates and handle the paperwork, so you can focus on driving."
+        intro="Dispatch is an equal half of our business. We are a box truck carrier that also dispatches for independent owner-operators, small trucking companies and new carriers. We find the loads, negotiate the rates and handle the paperwork, so you can focus on driving."
         image="/images/dispatch-office.jpg"
         imageAlt="Moorish Xpress dispatch office in Atlanta"
-        crumbs={[{ href: "/", label: "Home" }, { href: "/dispatch", label: "Dispatch" }]}
+        crumbs={[{ href: "/", label: "Home" }, { href: "/dispatch", label: "Dispatch Services" }]}
       >
         <Button href="#signup" variant="gold">Dispatch My Truck</Button>
         <Button href="tel:+16789687511" variant="ghost">Call {site.phone}</Button>
@@ -55,17 +55,29 @@ export default function DispatchPage() {
       <section className="py-24">
         <div className="container-x">
           <Reveal>
-            <SectionHeading eyebrow="Who we dispatch" title={<>Built for <span className="text-red">box trucks and hotshots.</span></>} />
+            <SectionHeading eyebrow="Dispatch services" title={<>Built for <span className="text-red">box trucks and hotshots.</span></>} intro="Load sourcing, freight rate negotiation, broker communication, route and shipment coordination, and freight documentation support." />
           </Reveal>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {[
+              { t: "Independent owner-operators", d: "Help finding loads, negotiating rates, coordinating pickups and deliveries, and managing dispatch paperwork." },
+              { t: "Small trucking companies", d: "Dependable dispatching and load coordination for small fleets." },
+              { t: "New and growing carriers", d: "Dispatch support while you establish your authority and expand your operations." },
+            ].map((x) => (
+              <div key={x.t} className="rounded-xl border-l-4 border-red bg-fog p-5">
+                <p className="font-display text-lg font-semibold uppercase text-ink">{x.t}</p>
+                <p className="mt-1 text-sm text-steel">{x.d}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {dispatchServices.map((s, i) => (
               <Reveal key={s.slug} delay={i * 100}>
                 <Link href={`/services/${s.slug}`} className="group relative block h-[28rem] overflow-hidden rounded-2xl bg-ink">
-                  <Image src={s.image} alt={s.imageAlt} fill sizes="(min-width:768px) 50vw, 100vw" className="object-cover opacity-65 transition duration-700 group-hover:scale-105" />
+                  <Image src={s.image} alt={s.imageAlt} fill sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw" className="object-cover opacity-65 transition duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-8">
                     <p className="eyebrow text-gold">{s.keyword}</p>
-                    <h3 className="mt-2 text-4xl font-bold uppercase text-white">{s.title}</h3>
+                    <h3 className="mt-2 text-3xl font-bold uppercase leading-tight text-white">{s.title}</h3>
                     <p className="mt-3 max-w-md text-white/80">{s.short}</p>
                     <span className="mt-5 inline-flex items-center gap-2 font-display font-semibold uppercase tracking-wider text-gold">Learn more <IconArrow className="h-5 w-5 transition-transform group-hover:translate-x-1" /></span>
                   </div>
@@ -114,7 +126,7 @@ export default function DispatchPage() {
         </div>
       </section>
 
-      <CtaBand title="Shipper or broker instead?" text="We also haul freight with our own box trucks out of Atlanta. Send us your load." />
+      <CtaBand title="Shipper or broker instead?" text="We also haul freight with our own 26 ft box trucks out of Atlanta. Send us your load." />
     </>
   );
 }

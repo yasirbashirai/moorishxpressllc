@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { dispatchServices, nav, site } from "@/lib/site";
 import { IconClock, IconMail, IconMap, IconPhone } from "./icons";
+import { socials } from "./Social";
 
 /**
  * Sticky header: slim operations bar on top, main nav below.
@@ -48,11 +49,18 @@ export default function Header() {
               </span>
               Dispatch open 24/7
             </span>
-            <span className="flex items-center gap-1.5"><IconMap className="h-3.5 w-3.5" />Atlanta, GA · Southeast, South, Midwest & Northeast</span>
+            <span className="flex items-center gap-1.5"><IconMap className="h-3.5 w-3.5" />Atlanta, GA · Midwest, Northeast & Southern states</span>
           </div>
           <div className="flex items-center gap-6">
             <span className="hidden items-center gap-1.5 lg:flex"><IconClock className="h-3.5 w-3.5" />{site.tagline}</span>
             <a href={`mailto:${site.email}`} className="flex items-center gap-1.5 hover:text-gold-light"><IconMail className="h-3.5 w-3.5" />{site.email}</a>
+            <span className="flex items-center gap-2.5 border-l border-white/25 pl-5">
+              {socials.map(({ href, label, Icon }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={`${site.shortName} on ${label} (opens in a new tab)`} className="hover:text-gold-light">
+                  <Icon className="h-3.5 w-3.5" />
+                </a>
+              ))}
+            </span>
           </div>
         </div>
       </div>
@@ -71,21 +79,21 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Main">
+          <nav className="hidden items-center gap-0 xl:flex" aria-label="Main">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative px-3 py-2 font-display text-[0.95rem] font-medium uppercase tracking-wide transition-colors xl:px-4 ${isActive(item.href) ? "text-gold" : "text-white/80 hover:text-white"}`}
+                className={`relative whitespace-nowrap px-2.5 py-2 font-display text-[0.92rem] font-medium uppercase tracking-wide transition-colors 2xl:px-3.5 ${isActive(item.href) ? "text-gold" : "text-white/80 hover:text-white"}`}
               >
                 {item.label}
-                {isActive(item.href) && <span className="absolute inset-x-3 -bottom-0.5 h-0.5 bg-gold-gradient xl:inset-x-4" />}
+                {isActive(item.href) && <span className="absolute inset-x-2.5 -bottom-0.5 h-0.5 bg-gold-gradient 2xl:inset-x-3.5" />}
               </Link>
             ))}
           </nav>
 
           <div className="flex items-center gap-3">
-            <a href={site.phoneHref} className="hidden items-center gap-2 font-display text-lg font-semibold text-white xl:flex">
+            <a href={site.phoneHref} className="hidden items-center gap-2 font-display text-lg font-semibold text-white 2xl:flex">
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10"><IconPhone className="h-4 w-4 text-gold" /></span>
               {site.phone}
             </a>
@@ -95,7 +103,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setOpen((o) => !o)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/20 lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/20 xl:hidden"
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
             >
@@ -109,7 +117,7 @@ export default function Header() {
         </div>
 
         {/* Mobile drawer */}
-        <div className={`grid overflow-hidden transition-all duration-300 lg:hidden ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+        <div className={`grid overflow-hidden transition-all duration-300 xl:hidden ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
           <div className="min-h-0">
             <nav className="container-x flex flex-col gap-1 pb-6" aria-label="Mobile">
               {nav.map((item) => (

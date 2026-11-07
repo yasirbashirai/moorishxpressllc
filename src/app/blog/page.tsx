@@ -12,7 +12,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Box Truck & Dispatch Blog | Freight Guides for Shippers and Owner-Operators",
   description:
-    "Practical guides on box truck freight, CDL vs non-CDL trucks, last mile delivery, box truck dispatch and hotshot dispatch from Moorish Xpress in Atlanta.",
+    "Practical guides on box truck freight, CDL vs non-CDL box trucks, last-mile delivery, box truck dispatch and hotshot dispatch from Moorish Xpress in Atlanta.",
   alternates: { canonical: "/blog" },
 };
 

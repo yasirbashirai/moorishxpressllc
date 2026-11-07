@@ -11,23 +11,23 @@ import { carrierServices, dispatchServices, trucks } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Box Truck Carrier Services Atlanta | OTR, First Mile, Last Mile, White Glove",
+  title: "Freight Transportation Services Atlanta GA | OTR, Palletized, PTL, U-Box",
   description:
-    "Box truck carrier services from Atlanta, GA: OTR freight, first mile pickup, last mile delivery and white glove. 33,000 lb GVWR CDL truck, liftgate, air ride, 24/7 dispatch.",
+    "26 ft box truck freight services from Atlanta, GA: OTR, palletized, partial truckload and U-Haul U-Box transportation for brokers and shippers. Tuck-under liftgate, air-ride suspension, open 24/7.",
   alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Carrier Services", path: "/services" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Freight Services", path: "/services" }])} />
       <PageHero
-        eyebrow="Carrier services"
-        title={<>Box truck freight <span className="text-gold">from Atlanta</span>, done right.</>}
-        intro="We are an asset-based carrier. Our own box trucks haul your freight across the Southeast, South, Midwest and Northeast, with liftgate and air ride on every unit."
-        image="/images/about-truck-terminal.jpg"
-        imageAlt="Truck parked at a freight terminal ready for box truck carrier service"
-        crumbs={[{ href: "/", label: "Home" }, { href: "/services", label: "Carrier Services" }]}
+        eyebrow="Freight transportation services"
+        title={<>26 ft box truck freight <span className="text-gold">from Atlanta</span>, done right.</>}
+        intro="We are an asset-based carrier for freight brokers, direct shippers, manufacturers, warehouses, distribution centers and logistics companies. Our own 26 ft box trucks haul your freight from Atlanta, GA to the Midwest, the Northeast and the Southern states, with a tuck-under liftgate and air-ride suspension on every truck."
+        image="/images/box-trucks-loading-dock.jpg"
+        imageAlt="26 ft box trucks parked at a warehouse loading dock"
+        crumbs={[{ href: "/", label: "Home" }, { href: "/services", label: "Freight Services" }]}
       >
         <Button href="#quote">Get a Quote</Button>
         <Button href="/dispatch" variant="ghost">Looking for dispatch?</Button>
@@ -89,7 +89,7 @@ export default function ServicesPage() {
             <div className="lg:col-span-2">
               <p className="eyebrow text-red-deep">Also from Moorish Xpress</p>
               <h2 className="mt-2 text-4xl font-bold uppercase text-ink">Own a box truck or hotshot? We dispatch too.</h2>
-              <p className="mt-3 text-graphite">{dispatchServices.map((d) => d.title).join(" and ")}: loads, rates and paperwork handled by a carrier that runs the same lanes.</p>
+              <p className="mt-3 text-graphite">Professional freight dispatching, hotshot dispatch, and freight documentation and load coordination: loads, rates and paperwork handled by a carrier that runs the same lanes.</p>
             </div>
             <div className="lg:text-right"><Button href="/dispatch" variant="dark">See Dispatch Services</Button></div>
           </div>

@@ -108,7 +108,7 @@ export default function DispatchConsole() {
             <div className="mt-3 grid grid-cols-2 gap-2">
               {[
                 { on: !isCdl, t: "Non-CDL", s: "26,000 lb GVWR" },
-                { on: isCdl, t: "CDL Class B", s: "33,000 lb GVWR" },
+                { on: isCdl, t: "Class B CDL", s: "33,000 lb GVWR" },
               ].map((x) => (
                 <div key={x.t} className={`rounded-lg border px-3 py-2 transition-all duration-300 ${x.on ? "border-red bg-white shadow-md shadow-red/10" : "border-transparent bg-white/50 opacity-55"}`}>
                   <p className={`font-display text-sm font-semibold uppercase ${x.on ? "text-red" : "text-steel"}`}>{x.t}</p>

@@ -5,9 +5,9 @@ import { useState } from "react";
 
 // Illustrative example data only: shows how the dispatch workflow looks, not real results.
 const loads = [
-  { lane: "Atlanta, GA → Charlotte, NC", eq: "26 ft box · liftgate", miles: 245, status: "Pending your OK" },
-  { lane: "Charlotte, NC → Richmond, VA", eq: "26 ft box", miles: 290, status: "Negotiating" },
-  { lane: "Richmond, VA → Atlanta, GA", eq: "26 ft box · liftgate", miles: 530, status: "Searching backhaul" },
+  { lane: "Atlanta, GA → Charlotte, NC", eq: "26 ft box truck · liftgate", miles: 245, status: "Pending your OK" },
+  { lane: "Charlotte, NC → Richmond, VA", eq: "26 ft box truck", miles: 290, status: "Negotiating" },
+  { lane: "Richmond, VA → Atlanta, GA", eq: "26 ft box truck · liftgate", miles: 530, status: "Searching backhaul" },
 ];
 const week = [62, 80, 74, 90, 58, 0, 0]; // % loaded miles, illustrative
 const days = ["M", "T", "W", "T", "F", "S", "S"];

@@ -1,13 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { carrierServices, dispatchServices, fullAddress, nav, site } from "@/lib/site";
-import { IconClock, IconFacebook, IconInstagram, IconLinkedin, IconMail, IconMap, IconPhone } from "./icons";
-
-const socials = [
-  { href: site.social.facebook, label: "Facebook", Icon: IconFacebook },
-  { href: site.social.instagram, label: "Instagram", Icon: IconInstagram },
-  { href: site.social.linkedin, label: "LinkedIn", Icon: IconLinkedin },
-].filter((s) => s.href);
+import { carrierServices, dispatchServices, fullAddress, moreLinks, nav, site } from "@/lib/site";
+import { IconClock, IconMail, IconMap, IconPhone } from "./icons";
+import { BbbBadge, SocialLinks } from "./Social";
 
 /** Site footer: brand, services, company links and contact details. */
 export default function Footer() {
@@ -18,17 +13,11 @@ export default function Footer() {
         <div className="lg:col-span-4">
           <Image src="/images/logo-sm.png" alt={`${site.name} logo`} width={571} height={447} className="h-28 w-auto" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed">
-            Asset-based box truck carrier and dispatch service based in Atlanta, Georgia. We haul for shippers and brokers, and we dispatch box trucks and hotshots for owner-operators.
+            Atlanta, Georgia-based freight transportation and truck dispatch company. We haul freight in our 26 ft box trucks for brokers and shippers, and we dispatch box trucks and hotshots for owner-operators and small trucking companies.
           </p>
-          {socials.length > 0 && (
-            <div className="mt-6 flex gap-3">
-              {socials.map(({ href, label, Icon }) => (
-                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={`${site.shortName} on ${label}`} className="flex h-10 w-10 items-center justify-center rounded-md bg-white/10 text-white transition hover:bg-red">
-                  <Icon />
-                </a>
-              ))}
-            </div>
-          )}
+          <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-white/50">Follow us</p>
+          <SocialLinks className="mt-3" />
+          <BbbBadge className="mt-6" />
           {(site.usdot || site.mc) && (
             <p className="mt-5 text-xs uppercase tracking-wider text-white/50">
               {site.usdot && <>USDOT {site.usdot}</>}{site.usdot && site.mc && " · "}{site.mc && <>MC {site.mc}</>}
@@ -37,7 +26,7 @@ export default function Footer() {
         </div>
 
         <div className="lg:col-span-2">
-          <h3 className="eyebrow text-gold">Carrier</h3>
+          <h3 className="eyebrow text-gold">Freight</h3>
           <ul className="mt-5 space-y-3 text-sm">
             {carrierServices.map((s) => (
               <li key={s.slug}><Link href={`/services/${s.slug}`} className="hover:text-white">{s.title}</Link></li>
@@ -54,10 +43,9 @@ export default function Footer() {
         <div className="lg:col-span-2">
           <h3 className="eyebrow text-gold">Company</h3>
           <ul className="mt-5 space-y-3 text-sm">
-            {nav.slice(1).map((n) => (
+            {[...nav.slice(1), ...moreLinks].map((n) => (
               <li key={n.href}><Link href={n.href} className="hover:text-white">{n.label}</Link></li>
             ))}
-            <li><Link href="/dispatch#signup" className="hover:text-white">Dispatch Sign-Up</Link></li>
           </ul>
         </div>
 
