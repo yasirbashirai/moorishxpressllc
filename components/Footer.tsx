@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="h-2 bg-hazard opacity-90" aria-hidden="true" />
       <div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <Image src="/images/logo-sm.png" alt={`${site.name} logo`} width={571} height={447} className="h-28 w-auto" />
+          <Image src="/images/logo-sm.png" alt={`${site.name} logo`} width={581} height={453} className="h-28 w-auto" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed">
             Atlanta, Georgia-based freight transportation and truck dispatch company. We haul freight in our 26 ft box trucks for brokers and shippers, and we dispatch box trucks and hotshots for owner-operators and small trucking companies.
           </p>

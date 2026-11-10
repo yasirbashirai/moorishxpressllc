@@ -72,8 +72,8 @@ export default function Header() {
             <Image
               src="/images/logo-sm.png"
               alt={`${site.name} logo`}
-              width={571}
-              height={447}
+              width={581}
+              height={453}
               priority
               className={`w-auto drop-shadow-[0_4px_14px_rgba(255,193,7,0.25)] transition-all duration-300 ${scrolled ? "h-[3.25rem]" : "h-[4.25rem]"}`}
             />

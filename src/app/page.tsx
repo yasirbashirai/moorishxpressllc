@@ -251,7 +251,7 @@ export default function HomePage() {
           <FadeIn className="relative overflow-hidden rounded-[2rem] bg-red-gradient p-10 text-white shadow-[0_40px_100px_-30px_rgba(215,20,26,0.6)] sm:p-16">
             <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-gold/40 blur-3xl" />
             <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:44px_44px] [mask-image:linear-gradient(90deg,transparent,black)]" />
-            <Image src="/images/logo-sm.png" alt="" width={571} height={447} className="pointer-events-none absolute -bottom-10 right-6 hidden w-72 rotate-6 opacity-25 lg:block" />
+            <Image src="/images/logo-sm.png" alt="" width={581} height={453} className="pointer-events-none absolute -bottom-10 right-6 hidden w-72 rotate-6 opacity-25 lg:block" />
             <div className="relative max-w-2xl">
               <p className="font-display text-sm uppercase tracking-[0.3em] text-gold-light">{site.tagline}</p>
               <h2 className="mt-4 font-display text-[clamp(2.4rem,5vw,4.5rem)] font-bold uppercase leading-[0.95]">Let&apos;s connect. Let&apos;s talk freight.</h2>
