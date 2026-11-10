@@ -29,7 +29,7 @@ export default function AboutPage() {
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])} />
       <PageHero
         eyebrow="About us"
-        title={<>Atlanta-built. <span className="text-gold">Operator-led.</span></>}
+        title={<>Atlanta-built. <span className="text-red">Operator-led.</span></>}
         intro="Moorish Xpress, LLC is a freight transportation and truck dispatch company based on Campbellton Road in Atlanta, Georgia. We haul freight in our own 26 ft box trucks and dispatch for owner-operators and small trucking companies."
         image="/images/moorish-box-truck.jpg"
         imageAlt="Moorish Xpress branded yellow 26 ft box truck at a warehouse"
@@ -48,10 +48,10 @@ export default function AboutPage() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
               <Image src="/images/box-truck-otr-highway.jpg" alt="26 ft box truck on a long-distance freight run, the kind of work Moorish Xpress does every day" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover object-[70%_center]" />
             </div>
-            <div className="absolute -bottom-6 -right-2 rounded-2xl bg-ink p-6 text-white shadow-2xl sm:-right-6">
-              <p className="font-display text-sm uppercase tracking-widest text-gold">Founder & owner</p>
+            <div className="absolute -bottom-6 -right-2 rounded-2xl bg-red-gradient p-6 text-white shadow-2xl shadow-red/30 sm:-right-6">
+              <p className="font-display text-sm uppercase tracking-widest text-white/85">Founder & owner</p>
               <p className="mt-1 font-display text-3xl font-bold uppercase">{site.owner}</p>
-              <p className="text-sm text-white/60">Class B CDL holder</p>
+              <p className="text-sm text-white/80">Class B CDL holder</p>
             </div>
           </Reveal>
           <Reveal delay={100}>
@@ -67,15 +67,15 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="bg-ink-gradient py-24 text-white">
+      <section className="bg-red-gradient py-24 text-white">
         <div className="container-x">
-          <SectionHeading dark align="center" eyebrow="How we operate" title={<>Four rules <span className="text-gold">we run by.</span></>} />
+          <SectionHeading dark align="center" eyebrow="How we operate" title={<>Four rules <span className="text-white/80">we run by.</span></>} />
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v, i) => (
-              <Reveal key={v.t} delay={i * 90} className="rounded-2xl border border-white/10 bg-white/5 p-7 transition hover:border-gold/50 hover:bg-white/10">
-                <v.Icon className="h-10 w-10 text-gold" />
+              <Reveal key={v.t} delay={i * 90} className="rounded-2xl border border-white/20 bg-white/10 p-7 transition hover:border-white/50 hover:bg-white/15">
+                <v.Icon className="h-10 w-10 text-white" />
                 <h3 className="mt-5 text-2xl font-bold uppercase">{v.t}</h3>
-                <p className="mt-2 text-white/70">{v.d}</p>
+                <p className="mt-2 text-white/85">{v.d}</p>
               </Reveal>
             ))}
           </div>
@@ -89,10 +89,10 @@ export default function AboutPage() {
             <SectionHeading align="center" eyebrow="The difference" title={<>A carrier, <span className="text-red">not a middleman.</span></>} intro="When you book Moorish Xpress for freight, our truck hauls it. Here is what that means for you." />
           </Reveal>
           <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-line">
-            <div className="grid grid-cols-3 bg-ink font-display text-sm uppercase tracking-wider text-white">
+            <div className="grid grid-cols-3 border-b border-line bg-fog font-display text-sm uppercase tracking-wider text-ink">
               <span className="p-4" />
-              <span className="bg-red-gradient p-4 text-center">Moorish Xpress</span>
-              <span className="p-4 text-center text-white/60">Typical broker</span>
+              <span className="bg-red-gradient p-4 text-center text-white">Moorish Xpress</span>
+              <span className="p-4 text-center text-steel">Typical broker</span>
             </div>
             {[
               ["Who hauls your freight", "Our own truck", "Whoever takes the load"],
@@ -111,7 +111,7 @@ export default function AboutPage() {
       </section>
 
       {/* Equipment strip */}
-      <section className="bg-gold-gradient py-14">
+      <section className="border-y border-red/10 bg-blush py-14">
         <div className="container-x grid gap-6 text-ink sm:grid-cols-3">
           {[
             { Icon: IconTruck, t: "26 ft box trucks", d: "CDL and non-CDL units" },
@@ -119,7 +119,7 @@ export default function AboutPage() {
             { Icon: IconShield, t: "33,000 lb GVWR", d: "For heavier loads" },
           ].map((x) => (
             <div key={x.t} className="flex items-center gap-4">
-              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-ink text-gold"><x.Icon className="h-7 w-7" /></span>
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-red-gradient text-white shadow-lg shadow-red/20"><x.Icon className="h-7 w-7" /></span>
               <div><p className="font-display text-2xl font-bold uppercase">{x.t}</p><p className="text-sm text-graphite">{x.d}</p></div>
             </div>
           ))}

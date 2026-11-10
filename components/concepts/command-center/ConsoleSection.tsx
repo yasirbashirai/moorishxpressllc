@@ -38,7 +38,7 @@ export default function ConsoleSection() {
       {/* Mesh gradient glows + fine grid */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-40 -top-20 h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,rgba(255,74,61,0.22),transparent_65%)] blur-2xl" />
-        <div className="absolute -right-40 top-40 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(255,193,7,0.3),transparent_65%)] blur-2xl" />
+        <div className="absolute -right-40 top-40 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(215,20,26,0.14),transparent_65%)] blur-2xl" />
         <div className="absolute inset-0 [background-image:linear-gradient(rgba(12,12,14,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(12,12,14,0.045)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_80%)]" />
       </div>
 
@@ -55,7 +55,7 @@ export default function ConsoleSection() {
 
         <div className="relative mx-auto mt-14 max-w-5xl [perspective:1600px]">
           <motion.div style={{ rotateX, scale, transformOrigin: "center top" }} initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.9, ease }}>
-            <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-[conic-gradient(from_120deg,rgba(215,20,26,0.25),rgba(255,193,7,0.35),rgba(215,20,26,0.25))] opacity-70 blur-3xl" />
+            <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-[conic-gradient(from_120deg,rgba(215,20,26,0.25),rgba(255,74,61,0.25),rgba(215,20,26,0.25))] opacity-70 blur-3xl" />
             <DispatchConsole />
           </motion.div>
 

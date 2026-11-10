@@ -20,7 +20,7 @@ export default function FaqPage() {
 
       <PageHero
         eyebrow="Frequently asked questions"
-        title={<>Straight <span className="text-gold">answers.</span></>}
+        title={<>Straight <span className="text-red">answers.</span></>}
         intro="Everything brokers, shippers and owner-operators usually ask us. Don't see your question? Call dispatch 24/7."
         crumbs={[{ href: "/", label: "Home" }, { href: "/faq", label: "FAQ" }]}
       />

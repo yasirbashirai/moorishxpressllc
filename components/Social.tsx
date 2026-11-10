@@ -14,8 +14,8 @@ export function SocialLinks({ tone = "dark", size = "md", className = "" }: { to
   const icon = size === "lg" ? "h-6 w-6" : "h-5 w-5";
   const styles =
     tone === "dark"
-      ? "bg-white/10 text-white ring-1 ring-white/15 hover:bg-red hover:ring-red"
-      : "bg-ink text-white hover:bg-red";
+      ? "bg-red text-white hover:bg-red-deep"
+      : "bg-red text-white hover:bg-red-deep";
   return (
     <div className={`flex flex-wrap gap-3 ${className}`}>
       {socials.map(({ href, label, Icon }) => (
@@ -49,7 +49,7 @@ export function BbbBadge({ className = "" }: { className?: string }) {
       href={profileUrl}
       target="_blank"
       rel="nofollow noopener"
-      className={`inline-block rounded-lg bg-white p-2 transition hover:-translate-y-0.5 ${className}`}
+      className={`inline-block rounded-lg bg-white p-2 ring-1 ring-black/10 transition hover:-translate-y-0.5 ${className}`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={badgeSrc} alt={badgeAlt} width={badgeWidth} height={badgeHeight} style={{ border: 0 }} className="h-16 w-auto" />

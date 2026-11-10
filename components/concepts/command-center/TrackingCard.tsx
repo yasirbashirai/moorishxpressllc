@@ -33,7 +33,7 @@ export default function TrackingCard() {
           <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-steel">Shipment · example</p>
           <p className="mt-1 font-display text-2xl font-semibold uppercase text-ink">ATL → CLT</p>
         </div>
-        <span className="rounded-full bg-gold/20 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-[#8a6100]">Demo</span>
+        <span className="rounded-full bg-blush px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-red">Demo</span>
       </div>
 
       {/* Progress rail */}

@@ -34,7 +34,7 @@ export default function ReviewsPage() {
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Reviews", path: "/reviews" }])} />
       <PageHero
         eyebrow="Reviews"
-        title={<>Earned one load <span className="text-gold">at a time.</span></>}
+        title={<>Earned one load <span className="text-red">at a time.</span></>}
         intro="We are a growing Atlanta carrier, and every review here comes from a real shipper, broker or owner-operator we have worked with."
         crumbs={[{ href: "/", label: "Home" }, { href: "/reviews", label: "Reviews" }]}
       />
@@ -46,7 +46,7 @@ export default function ReviewsPage() {
               <div className="space-y-5">
                 {reviews.map((r) => (
                   <Reveal key={r.name} className="rounded-2xl border border-line bg-white p-7 shadow-sm">
-                    <div className="flex gap-1 text-gold">{Array.from({ length: r.rating }).map((_, i) => <IconStar key={i} className="h-5 w-5 fill-current" />)}</div>
+                    <div className="flex gap-1 text-red">{Array.from({ length: r.rating }).map((_, i) => <IconStar key={i} className="h-5 w-5 fill-current" />)}</div>
                     <p className="mt-4 text-lg leading-relaxed text-graphite">&ldquo;{r.text}&rdquo;</p>
                     <p className="mt-4 font-display font-semibold uppercase">{r.name}{r.company && <span className="text-steel"> · {r.company}</span>}</p>
                   </Reveal>
@@ -67,7 +67,7 @@ export default function ReviewsPage() {
               </Reveal>
             )}
             {site.googleReviewUrl && (
-              <a href={site.googleReviewUrl} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex rounded-md bg-ink px-6 py-3 font-display font-semibold uppercase tracking-wider text-white">
+              <a href={site.googleReviewUrl} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex rounded-md bg-red-gradient px-6 py-3 font-display font-semibold uppercase tracking-wider text-white">
                 Review us on Google
               </a>
             )}

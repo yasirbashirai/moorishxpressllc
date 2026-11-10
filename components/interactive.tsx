@@ -39,14 +39,14 @@ export function AudienceSwitch() {
   const a = audiences[active];
   return (
     <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-2xl shadow-ink/10">
-      <div className="grid grid-cols-2 bg-ink p-1.5" role="tablist">
+      <div className="grid grid-cols-2 bg-fog p-1.5" role="tablist">
         {audiences.map((x, i) => (
           <button
             key={x.id}
             role="tab"
             aria-selected={active === i}
             onClick={() => setActive(i)}
-            className={`flex items-center justify-center gap-2 rounded-xl px-3 py-4 font-display text-sm font-semibold uppercase tracking-wider transition sm:text-base ${active === i ? (i === 0 ? "bg-red-gradient text-white" : "bg-gold-gradient text-ink") : "text-white/70 hover:text-white"}`}
+            className={`flex items-center justify-center gap-2 rounded-xl px-3 py-4 font-display text-sm font-semibold uppercase tracking-wider transition sm:text-base ${active === i ? (i === 0 ? "bg-red-gradient text-white" : "bg-white text-red ring-2 ring-red") : "text-graphite hover:text-red"}`}
           >
             <x.Icon className="h-5 w-5" />{x.tab}
           </button>
@@ -58,7 +58,7 @@ export function AudienceSwitch() {
           <p className="mt-4 leading-relaxed text-steel">{a.text}</p>
           <Link
             href={a.cta.href}
-            className={`group mt-7 inline-flex items-center gap-2 rounded-md px-7 py-4 font-display font-semibold uppercase tracking-wider transition hover:-translate-y-0.5 ${a.variant === "red" ? "bg-red-gradient text-white shadow-lg shadow-red/30" : "bg-gold-gradient text-ink shadow-lg shadow-gold/30"}`}
+            className={`group mt-7 inline-flex items-center gap-2 rounded-md px-7 py-4 font-display font-semibold uppercase tracking-wider transition hover:-translate-y-0.5 ${a.variant === "red" ? "bg-red-gradient text-white shadow-lg shadow-red/30" : "bg-white text-red ring-2 ring-red shadow-lg shadow-red/15"}`}
           >
             {a.cta.label}<IconArrow className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Link>
@@ -66,7 +66,7 @@ export function AudienceSwitch() {
         <ul className="space-y-3 self-center">
           {a.bullets.map((b) => (
             <li key={b} className="flex items-center gap-3 rounded-lg bg-fog px-4 py-3.5 font-medium text-graphite">
-              <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${a.variant === "red" ? "bg-red-gradient text-white" : "bg-gold-gradient text-ink"}`}>
+              <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${a.variant === "red" ? "bg-red-gradient text-white" : "bg-blush text-red ring-1 ring-red/20"}`}>
                 <IconCheck className="h-4 w-4" />
               </span>
               {b}
@@ -91,19 +91,19 @@ export function TruckSpecs() {
   return (
     <div className="grid items-center gap-10 lg:grid-cols-2">
       <div className="relative">
-        <div className="absolute -inset-4 -z-10 rounded-3xl bg-gold-gradient opacity-25 blur-2xl" />
+        <div className="absolute -inset-4 -z-10 rounded-3xl bg-white opacity-20 blur-2xl" />
         <div className="relative overflow-hidden rounded-2xl border border-white/10">
           <Image src="/images/moorish-box-truck.jpg" alt="Moorish Xpress 26 ft box truck with tuck-under liftgate at a loading dock" width={1122} height={395} className="h-auto w-full" />
-          <div className="absolute left-4 top-4 rounded-md bg-ink/85 px-3 py-1.5 font-display text-xs uppercase tracking-widest text-gold backdrop-blur">Our truck · Atlanta, GA</div>
+          <div className="absolute left-4 top-4 rounded-md bg-white/90 px-3 py-1.5 font-display text-xs uppercase tracking-widest text-red backdrop-blur">Our truck · Atlanta, GA</div>
         </div>
         {/* GVWR gauge */}
         <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-5">
           <div className="flex items-end justify-between">
             <span className="eyebrow text-white/60">Gross vehicle weight rating</span>
-            <span className="font-display text-4xl font-bold text-gold">{t.gvwr.toLocaleString()} lb</span>
+            <span className="font-display text-4xl font-bold text-white">{t.gvwr.toLocaleString()} lb</span>
           </div>
           <div className="mt-4 h-3 overflow-hidden rounded-full bg-white/10">
-            <div className="h-full rounded-full bg-gold-gradient transition-all duration-700 ease-out" style={{ width: `${pct}%` }} />
+            <div className="h-full rounded-full bg-white transition-all duration-700 ease-out" style={{ width: `${pct}%` }} />
           </div>
           <div className="mt-2 flex justify-between text-xs text-white/50"><span>0</span><span>26,000 lb non-CDL limit</span><span>33,000</span></div>
         </div>
@@ -115,19 +115,19 @@ export function TruckSpecs() {
             <button
               key={x.id}
               onClick={() => setId(x.id)}
-              className={`rounded-md px-4 py-2.5 font-display text-sm font-semibold uppercase tracking-wider transition ${id === x.id ? "bg-gold-gradient text-ink" : "text-white/70 hover:text-white"}`}
+              className={`rounded-md px-4 py-2.5 font-display text-sm font-semibold uppercase tracking-wider transition ${id === x.id ? "bg-white text-red" : "text-white/70 hover:text-white"}`}
             >
               {x.id === "cdl" ? "Class B CDL" : "Non-CDL"}
             </button>
           ))}
         </div>
-        <p className="eyebrow mt-8 text-red-light">{t.badge}</p>
+        <p className="eyebrow mt-8 text-white/80">{t.badge}</p>
         <h3 className="mt-2 text-4xl font-bold uppercase text-white">{t.name}</h3>
         <p className="mt-4 text-lg leading-relaxed text-white/70">{t.summary}</p>
         <ul className="mt-7 grid gap-3 sm:grid-cols-2">
           {t.specs.map((s) => (
             <li key={s} className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white">
-              <IconCheck className="h-5 w-5 text-gold" />{s}
+              <IconCheck className="h-5 w-5 text-white" />{s}
             </li>
           ))}
         </ul>
@@ -188,7 +188,7 @@ export function CoverageMap() {
               {r && (
                 <span className="mt-2 flex flex-wrap gap-1.5">
                   {r.states.map((s) => (
-                    <span key={s} className={`rounded px-2 py-0.5 text-xs font-bold ${active ? "bg-gold text-ink" : "bg-fog text-steel"}`}>{s}</span>
+                    <span key={s} className={`rounded px-2 py-0.5 text-xs font-bold ${active ? "bg-red text-white" : "bg-fog text-steel"}`}>{s}</span>
                   ))}
                 </span>
               )}
@@ -217,8 +217,8 @@ export function CoverageMap() {
           })}
           {cities.map((c) => (
             <g key={c.name} style={{ opacity: on(c.region) ? 1 : 0.3, transition: "opacity .4s" }}>
-              <circle cx={c.x} cy={c.y} r={7} fill="#0c0c0e" />
-              <circle cx={c.x} cy={c.y} r={3} fill="#ffc107" />
+              <circle cx={c.x} cy={c.y} r={7} fill="#d7141a" />
+              <circle cx={c.x} cy={c.y} r={3} fill="#ffffff" />
               <text x={c.end ? c.x - 12 : c.x + 12} y={c.y + 5} textAnchor={c.end ? "end" : "start"} fontSize="20" fontWeight="600" fill="#2a2c33" fontFamily="Inter, sans-serif">{c.name}</text>
             </g>
           ))}
@@ -237,11 +237,11 @@ export function CoverageMap() {
 /** Endless keyword ticker. Doubles the list so the loop is seamless. */
 export function Marquee({ items }: { items: string[] }) {
   return (
-    <div className="overflow-hidden bg-gold-gradient py-4" aria-hidden="true">
+    <div className="overflow-hidden bg-red-gradient py-4" aria-hidden="true">
       <div className="flex w-max animate-marquee">
         {[...items, ...items].map((t, i) => (
-          <span key={i} className="flex items-center gap-6 px-6 font-display text-xl font-semibold uppercase tracking-wider text-ink">
-            {t}<span className="h-2 w-2 rotate-45 bg-red" />
+          <span key={i} className="flex items-center gap-6 px-6 font-display text-xl font-semibold uppercase tracking-wider text-white">
+            {t}<span className="h-2 w-2 rotate-45 bg-white" />
           </span>
         ))}
       </div>

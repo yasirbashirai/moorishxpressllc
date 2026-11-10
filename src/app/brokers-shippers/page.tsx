@@ -42,7 +42,7 @@ export default function BrokersShippersPage() {
 
       <PageHero
         eyebrow="Brokers & shippers"
-        title={<>Your box truck carrier <span className="text-gold">out of Atlanta.</span></>}
+        title={<>Your box truck carrier <span className="text-red">out of Atlanta.</span></>}
         intro="Freight brokers, direct shippers, manufacturers, warehouses, distribution centers and logistics companies: when you need reliable 26 ft box truck transportation, we haul it with our own trucks."
         image="/images/box-truck-otr-highway.jpg"
         imageAlt="26 ft box truck hauling freight on an interstate highway"
@@ -73,16 +73,16 @@ export default function BrokersShippersPage() {
       {/* Two tracks: brokers today, direct shippers long term */}
       <section className="bg-fog py-24">
         <div className="container-x grid gap-6 lg:grid-cols-2">
-          <Reveal className="rounded-3xl bg-ink p-9 text-white sm:p-12">
-            <p className="eyebrow text-gold">For freight brokers</p>
+          <Reveal className="rounded-3xl bg-red-gradient p-9 text-white shadow-xl shadow-red/20 sm:p-12">
+            <p className="eyebrow text-white/90">For freight brokers</p>
             <h2 className="mt-3 text-4xl font-bold uppercase leading-tight">A carrier you can put on the board.</h2>
-            <p className="mt-4 text-white/75">We are building long-term freight broker partnerships. Add Moorish Xpress to your carrier list and we will send our setup packet the same day.</p>
+            <p className="mt-4 text-white/85">We are building long-term freight broker partnerships. Add Moorish Xpress to your carrier list and we will send our setup packet the same day.</p>
             <ul className="mt-6 space-y-3">
               {["26 ft box trucks, CDL and non-CDL", "Tuck-under liftgate and air-ride suspension on every truck", "24/7 dispatch for check calls", "Rate cons, BOLs and PODs handled fast"].map((p) => (
-                <li key={p} className="flex gap-3 text-white/85"><IconCheck className="mt-0.5 h-5 w-5 shrink-0 text-gold" />{p}</li>
+                <li key={p} className="flex gap-3 text-white/90"><IconCheck className="mt-0.5 h-5 w-5 shrink-0 text-white" />{p}</li>
               ))}
             </ul>
-            <a href={`mailto:${site.email}?subject=Carrier%20setup%20packet%20request`} className="mt-8 inline-flex items-center gap-2 font-display font-semibold uppercase tracking-wider text-gold">
+            <a href={`mailto:${site.email}?subject=Carrier%20setup%20packet%20request`} className="mt-8 inline-flex items-center gap-2 font-display font-semibold uppercase tracking-wider text-white underline decoration-white/40 underline-offset-4">
               Request our carrier packet <IconArrow className="h-5 w-5" />
             </a>
           </Reveal>
@@ -113,7 +113,7 @@ export default function BrokersShippersPage() {
             <div className="mt-8 space-y-4">
               {promises.map((p) => (
                 <div key={p.t} className="flex gap-4 rounded-xl border border-line p-5">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gold-gradient text-ink"><p.Icon className="h-5 w-5" /></span>
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-blush text-red"><p.Icon className="h-5 w-5" /></span>
                   <span><span className="block font-display text-lg font-semibold uppercase text-ink">{p.t}</span><span className="text-steel">{p.d}</span></span>
                 </div>
               ))}
@@ -123,15 +123,15 @@ export default function BrokersShippersPage() {
       </section>
 
       {/* Freight services quick links */}
-      <section className="bg-ink-gradient py-20 text-white">
+      <section className="bg-red-gradient py-20 text-white">
         <div className="container-x">
-          <SectionHeading dark eyebrow="Freight services" title={<>What we <span className="text-gold">haul.</span></>} />
+          <SectionHeading dark eyebrow="Freight services" title={<>What we <span className="text-white/80">haul.</span></>} />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {carrierServices.map((s) => (
-              <Link key={s.slug} href={`/services/${s.slug}`} className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-gold/50 hover:bg-white/10">
+              <Link key={s.slug} href={`/services/${s.slug}`} className="group rounded-2xl border border-white/20 bg-white/10 p-6 transition hover:border-white/50 hover:bg-white/15">
                 <h3 className="text-xl font-bold uppercase leading-tight">{s.title}</h3>
-                <p className="mt-2 text-sm text-white/65">{s.short}</p>
-                <span className="mt-4 inline-flex items-center gap-2 font-display text-sm font-semibold uppercase text-gold">Details <IconArrow className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span>
+                <p className="mt-2 text-sm text-white/85">{s.short}</p>
+                <span className="mt-4 inline-flex items-center gap-2 font-display text-sm font-semibold uppercase text-white">Details <IconArrow className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span>
               </Link>
             ))}
           </div>

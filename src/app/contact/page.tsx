@@ -28,7 +28,7 @@ export default function ContactPage() {
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }])} />
       <PageHero
         eyebrow="Contact"
-        title={<>Let&apos;s talk <span className="text-gold">freight.</span></>}
+        title={<>Let&apos;s talk <span className="text-red">freight.</span></>}
         intro="Send a load, ask for our carrier packet, or sign up for dispatch. Whether you have freight to move or need dispatch support, let's talk about your next load. We answer 24/7."
         crumbs={[{ href: "/", label: "Home" }, { href: "/contact", label: "Contact" }]}
       />
@@ -53,7 +53,7 @@ export default function ContactPage() {
               );
             })}
 
-            <Link href="/dispatch#signup" className="group flex items-center justify-between gap-4 rounded-xl bg-gold-gradient p-6 text-ink">
+            <Link href="/dispatch#signup" className="group flex items-center justify-between gap-4 rounded-xl bg-red-gradient p-6 text-white shadow-lg shadow-red/20 transition hover:shadow-red/40">
               <span className="flex items-center gap-4">
                 <IconHeadset className="h-9 w-9" />
                 <span><span className="block font-display text-xl font-bold uppercase">Owner-operator?</span><span className="text-sm">Sign up for box truck or hotshot dispatch</span></span>

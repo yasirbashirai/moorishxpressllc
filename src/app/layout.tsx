@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-export const viewport: Viewport = { themeColor: "#0c0c0e" };
+export const viewport: Viewport = { themeColor: "#d7141a" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IconArrow } from "./icons";
 
-/** Primary (red), secondary (gold) and ghost buttons used across the site. */
+/** Primary (solid red), secondary (white with red outline), ghost and dark buttons. */
 export function Button({
   href,
   children,
@@ -16,9 +16,10 @@ export function Button({
 }) {
   const styles = {
     red: "bg-red-gradient text-white shadow-lg shadow-red/30 hover:shadow-red/50",
-    gold: "bg-gold-gradient text-ink shadow-lg shadow-gold/30 hover:shadow-gold/50",
-    ghost: "border-2 border-white/30 text-white hover:border-gold hover:text-gold",
-    dark: "bg-ink text-white hover:bg-coal",
+    // "gold" is the legacy name for the secondary button: white with a red outline
+    gold: "bg-white text-red ring-2 ring-inset ring-red shadow-lg shadow-red/10 hover:bg-red hover:text-white",
+    ghost: "border-2 border-ink/15 bg-white text-ink hover:border-red hover:text-red",
+    dark: "bg-white text-red shadow-lg shadow-black/10 hover:bg-blush",
   }[variant];
   return (
     <Link
@@ -47,19 +48,19 @@ export function SectionHeading({
 }) {
   return (
     <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      <p className={`eyebrow flex items-center gap-3 ${align === "center" ? "justify-center" : ""} ${dark ? "text-gold" : "text-red"}`}>
+      <p className={`eyebrow flex items-center gap-3 ${align === "center" ? "justify-center" : ""} ${dark ? "text-white/90" : "text-red"}`}>
         <span className="h-0.5 w-8 bg-current" />{eyebrow}
       </p>
       <h2 className={`mt-4 text-4xl font-bold uppercase leading-[1.05] sm:text-5xl ${dark ? "text-white" : "text-ink"}`}>{title}</h2>
-      {intro && <p className={`mt-5 text-lg leading-relaxed ${dark ? "text-white/70" : "text-steel"}`}>{intro}</p>}
+      {intro && <p className={`mt-5 text-lg leading-relaxed ${dark ? "text-white/85" : "text-steel"}`}>{intro}</p>}
     </div>
   );
 }
 
 /**
- * Photo hero for inner pages, with breadcrumb.
- * `bright` shows the photo at full strength with only a soft left-side scrim
- * (used on About so the yellow truck and branding stay visible).
+ * Light hero for inner pages, with breadcrumb.
+ * White + red brand: text sits on white on the left, the photo fills the right
+ * side and fades into the white. `bright` keeps the photo fully visible (About page).
  */
 export function PageHero({
   eyebrow,
@@ -83,41 +84,45 @@ export function PageHero({
   imagePosition?: string;
 }) {
   return (
-    <section className={`relative overflow-hidden text-white ${bright ? "bg-[#2a2a30]" : "bg-ink"}`}>
+    <section className="relative overflow-hidden bg-white text-ink">
       {image && (
-        <Image
-          src={image}
-          alt={imageAlt || ""}
-          fill
-          priority
-          sizes="100vw"
-          style={{ objectPosition: imagePosition }}
-          className={`animate-kenburns object-cover ${bright ? "opacity-100" : "opacity-45"}`}
-        />
+        <div className="absolute inset-y-0 right-0 hidden w-[58%] overflow-hidden lg:block">
+          <Image
+            src={image}
+            alt={imageAlt || ""}
+            fill
+            priority
+            sizes="60vw"
+            style={{ objectPosition: imagePosition }}
+            className="animate-kenburns object-cover"
+          />
+          {/* Fade the photo into the white text side */}
+          <div className={`absolute inset-0 bg-gradient-to-r from-white ${bright ? "via-white/10 to-transparent" : "via-white/40 to-white/5"}`} />
+        </div>
       )}
-      {bright ? (
-        // Light scrim: only behind the text column, so the photo stays bright and welcoming
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent lg:via-black/20" />
-      ) : (
-        <>
-          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30" />
-          <div className="absolute inset-0 bg-grid opacity-40" />
-        </>
-      )}
-      <div className="container-x relative py-20 sm:py-28">
-        <nav className="flex flex-wrap gap-2 text-sm text-white/60" aria-label="Breadcrumb">
-          {crumbs.map((c, i) => (
-            <span key={c.href} className="flex gap-2">
-              {i > 0 && <span>/</span>}
-              {i < crumbs.length - 1 ? <Link href={c.href} className="hover:text-white">{c.label}</Link> : <span className="text-gold">{c.label}</span>}
-            </span>
-          ))}
-        </nav>
-        <p className="eyebrow mt-8 flex items-center gap-3 text-gold"><span className="h-0.5 w-8 bg-current" />{eyebrow}</p>
-        <h1 className={`mt-4 max-w-4xl ${bright ? "[text-shadow:0_4px_24px_rgba(0,0,0,0.55)]" : ""} text-5xl font-bold uppercase leading-[1.02] sm:text-6xl lg:text-7xl`}>{title}</h1>
-        <p className={`mt-6 max-w-2xl text-lg leading-relaxed ${bright ? "text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.6)]" : "text-white/75"}`}>{intro}</p>
-        {children && <div className="mt-9 flex flex-wrap gap-4">{children}</div>}
+      <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-red/10 blur-[120px]" />
+      <div className="container-x relative py-16 sm:py-24">
+        <div className="max-w-2xl">
+          <nav className="flex flex-wrap gap-2 text-sm text-steel" aria-label="Breadcrumb">
+            {crumbs.map((c, i) => (
+              <span key={c.href} className="flex gap-2">
+                {i > 0 && <span>/</span>}
+                {i < crumbs.length - 1 ? <Link href={c.href} className="hover:text-red">{c.label}</Link> : <span className="font-semibold text-red">{c.label}</span>}
+              </span>
+            ))}
+          </nav>
+          <p className="eyebrow mt-8 flex items-center gap-3 text-red"><span className="h-0.5 w-8 bg-current" />{eyebrow}</p>
+          <h1 className="mt-4 text-5xl font-bold uppercase leading-[1.02] text-ink sm:text-6xl lg:text-[4.2rem]">{title}</h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-graphite">{intro}</p>
+          {children && <div className="mt-9 flex flex-wrap gap-4">{children}</div>}
+        </div>
       </div>
+      {/* Mobile: photo below the text */}
+      {image && (
+        <div className="relative aspect-[16/9] w-full lg:hidden">
+          <Image src={image} alt="" fill sizes="100vw" style={{ objectPosition: imagePosition }} className="object-cover" />
+        </div>
+      )}
       <div className="relative h-1.5 bg-red-gradient" />
     </section>
   );

@@ -11,6 +11,8 @@ const nextConfig: NextConfig = {
       { source: "/blog/white-glove-freight-delivery-what-to-expect", destination: "/blog", permanent: true },
       { source: "/services/first-mile-freight", destination: "/services/palletized-freight-transportation", permanent: true },
       { source: "/services/last-mile-delivery", destination: "/services/palletized-freight-transportation", permanent: true },
+      // Hotshot dispatch is part of Professional Freight Dispatching Services (client PDF lists 6 services)
+      { source: "/services/hotshot-dispatch", destination: "/services/box-truck-dispatch", permanent: true },
     ];
   },
 };

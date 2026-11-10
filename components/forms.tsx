@@ -90,7 +90,7 @@ export function QuoteForm({ title = "Get a freight quote", dark = false }: { tit
     }
   }
 
-  const wrap = `relative rounded-xl p-6 sm:p-8 ${dark ? "bg-white shadow-2xl shadow-black/40" : "border border-line bg-white shadow-xl shadow-ink/5"}`;
+  const wrap = `relative rounded-xl p-6 sm:p-8 ${dark ? "bg-white shadow-2xl shadow-red-deep/30" : "border border-line bg-white shadow-xl shadow-ink/5"}`;
 
   if (status === "sent")
     return (
@@ -164,7 +164,7 @@ export function QuoteForm({ title = "Get a freight quote", dark = false }: { tit
             </div>
             {/* Instant truck match */}
             {fit && (
-              <div className={`flex gap-3 rounded-md border-l-4 p-4 text-sm ${fit.tone === "ok" ? "border-gold bg-gold/10" : "border-red bg-red/5"}`} aria-live="polite">
+              <div className={`flex gap-3 rounded-md border-l-4 p-4 text-sm ${fit.tone === "ok" ? "border-red bg-blush" : "border-red bg-red/5"}`} aria-live="polite">
                 <IconCheck className="mt-0.5 h-5 w-5 shrink-0 text-red" />
                 <div>
                   <p className="font-semibold text-ink">Instant match: {fit.truck}</p>
@@ -294,7 +294,7 @@ export function DispatchForm() {
         </Field>
       </div>
       {status === "error" && <p className="mt-4 rounded-md bg-red/10 p-3 text-sm text-red-deep">Sorry, that did not send. Please call {site.phone}.</p>}
-      <button type="submit" disabled={status === "sending"} className="mt-6 w-full rounded-md bg-gold-gradient px-6 py-4 font-display text-base font-semibold uppercase tracking-wider text-ink shadow-lg shadow-gold/30 transition hover:-translate-y-0.5 disabled:opacity-60">
+      <button type="submit" disabled={status === "sending"} className="mt-6 w-full rounded-md bg-red-gradient px-6 py-4 font-display text-base font-semibold uppercase tracking-wider text-white shadow-lg shadow-red/30 transition hover:-translate-y-0.5 disabled:opacity-60">
         {status === "sending" ? "Sending…" : "Start Dispatching With Us"}
       </button>
     </form>
@@ -336,7 +336,7 @@ export function ReviewForm() {
         <span className={label}>Your rating</span>
         <div className="flex gap-1" role="radiogroup" aria-label="Rating">
           {[1, 2, 3, 4, 5].map((n) => (
-            <button key={n} type="button" role="radio" aria-checked={rating === n} aria-label={`${n} star${n > 1 ? "s" : ""}`} onClick={() => setRating(n)} className={`text-3xl transition ${n <= rating ? "text-gold" : "text-line"}`}>
+            <button key={n} type="button" role="radio" aria-checked={rating === n} aria-label={`${n} star${n > 1 ? "s" : ""}`} onClick={() => setRating(n)} className={`text-3xl transition ${n <= rating ? "text-red" : "text-line"}`}>
               ★
             </button>
           ))}

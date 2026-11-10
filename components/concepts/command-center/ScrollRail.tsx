@@ -24,7 +24,7 @@ export default function ScrollRail() {
 
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-[60] h-1">
-      <div ref={bar} className="h-full origin-left bg-[linear-gradient(90deg,#d7141a,#ff4a3d,#ffc107)]" style={{ transform: "scaleX(0)" }} />
+      <div ref={bar} className="h-full origin-left bg-[linear-gradient(90deg,#a10c11,#d7141a,#ff4a3d)]" style={{ transform: "scaleX(0)" }} />
     </div>
   );
 }

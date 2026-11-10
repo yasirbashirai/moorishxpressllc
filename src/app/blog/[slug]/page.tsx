@@ -52,15 +52,17 @@ export default async function ArticlePage({ params }: Props) {
       <JsonLd data={articleSchema} />
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }, { name: post.title, path: `/blog/${post.slug}` }])} />
 
-      <header className="bg-ink-gradient text-white">
-        <div className="container-x max-w-4xl py-16 sm:py-20">
-          <nav className="text-sm text-white/60" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-white">Home</Link> / <Link href="/blog" className="hover:text-white">Blog</Link>
+      <header className="relative overflow-hidden bg-white text-ink">
+        <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-red/10 blur-[120px]" />
+        <div className="container-x relative max-w-4xl py-16 sm:py-20">
+          <nav className="text-sm text-steel" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-red">Home</Link> / <Link href="/blog" className="hover:text-red">Blog</Link>
           </nav>
-          <p className="eyebrow mt-6 text-gold">{post.category}</p>
+          <p className="eyebrow mt-6 text-red">{post.category}</p>
           <h1 className="mt-4 text-4xl font-bold uppercase leading-tight sm:text-5xl">{post.title}</h1>
-          <p className="mt-6 text-sm text-white/60">{formatDate(post.date)} · {post.readMins} min read · {site.name}</p>
+          <p className="mt-6 text-sm text-steel">{formatDate(post.date)} · {post.readMins} min read · {site.name}</p>
         </div>
+        <div className="relative h-1.5 bg-red-gradient" />
       </header>
 
       <div className="container-x grid max-w-6xl gap-12 py-16 lg:grid-cols-3">
@@ -93,7 +95,7 @@ export default async function ArticlePage({ params }: Props) {
 
         {/* Sticky lead form beside the article */}
         <aside className="lg:sticky lg:top-28 lg:self-start">
-          {post.cta === "dispatch" ? <div className="rounded-2xl bg-ink p-2"><DispatchForm /></div> : <QuoteForm title="Get a freight quote" />}
+          {post.cta === "dispatch" ? <div className="rounded-2xl bg-red-gradient p-2 shadow-xl shadow-red/20"><DispatchForm /></div> : <QuoteForm title="Get a freight quote" />}
         </aside>
       </div>
 

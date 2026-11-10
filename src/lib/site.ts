@@ -47,8 +47,8 @@ export const fullAddress = `${site.address.street}, ${site.address.city}, ${site
 
 /** Company description supplied by the client (used on About + footer). */
 export const companyDescription = [
-  "Moorish Xpress, LLC is an Atlanta, Georgia-based freight transportation and truck dispatch company. We provide freight hauling services with our 26 ft box trucks and professional dispatch services for owner-operators and small trucking companies.",
-  "We work with both freight brokers and shippers to meet their freight transportation needs, while helping carriers find loads, coordinate trips and manage communication and paperwork. Our dispatch approach focuses on securing competitive rates, reducing empty miles and keeping trucks moving efficiently.",
+  "Moorish Xpress LLC is an Atlanta, Georgia–based freight transportation and truck dispatch company. We provide freight hauling services with our 26 ft box trucks and professional dispatch services for owner-operators and small trucking companies.",
+  "We work with both freight brokers and shippers to meet their freight transportation needs while helping carriers find loads, coordinate trips and manage communication and paperwork. Our dispatch approach focuses on securing competitive rates, reducing empty miles and keeping trucks moving efficiently.",
   "We believe strong business relationships start with clear communication, attention to detail and consistent follow-through. Whether you have freight to move or need dispatch support, let's talk about your next load.",
 ];
 
@@ -62,12 +62,11 @@ export const nav = [
   { href: "/contact", label: "Contact" },
 ];
 
-/** Secondary pages linked from the footer only. */
-export const moreLinks = [
-  { href: "/reviews", label: "Reviews" },
-  { href: "/blog", label: "Blog" },
-  { href: "/dispatch#signup", label: "Dispatch Sign-Up" },
-];
+/**
+ * Extra pages (Blog, Reviews) stay live for search engines but are not linked
+ * in the menu or footer: the client's PDF lists exactly 7 website pages.
+ */
+export const moreLinks: { href: string; label: string }[] = [];
 
 /** The two truck types in the fleet. Used by the spec toggle and the load-fit checker. */
 export const trucks = [
@@ -112,8 +111,8 @@ export const services: Service[] = [
   {
     slug: "otr-box-truck-freight",
     group: "carrier",
-    title: "OTR Freight Transportation",
-    short: "Long-distance, interstate freight hauling in our 26 ft box trucks, from Atlanta, GA to the Midwest, the Northeast and the Southern states.",
+    title: "Over-the-Road (OTR) Freight Transportation",
+    short: "Long-distance interstate freight hauling using 26-foot box trucks.",
     keyword: "OTR box truck freight transportation",
     metaTitle: "OTR Box Truck Freight Transportation | Interstate Freight Carrier Atlanta GA",
     metaDescription:
@@ -145,7 +144,7 @@ export const services: Service[] = [
     slug: "palletized-freight-transportation",
     group: "carrier",
     title: "Palletized Freight Transportation",
-    short: "Palletized commercial goods moved for freight brokers, shippers, warehouses and distribution centers.",
+    short: "Transportation of palletized commercial goods for freight brokers, shippers, warehouses, and distribution centers.",
     keyword: "palletized freight transportation services",
     metaTitle: "Palletized Freight Transportation Atlanta GA | Long Distance Pallet Shipping",
     metaDescription:
@@ -175,8 +174,8 @@ export const services: Service[] = [
   {
     slug: "partial-truckload-freight",
     group: "carrier",
-    title: "Partial Truckload (PTL) Freight",
-    short: "Smaller shipments that do not need the whole truck, subject to available capacity and route compatibility.",
+    title: "Partial Truckload (PTL) Freight Transportation",
+    short: "Transportation of smaller freight shipments that do not require the entire truck, subject to available capacity and route compatibility.",
     keyword: "partial truckload freight transportation",
     metaTitle: "Partial Truckload (PTL) Freight Transportation | Box Truck Carrier Atlanta GA",
     metaDescription:
@@ -239,28 +238,33 @@ export const services: Service[] = [
   {
     slug: "box-truck-dispatch",
     group: "dispatch",
-    title: "Professional Freight Dispatching",
-    short: "Load searching, broker communication, rate negotiation, scheduling and shipment coordination for owner-operators and small trucking companies.",
+    title: "Professional Freight Dispatching Services",
+    short: "Dispatch support for owner-operators and small trucking companies, including load searching, broker communication, rate negotiation, scheduling, and shipment coordination.",
     keyword: "professional freight dispatch services",
-    metaTitle: "Professional Freight Dispatch Services | Box Truck Dispatching Atlanta GA",
+    metaTitle: "Professional Freight Dispatch Services | Box Truck & Hotshot Dispatch Atlanta GA",
     metaDescription:
-      "Professional freight and box truck dispatching for owner-operators and small trucking companies. Load searching, rate negotiation, broker communication and scheduling.",
+      "Professional freight dispatching for box trucks and hotshots. Moorish Xpress helps owner-operators and small trucking companies with load searching, broker communication, rate negotiation, scheduling and shipment coordination.",
     image: "/images/moorish-box-truck.jpg",
     imageAlt: "Moorish Xpress yellow 26 ft box truck at a warehouse",
     intro:
-      "We are a box truck carrier ourselves, so we dispatch the way we would want to be dispatched. For independent owner-operators, small trucking companies and new carriers, we find loads that fit your truck, your lanes and your schedule, and we handle the back-and-forth with brokers.",
+      "We dispatch box trucks and hotshots. We are a box truck carrier ourselves, so we dispatch the way we would want to be dispatched. For independent owner-operators, small trucking companies and new and growing carriers, we find loads that fit your truck, your lanes and your schedule, and we handle the back-and-forth with brokers.",
     points: [
+      "Dispatch for 26 ft box trucks and hotshots",
       "Load searching across load boards and broker relationships",
       "Rate negotiation aimed at competitive rates and fewer empty miles",
       "Broker communication, setup packets and rate confirmations",
       "Scheduling, route planning and shipment coordination",
       "One dispatcher who knows your truck and your goals",
     ],
-    idealFor: ["26 ft box truck owner-operators", "Small trucking companies and fleets", "New and growing carriers"],
+    idealFor: ["Box truck and hotshot owner-operators", "Small trucking companies and fleets", "New and growing carriers"],
     faqs: [
       {
         q: "Do you force loads on drivers?",
         a: "No. You approve every load before it is booked. Our job is to bring good options and negotiate, not to push you into lanes you do not want.",
+      },
+      {
+        q: "Do you dispatch hotshots?",
+        a: "Yes. We dispatch box trucks and hotshots. Tell us your truck, trailer and weight limits and we will only bring you loads that fit your setup.",
       },
       {
         q: "What do I need to get started?",
@@ -269,43 +273,12 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "hotshot-dispatch",
-    group: "dispatch",
-    title: "Hotshot Dispatch",
-    short: "Dispatch for hotshot owner-operators: loads, rates, broker setup and paperwork handled.",
-    keyword: "hotshot dispatch services",
-    metaTitle: "Hotshot Dispatch Services | Dispatcher for Hotshot Owner-Operators",
-    metaDescription:
-      "Hotshot dispatch services for owner-operators. Moorish Xpress finds hotshot loads, negotiates rates, handles broker setup and keeps your truck moving.",
-    image: "/images/hero-fleet-highway-rtl.jpg",
-    imageAlt: "Yellow 26 ft box trucks on the highway, loaded and moving",
-    intro:
-      "Hotshot freight moves fast and pays for speed, but only if the truck stays loaded. We find hotshot loads that fit your trailer and weight limits, negotiate the rate and handle broker setup so you can stay on the road.",
-    points: [
-      "Hotshot and flatbed load searching",
-      "Rate negotiation and backhaul planning",
-      "Broker packets, rate confirmations and paperwork",
-      "Load planning around trailer length and weight",
-    ],
-    idealFor: ["Hotshot owner-operators", "Gooseneck and flatbed trailers", "Drivers who want fewer empty miles"],
-    faqs: [
-      {
-        q: "Do you dispatch CDL and non-CDL hotshots?",
-        a: "Yes. Tell us your truck, trailer and weight limits and we will only bring you loads that fit your setup.",
-      },
-      {
-        q: "How do I pay for dispatch?",
-        a: "We explain our dispatch fee clearly before we start, so you know exactly what you pay on every load. Contact us for current dispatch rates.",
-      },
-    ],
-  },
-  {
     slug: "freight-documentation-load-coordination",
     group: "dispatch",
-    title: "Freight Documentation & Load Coordination",
-    short: "Rate confirmations, Bills of Lading (BOLs), Proofs of Delivery (PODs) and shipment updates, managed as part of every load.",
+    title: "Freight Documentation and Load Coordination",
+    short: "Managing rate confirmations, Bills of Lading (BOLs), Proofs of Delivery (PODs), and shipment updates as part of our transportation and dispatching services.",
     keyword: "truck dispatching and load coordination",
-    metaTitle: "Freight Documentation & Load Coordination | Rate Cons, BOLs, PODs",
+    metaTitle: "Freight Documentation and Load Coordination | Rate Cons, BOLs, PODs",
     metaDescription:
       "Moorish Xpress manages rate confirmations, Bills of Lading, Proofs of Delivery and shipment updates as part of our transportation and dispatching services.",
     image: "/images/box-trucks-loading-dock.jpg",

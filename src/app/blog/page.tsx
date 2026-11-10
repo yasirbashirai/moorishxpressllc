@@ -23,7 +23,7 @@ export default function BlogPage() {
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }])} />
       <PageHero
         eyebrow="Blog"
-        title={<>Freight knowledge <span className="text-gold">from the road.</span></>}
+        title={<>Freight knowledge <span className="text-red">from the road.</span></>}
         intro="Straight-talk guides for shippers, brokers and owner-operators, written by a box truck carrier that runs these lanes."
         crumbs={[{ href: "/", label: "Home" }, { href: "/blog", label: "Blog" }]}
       />

@@ -3,14 +3,18 @@
 /* Components live outside src/, so tell Tailwind to scan them */
 @source "../../components";
 
-/* ---------- Brand tokens (Moorish Xpress: red, yellow, black, white) ---------- */
+/* ---------- Brand tokens (Moorish Xpress business colours: WHITE + RED) ----------
+   Per the client's requirements PDF, the business colours are white and red.
+   The gold/blue main logo is for door decals only, so it is NOT used as a site colour.
+   The old "gold" tokens are kept as aliases of red so nothing renders yellow. */
 @theme {
-  --color-red: #d7141a;          /* primary action (logo red) */
+  --color-red: #d7141a;          /* primary brand + action colour */
   --color-red-light: #ff4a3d;
   --color-red-deep: #a10c11;
-  --color-gold: #ffc107;         /* secondary action (logo / flyer yellow) */
-  --color-gold-light: #ffe066;
-  --color-gold-deep: #e0a100;
+  --color-blush: #fff2f2;        /* soft red-tinted section background */
+  --color-gold: #d7141a;         /* alias of red (legacy class names) */
+  --color-gold-light: #ffd9d9;
+  --color-gold-deep: #a10c11;
   --color-ink: #0c0c0e;          /* authority, structure */
   --color-coal: #17181c;
   --color-graphite: #2a2c33;
@@ -69,20 +73,20 @@ h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0.005em; }
 @utility bg-red-gradient {
   background-image: linear-gradient(135deg, #b30f14 0%, #d7141a 45%, #ff4a3d 100%);
 }
-/* Secondary action gradient: logo yellow to a lighter yellow */
+/* Secondary surface (legacy name): white with a soft red tint */
 @utility bg-gold-gradient {
-  background-image: linear-gradient(135deg, #f2a900 0%, #ffc107 50%, #ffe066 100%);
+  background-image: linear-gradient(135deg, #ffffff 0%, #fff2f2 100%);
 }
-/* Dark authority panels */
+/* Deep red feature panels (legacy name kept) */
 @utility bg-ink-gradient {
-  background-image: radial-gradient(120% 90% at 85% 0%, #3a0a0c 0%, transparent 55%), linear-gradient(160deg, #0c0c0e 0%, #17181c 60%, #22242a 100%);
+  background-image: radial-gradient(120% 90% at 85% 0%, #ff4a3d 0%, transparent 55%), linear-gradient(160deg, #a10c11 0%, #c3121a 60%, #d7141a 100%);
 }
 @utility text-red-gradient {
   background-image: linear-gradient(120deg, #d7141a, #ff4a3d);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 @utility text-gold-gradient {
-  background-image: linear-gradient(120deg, #ffc107, #ffe066);
+  background-image: linear-gradient(120deg, #a10c11, #d7141a);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 /* Fine grid on dark panels */
@@ -97,9 +101,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0.005em; }
   background-image: radial-gradient(rgba(12,12,14,0.14) 1.2px, transparent 1.2px);
   background-size: 18px 18px;
 }
-/* Hazard stripe accent, a nod to dock and road markings */
+/* Red + white stripe accent, a nod to dock and road markings */
 @utility bg-hazard {
-  background-image: repeating-linear-gradient(-45deg, #ffc107 0 14px, #0c0c0e 14px 28px);
+  background-image: repeating-linear-gradient(-45deg, #d7141a 0 14px, #ffffff 14px 28px);
 }
 @utility eyebrow {
   font-family: var(--font-display);

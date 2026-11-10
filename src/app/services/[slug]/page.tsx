@@ -64,7 +64,7 @@ export default async function ServicePage({ params }: Props) {
       >
         {isDispatch ? (
           <>
-            <Button href="#signup" variant="gold">Dispatch My Truck</Button>
+            <Button href="#signup">Dispatch My Truck</Button>
             <Button href={`tel:+16789687511`} variant="ghost">Call {site.phone}</Button>
           </>
         ) : (
@@ -94,10 +94,10 @@ export default async function ServicePage({ params }: Props) {
               </ul>
             </Reveal>
             <Reveal delay={120}>
-              <div className="mt-12 rounded-2xl bg-ink p-8 text-white">
-                <p className="flex items-center gap-3 font-display text-xl font-semibold uppercase text-gold"><IconUsers className="h-6 w-6" />Ideal for</p>
+              <div className="mt-12 rounded-2xl bg-red-gradient p-8 text-white shadow-xl shadow-red/20">
+                <p className="flex items-center gap-3 font-display text-xl font-semibold uppercase text-white"><IconUsers className="h-6 w-6" />Ideal for</p>
                 <ul className="mt-5 grid gap-3 sm:grid-cols-3">
-                  {s.idealFor.map((x) => <li key={x} className="rounded-lg bg-white/10 p-4 text-sm text-white/85">{x}</li>)}
+                  {s.idealFor.map((x) => <li key={x} className="rounded-lg bg-white/15 p-4 text-sm text-white">{x}</li>)}
                 </ul>
               </div>
             </Reveal>
@@ -109,7 +109,7 @@ export default async function ServicePage({ params }: Props) {
 
           <aside id={isDispatch ? "signup" : "quote"} className="lg:col-span-2 lg:sticky lg:top-28 lg:self-start">
             {isDispatch ? (
-              <div className="rounded-2xl bg-ink p-2"><DispatchForm /></div>
+              <div className="rounded-2xl bg-red-gradient p-2 shadow-xl shadow-red/20"><DispatchForm /></div>
             ) : (
               <QuoteForm title={`Quote: ${s.title}`} />
             )}

@@ -41,13 +41,13 @@ export default function DispatchPage() {
 
       <PageHero
         eyebrow="Professional freight dispatch services"
-        title={<>Box truck & hotshot <span className="text-gold">dispatch</span> that keeps you loaded.</>}
+        title={<>Box truck & hotshot <span className="text-red">dispatch</span> that keeps you loaded.</>}
         intro="Dispatch is an equal half of our business. We are a box truck carrier that also dispatches for independent owner-operators, small trucking companies and new carriers. We find the loads, negotiate the rates and handle the paperwork, so you can focus on driving."
         image="/images/hero-fleet-highway-rtl.jpg"
         imageAlt="Moorish Xpress yellow 26 ft box trucks on the highway, kept moving by our dispatch desk"
         crumbs={[{ href: "/", label: "Home" }, { href: "/dispatch", label: "Dispatch Services" }]}
       >
-        <Button href="#signup" variant="gold">Dispatch My Truck</Button>
+        <Button href="#signup">Dispatch My Truck</Button>
         <Button href="tel:+16789687511" variant="ghost">Call {site.phone}</Button>
       </PageHero>
 
@@ -69,17 +69,17 @@ export default function DispatchPage() {
               </div>
             ))}
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
             {dispatchServices.map((s, i) => (
               <Reveal key={s.slug} delay={i * 100}>
-                <Link href={`/services/${s.slug}`} className="group relative block h-[28rem] overflow-hidden rounded-2xl bg-ink">
-                  <Image src={s.image} alt={s.imageAlt} fill sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw" className="object-cover opacity-65 transition duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent" />
+                <Link href={`/services/${s.slug}`} className="group relative block h-[28rem] overflow-hidden rounded-2xl bg-red-deep">
+                  <Image src={s.image} alt={s.imageAlt} fill sizes="(min-width:768px) 50vw, 100vw" className="object-cover opacity-80 transition duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-red-deep via-red-deep/70 to-red-deep/10" />
                   <div className="absolute inset-x-0 bottom-0 p-8">
-                    <p className="eyebrow text-gold">{s.keyword}</p>
+                    <p className="eyebrow text-white/90">{s.keyword}</p>
                     <h3 className="mt-2 text-3xl font-bold uppercase leading-tight text-white">{s.title}</h3>
-                    <p className="mt-3 max-w-md text-white/80">{s.short}</p>
-                    <span className="mt-5 inline-flex items-center gap-2 font-display font-semibold uppercase tracking-wider text-gold">Learn more <IconArrow className="h-5 w-5 transition-transform group-hover:translate-x-1" /></span>
+                    <p className="mt-3 max-w-md text-white/90">{s.short}</p>
+                    <span className="mt-5 inline-flex items-center gap-2 font-display font-semibold uppercase tracking-wider text-white">Learn more <IconArrow className="h-5 w-5 transition-transform group-hover:translate-x-1" /></span>
                   </div>
                 </Link>
               </Reveal>
@@ -96,8 +96,8 @@ export default function DispatchPage() {
           </Reveal>
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {includes.map((x, i) => (
-              <Reveal key={x.t} delay={i * 70} className="group rounded-2xl border border-line bg-white p-8 transition hover:-translate-y-1 hover:border-gold hover:shadow-xl">
-                <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-gold-gradient text-ink transition group-hover:rotate-6"><x.Icon className="h-7 w-7" /></span>
+              <Reveal key={x.t} delay={i * 70} className="group rounded-2xl border border-line bg-white p-8 transition hover:-translate-y-1 hover:border-red/40 hover:shadow-xl">
+                <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-blush text-red transition group-hover:rotate-6 group-hover:bg-red group-hover:text-white"><x.Icon className="h-7 w-7" /></span>
                 <h3 className="mt-6 text-2xl font-bold uppercase">{x.t}</h3>
                 <p className="mt-2 text-steel">{x.d}</p>
               </Reveal>
@@ -107,20 +107,20 @@ export default function DispatchPage() {
       </section>
 
       {/* Sign-up */}
-      <section id="signup" className="relative overflow-hidden bg-ink-gradient py-24 text-white">
-        <div className="absolute inset-0 bg-grid opacity-40" />
+      <section id="signup" className="relative overflow-hidden bg-blush py-24">
+        <div className="absolute -right-40 top-20 h-96 w-96 rounded-full bg-red/10 blur-[120px]" />
         <div className="container-x relative grid gap-14 lg:grid-cols-2">
           <div>
-            <SectionHeading dark eyebrow="Get started" title={<>Ready to stay loaded? <span className="text-gold">Sign up in a minute.</span></>} intro="Tell us about your truck and where you like to run. A dispatcher will call you to go over lanes, rates and next steps." />
+            <SectionHeading eyebrow="Get started" title={<>Ready to stay loaded? <span className="text-red">Sign up in a minute.</span></>} intro="Tell us about your truck and where you like to run. A dispatcher will call you to go over lanes, rates and next steps." />
             <ol className="mt-10 space-y-5">
               {["Send your details", "Quick intro call with a dispatcher", "Send your MC, insurance and W-9", "We start booking loads you approve"].map((t, i) => (
                 <li key={t} className="flex items-center gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gold-gradient font-display text-lg font-bold text-ink">{i + 1}</span>
-                  <span className="text-lg text-white/85">{t}</span>
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-red-gradient font-display text-lg font-bold text-white shadow-lg shadow-red/20">{i + 1}</span>
+                  <span className="text-lg text-graphite">{t}</span>
                 </li>
               ))}
             </ol>
-            <div className="mt-12"><Faq dark items={faqs} /></div>
+            <div className="mt-12"><Faq items={faqs} /></div>
           </div>
           <div className="lg:sticky lg:top-28 lg:self-start"><DispatchForm /></div>
         </div>

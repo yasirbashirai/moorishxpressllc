@@ -93,7 +93,7 @@ export default function DispatchConsole() {
             </select>
           </label>
           <label className="block">
-            <span className="mb-1.5 flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-wider text-steel"><span className="h-2 w-2 rounded-full bg-gold" />Delivery</span>
+            <span className="mb-1.5 flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-wider text-steel"><span className="h-2 w-2 rounded-full border-2 border-red bg-white" />Delivery</span>
             <select aria-label="Delivery city" className={select} value={to} onChange={(e) => setTo(Number(e.target.value))}>
               {cities.map((c, i) => <option key={c.name} value={i}>{c.name}</option>)}
             </select>
@@ -126,7 +126,7 @@ export default function DispatchConsole() {
             <svg viewBox="0 0 400 260" className="block h-auto w-full" role="img" aria-label={`Route from ${a.name} to ${b.name}`}>
               <defs>
                 <pattern id="cc-dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="1.1" fill="rgba(12,12,14,0.12)" /></pattern>
-                <linearGradient id="cc-route" x1="0" x2="1"><stop offset="0" stopColor="#d7141a" /><stop offset="1" stopColor="#ffc107" /></linearGradient>
+                <linearGradient id="cc-route" x1="0" x2="1"><stop offset="0" stopColor="#a10c11" /><stop offset="1" stopColor="#ff4a3d" /></linearGradient>
               </defs>
               <rect width="400" height="260" fill="url(#cc-dots)" />
               {cities.map((c) => {
@@ -157,14 +157,14 @@ export default function DispatchConsole() {
               {/* Endpoint labels */}
               {[{ p: pa, c: a }, { p: pb, c: b }].map(({ p, c }, i) => (
                 <g key={`lbl-${i}`}>
-                  <rect x={Math.min(p.x + 10, 330)} y={p.y - 22} width={c.name.split(",")[0].length * 6.4 + 14} height={17} rx={8.5} fill={i ? "#0c0c0e" : "#d7141a"} />
-                  <text x={Math.min(p.x + 10, 330) + 7} y={p.y - 10} fontSize="10" fontWeight="700" fill={i ? "#ffc107" : "#fff"} fontFamily="Inter, sans-serif">{c.name.split(",")[0]}</text>
+                  <rect x={Math.min(p.x + 10, 330)} y={p.y - 22} width={c.name.split(",")[0].length * 6.4 + 14} height={17} rx={8.5} fill={i ? "#ffffff" : "#d7141a"} stroke={i ? "#d7141a" : "none"} strokeWidth={1.5} />
+                  <text x={Math.min(p.x + 10, 330) + 7} y={p.y - 10} fontSize="10" fontWeight="700" fill={i ? "#d7141a" : "#fff"} fontFamily="Inter, sans-serif">{c.name.split(",")[0]}</text>
                 </g>
               ))}
               <circle cx={pa.x} cy={pa.y} r={7} fill="#d7141a" stroke="#fff" strokeWidth={2.5} />
-              <circle cx={pb.x} cy={pb.y} r={7} fill="#ffc107" stroke="#0c0c0e" strokeWidth={2} />
+              <circle cx={pb.x} cy={pb.y} r={7} fill="#ffffff" stroke="#d7141a" strokeWidth={3} />
               {!reduce && from !== to && (
-                <circle r={4} fill="#0c0c0e">
+                <circle r={4} fill="#a10c11">
                   <animateMotion key={path} dur="2.6s" repeatCount="indefinite" path={path} />
                 </circle>
               )}
