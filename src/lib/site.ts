@@ -117,8 +117,8 @@ export const services: Service[] = [
     metaTitle: "OTR Box Truck Freight Transportation | Interstate Freight Carrier Atlanta GA",
     metaDescription:
       "Over-the-road box truck freight from Atlanta, GA. Moorish Xpress hauls long-distance, interstate freight in 26 ft box trucks to the Midwest, the Northeast and the Southern states. Open 24/7.",
-    image: "/images/box-truck-otr-highway.jpg",
-    imageAlt: "26 ft box truck hauling over-the-road freight on an interstate highway at sunset",
+    image: "/images/moorish-red-truck-highway.jpg",
+    imageAlt: "Moorish Xpress 26 ft box truck with tuck-under liftgate hauling over-the-road freight on an interstate highway",
     intro:
       "Our primary focus is over-the-road freight in 26 ft box trucks. When your freight needs to leave Georgia and arrive on time, we run long-distance, interstate lanes out of Atlanta into the Midwest, the Northeast and the Southern states, including Texas, Tennessee, the Carolinas, Oklahoma and Virginia.",
     points: [
@@ -149,8 +149,8 @@ export const services: Service[] = [
     metaTitle: "Palletized Freight Transportation Atlanta GA | Long Distance Pallet Shipping",
     metaDescription:
       "Palletized freight transportation from Atlanta, GA. 26 ft box trucks with a tuck-under liftgate and air-ride suspension move pallets for brokers, shippers, warehouses and distribution centers.",
-    image: "/images/box-trucks-loading-dock.jpg",
-    imageAlt: "Two box trucks parked at a warehouse loading dock ready for palletized freight",
+    image: "/images/moorish-red-truck-dock.jpg",
+    imageAlt: "Moorish Xpress 26 ft box truck backed into a warehouse loading dock for palletized freight",
     intro:
       "We move palletized commercial goods between factories, warehouses and distribution centers, short haul or long distance. From first-mile pickups at the supplier to last-mile delivery at the receiver, our 26 ft box trucks with tuck-under liftgates handle docks and ground-level locations alike.",
     points: [
@@ -180,8 +180,8 @@ export const services: Service[] = [
     metaTitle: "Partial Truckload (PTL) Freight Transportation | Box Truck Carrier Atlanta GA",
     metaDescription:
       "Partial truckload freight transportation by box truck from Atlanta, GA. Ship a few pallets without paying for the whole truck, subject to capacity and route.",
-    image: "/images/box-truck-city-delivery.jpg",
-    imageAlt: "White box truck making a partial truckload delivery in the city",
+    image: "/images/box-trucks-loading-dock.jpg",
+    imageAlt: "26 ft box trucks at a warehouse loading dock, ready for partial truckload freight",
     intro:
       "Not every shipment needs a full truck. When your freight takes up only part of a 26 ft box truck, we can move it as a partial truckload, subject to available capacity and route compatibility.",
     points: [
@@ -211,8 +211,8 @@ export const services: Service[] = [
     metaTitle: "U-Haul U-Box Transportation Services | Long Distance Box Truck Atlanta GA",
     metaDescription:
       "Long-distance transportation of U-Haul U-Box containers by 26 ft box truck from Atlanta, GA, subject to equipment suitability and load requirements.",
-    image: "/images/box-truck-warehouse.jpg",
-    imageAlt: "Box truck parked beside a warehouse, ready for long-distance container transport",
+    image: "/images/moorish-box-truck.jpg",
+    imageAlt: "Moorish Xpress yellow 26 ft box truck at a warehouse, ready for long-distance U-Box transport",
     intro:
       "We transport U-Haul U-Box containers long distance in our 26 ft box trucks. Every move is subject to equipment suitability and load requirements, so we confirm the details with you before we book.",
     points: [
@@ -244,8 +244,8 @@ export const services: Service[] = [
     metaTitle: "Professional Freight Dispatch Services | Box Truck & Hotshot Dispatch Atlanta GA",
     metaDescription:
       "Professional freight dispatching for box trucks and hotshots. Moorish Xpress helps owner-operators and small trucking companies with load searching, broker communication, rate negotiation, scheduling and shipment coordination.",
-    image: "/images/moorish-box-truck.jpg",
-    imageAlt: "Moorish Xpress yellow 26 ft box truck at a warehouse",
+    image: "/images/jude-dispatch-desk.jpg",
+    imageAlt: "Jude Hood at the Moorish Xpress dispatch desk, reviewing loads and routes on three monitors",
     intro:
       "We dispatch box trucks and hotshots. We are a box truck carrier ourselves, so we dispatch the way we would want to be dispatched. For independent owner-operators, small trucking companies and new and growing carriers, we find loads that fit your truck, your lanes and your schedule, and we handle the back-and-forth with brokers.",
     points: [
@@ -281,8 +281,8 @@ export const services: Service[] = [
     metaTitle: "Freight Documentation and Load Coordination | Rate Cons, BOLs, PODs",
     metaDescription:
       "Moorish Xpress manages rate confirmations, Bills of Lading, Proofs of Delivery and shipment updates as part of our transportation and dispatching services.",
-    image: "/images/box-trucks-loading-dock.jpg",
-    imageAlt: "Box trucks at a warehouse loading dock, where BOLs are signed at pickup",
+    image: "/images/moorish-dispatch-office.jpg",
+    imageAlt: "Moorish Xpress dispatch office with load boards, route maps and schedules",
     intro:
       "Paperwork is where loads get delayed and payments get stuck. As part of our transportation and dispatching services, we manage rate confirmations, Bills of Lading (BOLs), Proofs of Delivery (PODs) and shipment updates, so every load is documented from booking to payment.",
     points: [

@@ -46,12 +46,16 @@ export default function AboutPage() {
           <Reveal className="relative">
             <div className="absolute -left-4 -top-4 h-full w-full rounded-3xl bg-hazard opacity-20" />
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
-              <Image src="/images/box-truck-otr-highway.jpg" alt="26 ft box truck on a long-distance freight run, the kind of work Moorish Xpress does every day" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover object-[70%_center]" />
+              <Image src="/images/moorish-red-truck-highway.jpg" alt="Moorish Xpress 26 ft box truck on a long-distance freight run" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover object-[68%_center]" />
             </div>
-            <div className="absolute -bottom-6 -right-2 rounded-2xl bg-red-gradient p-6 text-white shadow-2xl shadow-red/30 sm:-right-6">
-              <p className="font-display text-sm uppercase tracking-widest text-white/85">Founder & owner</p>
-              <p className="mt-1 font-display text-3xl font-bold uppercase">{site.owner}</p>
-              <p className="text-sm text-white/80">Class B CDL holder</p>
+            {/* Founder card with Jude's photo */}
+            <div className="absolute -bottom-6 -right-2 flex items-center gap-4 rounded-2xl bg-red-gradient p-5 pr-7 text-white shadow-2xl shadow-red/30 sm:-right-6">
+              <Image src="/images/jude-hood.jpg" alt={`${site.owner}, founder of Moorish Xpress`} width={600} height={600} className="h-20 w-20 rounded-full object-cover ring-4 ring-white/90" />
+              <div>
+                <p className="font-display text-sm uppercase tracking-widest text-white/85">Founder & owner</p>
+                <p className="mt-1 font-display text-3xl font-bold uppercase">{site.owner}</p>
+                <p className="text-sm text-white/80">Class B CDL holder</p>
+              </div>
             </div>
           </Reveal>
           <Reveal delay={100}>

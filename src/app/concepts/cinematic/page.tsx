@@ -95,7 +95,7 @@ export default function CinematicConcept() {
 
       {/* Finale */}
       <section className="relative overflow-hidden py-32 text-center text-white">
-        <Image src="/images/box-truck-otr-highway.jpg" alt="Truck on the open highway at speed" fill sizes="100vw" className="object-cover opacity-30" />
+        <Image src="/images/moorish-red-truck-highway.jpg" alt="Truck on the open highway at speed" fill sizes="100vw" className="object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#060607] via-[#060607]/60 to-[#060607]" />
         <div className="container-x relative">
           <h2 className="font-display text-[15vw] font-bold uppercase leading-[0.85] sm:text-[9rem]">
