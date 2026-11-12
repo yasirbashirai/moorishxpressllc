@@ -51,7 +51,7 @@ export default function SpecSheet() {
         {/* Truck elevation drawing */}
         <div className="relative mt-14 border-2 border-gold/40 p-4 sm:p-10">
           <span className="absolute left-3 top-3 font-display text-[0.65rem] uppercase tracking-[0.3em] text-gold/70">Side elevation · not to scale</span>
-          <span className="absolute right-3 top-3 font-display text-[0.65rem] uppercase tracking-[0.3em] text-gold/70">Moorish Xpress · ATL</span>
+          <span className="absolute right-3 top-3 font-display text-[0.65rem] uppercase tracking-[0.3em] text-gold/70">MOORISH XPRESS LLC · ATL</span>
           <svg viewBox="0 0 1000 340" className="mt-6 w-full" fill="none" stroke="#ffc107" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-label="Box truck side drawing showing 26 ft box, tuck-under liftgate and air-ride suspension">
             {/* box */}
             <path data-draw d="M300 40 H900 V250 H300 Z" />

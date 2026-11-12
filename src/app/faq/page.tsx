@@ -6,9 +6,9 @@ import { faqGroups, site } from "@/lib/site";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "FAQ | Box Truck Freight & Dispatch Questions | Moorish Xpress",
+  title: "FAQ | Box Truck Freight & Dispatch Questions | MOORISH XPRESS LLC",
   description:
-    "Answers about Moorish Xpress freight transportation and dispatch services: equipment, coverage, carrier packets, partial truckload, U-Box transport and box truck and hotshot dispatch.",
+    "Answers about MOORISH XPRESS LLC freight transportation and dispatch services: equipment, coverage, carrier packets, partial truckload, U-Box transport and box truck and hotshot dispatch.",
   alternates: { canonical: "/faq" },
 };
 

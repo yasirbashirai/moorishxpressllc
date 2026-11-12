@@ -116,7 +116,7 @@ export default function CommandCenterPage() {
           <FadeIn className="overflow-hidden rounded-[2rem] border border-black/5 bg-white shadow-[0_40px_100px_-40px_rgba(12,12,14,0.3)]">
             <div className="grid lg:grid-cols-[1.15fr_1fr]">
               <div className="relative min-h-[18rem] overflow-hidden bg-ink">
-                <Image src="/images/moorish-box-truck.jpg" alt="Moorish Xpress yellow 26 ft box truck with tuck-under liftgate at an Atlanta warehouse" fill sizes="(min-width:1024px) 55vw, 100vw" className="object-cover object-left" />
+                <Image src="/images/moorish-box-truck.jpg" alt="MOORISH XPRESS LLC yellow 26 ft box truck with tuck-under liftgate at an Atlanta warehouse" fill sizes="(min-width:1024px) 55vw, 100vw" className="object-cover object-left" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-5 flex flex-wrap gap-2">
                   {["Our truck", "Atlanta, GA"].map((t) => (

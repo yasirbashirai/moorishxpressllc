@@ -10,9 +10,9 @@ import { companyDescription, site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About Moorish Xpress | Atlanta Freight Transportation & Truck Dispatch Company",
+  title: "About MOORISH XPRESS LLC | Atlanta Freight Transportation & Truck Dispatch Company",
   description:
-    "Moorish Xpress, LLC is an Atlanta, Georgia-based freight transportation and truck dispatch company led by Jude Hood. 26 ft box trucks with tuck-under liftgates and air-ride suspension, open 24/7.",
+    "MOORISH XPRESS LLC is an Atlanta, Georgia-based freight transportation and truck dispatch company led by Jude Hood. 26 ft box trucks with tuck-under liftgates and air-ride suspension, open 24/7.",
   alternates: { canonical: "/about" },
 };
 
@@ -30,9 +30,9 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About us"
         title={<>Atlanta-built. <span className="text-red">Operator-led.</span></>}
-        intro="Moorish Xpress, LLC is a freight transportation and truck dispatch company based on Campbellton Road in Atlanta, Georgia. We haul freight in our own 26 ft box trucks and dispatch for owner-operators and small trucking companies."
+        intro="MOORISH XPRESS LLC is a freight transportation and truck dispatch company based in Atlanta, Georgia. We haul freight in our own 26ft box trucks and we offer dispatching services for owner-operators and small trucking companies."
         image="/images/moorish-box-truck.jpg"
-        imageAlt="Moorish Xpress branded yellow 26 ft box truck at a warehouse"
+        imageAlt="MOORISH XPRESS LLC branded yellow 26 ft box truck at a warehouse"
         bright
         imagePosition="30% center"
         crumbs={[{ href: "/", label: "Home" }, { href: "/about", label: "About" }]}
@@ -45,12 +45,12 @@ export default function AboutPage() {
         <div className="container-x grid items-center gap-14 lg:grid-cols-2">
           <Reveal className="relative">
             <div className="absolute -left-4 -top-4 h-full w-full rounded-3xl bg-hazard opacity-20" />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
-              <Image src="/images/moorish-red-truck-highway.jpg" alt="Moorish Xpress 26 ft box truck on a long-distance freight run" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover object-[68%_center]" />
+            <div className="relative aspect-[5/4] overflow-hidden rounded-3xl">
+              <Image src="/images/moorish-red-truck-highway.jpg" alt="MOORISH XPRESS LLC 26 ft box truck on a long-distance freight run" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover object-[35%_center]" />
             </div>
             {/* Founder card with Jude's photo */}
             <div className="absolute -bottom-6 -right-2 flex items-center gap-4 rounded-2xl bg-red-gradient p-5 pr-7 text-white shadow-2xl shadow-red/30 sm:-right-6">
-              <Image src="/images/jude-hood.jpg" alt={`${site.owner}, founder of Moorish Xpress`} width={600} height={600} className="h-20 w-20 rounded-full object-cover ring-4 ring-white/90" />
+              <Image src="/images/jude-hood.jpg" alt={`${site.owner}, founder of MOORISH XPRESS LLC`} width={600} height={600} className="h-20 w-20 rounded-full object-cover ring-4 ring-white/90" />
               <div>
                 <p className="font-display text-sm uppercase tracking-widest text-white/85">Founder & owner</p>
                 <p className="mt-1 font-display text-3xl font-bold uppercase">{site.owner}</p>
@@ -90,12 +90,12 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="container-x">
           <Reveal>
-            <SectionHeading align="center" eyebrow="The difference" title={<>A carrier, <span className="text-red">not a middleman.</span></>} intro="When you book Moorish Xpress for freight, our truck hauls it. Here is what that means for you." />
+            <SectionHeading align="center" eyebrow="The difference" title={<>A carrier, <span className="text-red">not a middleman.</span></>} intro="When you book MOORISH XPRESS LLC for freight, our truck hauls it. Here is what that means for you." />
           </Reveal>
           <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-line">
             <div className="grid grid-cols-3 border-b border-line bg-fog font-display text-sm uppercase tracking-wider text-ink">
               <span className="p-4" />
-              <span className="bg-red-gradient p-4 text-center text-white">Moorish Xpress</span>
+              <span className="bg-red-gradient p-4 text-center text-white">MOORISH XPRESS LLC</span>
               <span className="p-4 text-center text-steel">Typical broker</span>
             </div>
             {[

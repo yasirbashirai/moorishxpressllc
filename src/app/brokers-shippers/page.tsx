@@ -13,7 +13,7 @@ import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Box Truck Freight Carrier for Brokers & Shippers | Atlanta GA",
   description:
-    "Freight broker partnerships and direct shipper transportation services. Moorish Xpress is a reliable 26 ft box truck carrier in Atlanta, GA for brokers, shippers, warehouses and 3PLs.",
+    "Freight broker partnerships and direct shipper transportation services. MOORISH XPRESS LLC is a reliable 26 ft box truck carrier in Atlanta, GA for brokers, shippers, warehouses and 3PLs.",
   alternates: { canonical: "/brokers-shippers" },
 };
 
@@ -42,10 +42,12 @@ export default function BrokersShippersPage() {
 
       <PageHero
         eyebrow="Brokers & shippers"
-        title={<>Your box truck carrier <span className="text-red">out of Atlanta.</span></>}
-        intro="Freight brokers, direct shippers, manufacturers, warehouses, distribution centers and logistics companies: when you need reliable 26 ft box truck transportation, we haul it with our own trucks."
+        title={<>Your Atlanta-Based <span className="text-red">Box Truck Carrier.</span></>}
+        intro="Freight brokers, direct shippers, manufacturers, warehouses, distribution centers and logistics companies count on us for reliable 26 ft box truck transportation. We haul with our own trucks."
         image="/images/moorish-red-truck-dock.jpg"
-        imageAlt="26 ft box truck hauling freight on an interstate highway"
+        imageAlt="MOORISH XPRESS LLC red box truck backed up to a warehouse loading dock"
+        bright
+        imagePosition="left center"
         crumbs={[{ href: "/", label: "Home" }, { href: "/brokers-shippers", label: "Brokers & Shippers" }]}
       >
         <Button href="#quote">Send Us a Load</Button>
@@ -76,7 +78,7 @@ export default function BrokersShippersPage() {
           <Reveal className="rounded-3xl bg-red-gradient p-9 text-white shadow-xl shadow-red/20 sm:p-12">
             <p className="eyebrow text-white/90">For freight brokers</p>
             <h2 className="mt-3 text-4xl font-bold uppercase leading-tight">A carrier you can put on the board.</h2>
-            <p className="mt-4 text-white/85">We are building long-term freight broker partnerships. Add Moorish Xpress to your carrier list and we will send our setup packet the same day.</p>
+            <p className="mt-4 text-white/85">We are building long-term freight broker partnerships. Add MOORISH XPRESS LLC to your carrier list and we will send our setup packet the same day.</p>
             <ul className="mt-6 space-y-3">
               {["26 ft box trucks, CDL and non-CDL", "Tuck-under liftgate and air-ride suspension on every truck", "24/7 dispatch for check calls", "Rate cons, BOLs and PODs handled fast"].map((p) => (
                 <li key={p} className="flex gap-3 text-white/90"><IconCheck className="mt-0.5 h-5 w-5 shrink-0 text-white" />{p}</li>
@@ -106,7 +108,7 @@ export default function BrokersShippersPage() {
       <section className="py-24">
         <div className="container-x grid items-center gap-14 lg:grid-cols-2">
           <Reveal className="relative aspect-[4/3] overflow-hidden rounded-3xl">
-            <Image src="/images/moorish-box-truck.jpg" alt="Moorish Xpress yellow 26 ft box truck with tuck-under liftgate at a warehouse" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover object-left" />
+            <Image src="/images/moorish-box-truck.jpg" alt="MOORISH XPRESS LLC yellow 26 ft box truck with tuck-under liftgate at a warehouse" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover object-left" />
           </Reveal>
           <Reveal delay={100}>
             <SectionHeading eyebrow="On every load" title={<>Strong relationships start <span className="text-red">with follow-through.</span></>} />

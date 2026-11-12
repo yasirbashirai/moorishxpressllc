@@ -40,7 +40,7 @@ const facts = [
   { Icon: IconLift, t: "Tuck-under liftgate", s: "On every truck" },
   { Icon: IconShield, t: "Air-ride suspension", s: "Gentle on freight" },
   { Icon: IconClock, t: "Open 24/7", s: "Dispatch never sleeps" },
-  { Icon: IconRoute, t: "4 regions", s: "From Atlanta, GA" },
+  { Icon: IconRoute, t: "Nationwide", s: "From Atlanta, GA" },
 ];
 
 const updates = [
@@ -78,12 +78,11 @@ export default function HomePage() {
         <div className="container-x flex flex-col items-center justify-center gap-5 py-6 text-center sm:flex-row sm:gap-10 sm:text-left">
           {hasBbb && (
             <div className="flex items-center gap-4">
-              <BbbBadge className="ring-1 ring-black/10" />
-              <span className="text-sm text-steel">See our Better Business Bureau profile</span>
+              <BbbBadge size="lg" />
             </div>
           )}
           <div className="flex items-center gap-4">
-            <span className="font-display text-sm font-semibold uppercase tracking-widest text-ink">Follow Moorish Xpress</span>
+            <span className="font-display text-sm font-semibold uppercase tracking-widest text-ink">Follow MOORISH XPRESS LLC</span>
             <SocialLinks tone="light" />
           </div>
         </div>
@@ -110,9 +109,7 @@ export default function HomePage() {
           </FadeIn>
           <FadeIn delay={0.15} className="relative">
             <div className="absolute -inset-8 -z-10 rounded-[2.5rem] bg-[radial-gradient(circle_at_30%_30%,rgba(215,20,26,0.18),transparent_60%)] blur-2xl" />
-            <div className="lg:rotate-[1.5deg] lg:transition lg:duration-500 lg:hover:rotate-0">
-              <TrackingCard />
-            </div>
+            <TrackingCard />
           </FadeIn>
         </div>
       </section>
@@ -134,8 +131,8 @@ export default function HomePage() {
           <FadeIn className="overflow-hidden rounded-[2rem] border border-black/5 bg-white shadow-[0_40px_100px_-40px_rgba(12,12,14,0.3)]">
             <div className="grid lg:grid-cols-[1.15fr_1fr]">
               <div className="relative min-h-[18rem] overflow-hidden bg-blush">
-                <Image src="/images/moorish-box-truck.jpg" alt="Moorish Xpress yellow 26 ft box truck with tuck-under liftgate at an Atlanta warehouse" fill sizes="(min-width:1024px) 55vw, 100vw" className="object-cover object-left" />
-                <div className="absolute inset-0 bg-gradient-to-t from-red-deep/70 via-transparent to-transparent" />
+                <Image src="/images/moorish-box-truck.jpg" alt="MOORISH XPRESS LLC yellow 26 ft box truck with tuck-under liftgate at an Atlanta warehouse" fill sizes="(min-width:1024px) 55vw, 100vw" className="object-cover object-left" />
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/45 to-transparent" />
                 <div className="absolute bottom-5 left-5 flex flex-wrap gap-2">
                   {["Our truck", "Atlanta, GA"].map((t) => (
                     <span key={t} className="rounded-full bg-white/85 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-ink backdrop-blur">{t}</span>
@@ -212,7 +209,7 @@ export default function HomePage() {
       {/* ============ COVERAGE ============ */}
       <section className="py-28">
         <div className="container-x">
-          <FadeIn><Head eyebrow="Coverage" title={<>Atlanta hub. <span className="text-red-gradient">Multi-state lanes.</span></>} intro="From Atlanta, GA to the Midwest, the Northeast and the Southern states. Tap a region to light up the lanes." /></FadeIn>
+          <FadeIn><Head eyebrow="Coverage" title={<>Atlanta hub. <span className="text-red-gradient">Nationwide lanes.</span></>} intro="From Atlanta, GA to the Midwest, the Northeast, the Southern states and the West Coast. Tap a region to light up the lanes." /></FadeIn>
           <FadeIn delay={0.1} className="mt-12 rounded-[2rem] border border-black/5 bg-white/60 p-4 shadow-[0_30px_80px_-40px_rgba(12,12,14,0.3)] backdrop-blur sm:p-6">
             <CoverageMap />
           </FadeIn>
@@ -251,7 +248,9 @@ export default function HomePage() {
           <FadeIn className="relative overflow-hidden rounded-[2rem] bg-red-gradient p-10 text-white shadow-[0_40px_100px_-30px_rgba(215,20,26,0.6)] sm:p-16">
             <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white/25 blur-3xl" />
             <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:44px_44px] [mask-image:linear-gradient(90deg,transparent,black)]" />
-            <Image src="/images/logo-sm.png" alt="" width={581} height={453} className="pointer-events-none absolute -bottom-10 right-6 hidden w-72 rotate-6 opacity-25 lg:block" />
+            <div className="absolute right-12 top-1/2 hidden -translate-y-1/2 rounded-2xl bg-white p-6 shadow-xl shadow-black/20 lg:block">
+              <Image src="/images/logo-sm.png" alt={`${site.name} logo`} width={581} height={453} className="h-auto w-64 xl:w-72" />
+            </div>
             <div className="relative max-w-2xl">
               <p className="font-display text-sm uppercase tracking-[0.3em] text-white/85">{site.tagline}</p>
               <h2 className="mt-4 font-display text-[clamp(2.4rem,5vw,4.5rem)] font-bold uppercase leading-[0.95]">Let&apos;s connect. Let&apos;s talk freight.</h2>
@@ -259,7 +258,7 @@ export default function HomePage() {
                 <a href="#quote" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-4 font-display font-semibold uppercase tracking-wider text-red shadow-lg shadow-black/15 transition hover:-translate-y-0.5">Get a Freight Quote →</a>
                 <a href="#signup" className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white px-7 py-4 font-display font-semibold uppercase tracking-wider text-white transition hover:bg-white/10 hover:-translate-y-0.5">Dispatch My Truck →</a>
               </div>
-              <a href={site.phoneHref} className="mt-6 inline-flex items-center gap-2 font-display text-2xl font-semibold"><IconPhone className="h-6 w-6" />{site.phone} · 24/7</a>
+              <a href={site.phoneHref} className="mt-6 inline-flex items-center gap-2 font-display text-2xl font-semibold"><IconPhone className="h-6 w-6" />{site.phone}</a>
             </div>
           </FadeIn>
         </div>

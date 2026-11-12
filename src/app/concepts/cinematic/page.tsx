@@ -58,7 +58,7 @@ export default function CinematicConcept() {
         <div className="container-x relative grid items-center gap-16 lg:grid-cols-2">
           <div className="relative mx-auto w-full max-w-md [perspective:1200px]">
             <div className="transition duration-700 [transform:rotateY(14deg)_rotateX(4deg)] hover:[transform:rotateY(0)_rotateX(0)]">
-              <Image src="/images/flyer-lets-talk-freight.jpg" alt="Moorish Xpress flyer: Let's connect, let's talk freight" width={1122} height={1402} className="rounded-2xl shadow-[0_40px_120px_-20px_rgba(0,0,0,0.9)]" />
+              <Image src="/images/flyer-lets-talk-freight.jpg" alt="MOORISH XPRESS LLC flyer: Let's connect, let's talk freight" width={1122} height={1402} className="rounded-2xl shadow-[0_40px_120px_-20px_rgba(0,0,0,0.9)]" />
             </div>
           </div>
           <div>

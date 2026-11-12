@@ -44,7 +44,7 @@ export default function FlyerCollage() {
           </motion.div>
           <motion.div style={{ rotate: r1, y: y1 }} className="absolute bottom-0 left-0 w-[70%] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.55)]">
             <div className="absolute -top-4 left-1/2 z-10 h-8 w-32 -translate-x-1/2 rotate-[-4deg] bg-white/70 backdrop-blur-sm" />
-            <Image src="/images/flyer-lets-talk-freight.jpg" alt="Moorish Xpress flyer: Let's connect. Let's talk freight. 26 ft box trucks, 33,000 lb GVWR" width={1122} height={1402} className="h-auto w-full border-[6px] border-white" />
+            <Image src="/images/flyer-lets-talk-freight.jpg" alt="MOORISH XPRESS LLC flyer: Let's connect. Let's talk freight. 26 ft box trucks, 33,000 lb GVWR" width={1122} height={1402} className="h-auto w-full border-[6px] border-white" />
           </motion.div>
           <div className={`absolute left-[52%] top-[44%] z-20 flex h-32 w-32 items-center justify-center rounded-full bg-red text-white shadow-2xl sm:h-40 sm:w-40`}>
             <svg viewBox="0 0 200 200" className={`absolute inset-0 h-full w-full ${s.spin}`} aria-hidden="true">

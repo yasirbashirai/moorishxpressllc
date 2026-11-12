@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import SmartLink from "./SmartLink";
 import { useState } from "react";
 import { regions, trucks } from "@/lib/site";
 import { IconArrow, IconCheck, IconHeadset, IconTruck } from "./icons";
@@ -56,12 +56,12 @@ export function AudienceSwitch() {
         <div>
           <h3 className="text-3xl font-bold uppercase leading-tight">{a.title}</h3>
           <p className="mt-4 leading-relaxed text-steel">{a.text}</p>
-          <Link
+          <SmartLink
             href={a.cta.href}
             className={`group mt-7 inline-flex items-center gap-2 rounded-md px-7 py-4 font-display font-semibold uppercase tracking-wider transition hover:-translate-y-0.5 ${a.variant === "red" ? "bg-red-gradient text-white shadow-lg shadow-red/30" : "bg-white text-red ring-2 ring-red shadow-lg shadow-red/15"}`}
           >
             {a.cta.label}<IconArrow className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </Link>
+          </SmartLink>
         </div>
         <ul className="space-y-3 self-center">
           {a.bullets.map((b) => (
@@ -93,7 +93,7 @@ export function TruckSpecs() {
       <div className="relative">
         <div className="absolute -inset-4 -z-10 rounded-3xl bg-white opacity-20 blur-2xl" />
         <div className="relative overflow-hidden rounded-2xl border border-white/10">
-          <Image src="/images/moorish-box-truck.jpg" alt="Moorish Xpress 26 ft box truck with tuck-under liftgate at a loading dock" width={1122} height={395} className="h-auto w-full" />
+          <Image src="/images/moorish-box-truck.jpg" alt="MOORISH XPRESS LLC 26 ft box truck with tuck-under liftgate at a loading dock" width={1122} height={395} className="h-auto w-full" />
           <div className="absolute left-4 top-4 rounded-md bg-white/90 px-3 py-1.5 font-display text-xs uppercase tracking-widest text-red backdrop-blur">Our truck · Atlanta, GA</div>
         </div>
         {/* GVWR gauge */}
@@ -141,15 +141,12 @@ export function TruckSpecs() {
 /* serve. Positions are a simple lon/lat projection, not a GIS map.    */
 /* ------------------------------------------------------------------ */
 
-const project = (lon: number, lat: number) => ({ x: (lon + 104) * 32, y: (46 - lat) * 40 });
+const project = (lon: number, lat: number) => ({ x: (lon + 126) * 20, y: (50 - lat) * 34 });
 const hub = project(-84.39, 33.75);
 const cities = [
   { name: "Charlotte", lon: -80.84, lat: 35.23, region: "Southeast" },
-  { name: "Columbia", lon: -81.03, lat: 34.0, region: "Southeast" },
   { name: "Nashville", lon: -86.78, lat: 36.16, region: "Southeast" },
   { name: "Jacksonville", lon: -81.66, lat: 30.33, region: "Southeast" },
-  { name: "Birmingham", lon: -86.8, lat: 33.52, region: "Southeast", end: true },
-  { name: "Memphis", lon: -90.05, lat: 35.15, region: "Southeast", end: true },
   { name: "Dallas", lon: -96.8, lat: 32.78, region: "South & Texas" },
   { name: "Houston", lon: -95.37, lat: 29.76, region: "South & Texas" },
   { name: "Oklahoma City", lon: -97.52, lat: 35.47, region: "South & Texas" },
@@ -157,13 +154,17 @@ const cities = [
   { name: "Richmond", lon: -77.44, lat: 37.54, region: "Mid-Atlantic & Northeast" },
   { name: "Philadelphia", lon: -75.17, lat: 39.95, region: "Mid-Atlantic & Northeast" },
   { name: "New York", lon: -74.0, lat: 40.71, region: "Mid-Atlantic & Northeast" },
-  { name: "Baltimore", lon: -76.61, lat: 39.29, region: "Mid-Atlantic & Northeast" },
   { name: "Chicago", lon: -87.63, lat: 41.88, region: "Midwest" },
-  { name: "Indianapolis", lon: -86.16, lat: 39.77, region: "Midwest" },
+  { name: "Indianapolis", lon: -86.16, lat: 39.77, region: "Midwest", end: true },
   { name: "Columbus", lon: -82.99, lat: 39.96, region: "Midwest" },
-  { name: "Louisville", lon: -85.76, lat: 38.25, region: "Midwest" },
   { name: "Detroit", lon: -83.05, lat: 42.33, region: "Midwest" },
-].map((c) => ({ ...c, ...project(c.lon, c.lat) }));
+  { name: "Los Angeles, CA", lon: -118.24, lat: 34.05, region: "West Coast & Southwest", below: true },
+  { name: "San Francisco, CA", lon: -122.42, lat: 37.77, region: "West Coast & Southwest", below: true },
+  { name: "Phoenix, AZ", lon: -112.07, lat: 33.45, region: "West Coast & Southwest" },
+  { name: "Albuquerque, NM", lon: -106.65, lat: 35.08, region: "West Coast & Southwest", below: true },
+  { name: "Portland, OR", lon: -122.68, lat: 45.52, region: "West Coast & Southwest", below: true },
+  { name: "Seattle, WA", lon: -122.33, lat: 47.61, region: "West Coast & Southwest", below: true },
+].map((c: { name: string; lon: number; lat: number; region: string; end?: boolean; below?: boolean }) => ({ ...c, ...project(c.lon, c.lat) }));
 
 export function CoverageMap() {
   const [region, setRegion] = useState<string>("All");
@@ -198,10 +199,10 @@ export function CoverageMap() {
       </div>
 
       <div className="relative overflow-hidden rounded-2xl border border-line bg-white bg-dots lg:col-span-3">
-        <svg viewBox="150 100 1000 620" className="h-full w-full" role="img" aria-label="Lanes from Atlanta to the Southeast, South, Midwest and Northeast">
+        <svg viewBox="20 40 1125 680" className="h-full w-full" role="img" aria-label="Nationwide lanes from Atlanta to the Southeast, South, Midwest, Northeast and West Coast">
           {cities.map((c) => {
             const mx = (hub.x + c.x) / 2;
-            const my = (hub.y + c.y) / 2 - 60;
+            const my = (hub.y + c.y) / 2 - Math.max(40, Math.abs(hub.x - c.x) * 0.22);
             return (
               <path
                 key={`l-${c.name}`}
@@ -217,17 +218,17 @@ export function CoverageMap() {
           })}
           {cities.map((c) => (
             <g key={c.name} style={{ opacity: on(c.region) ? 1 : 0.3, transition: "opacity .4s" }}>
-              <circle cx={c.x} cy={c.y} r={7} fill="#d7141a" />
-              <circle cx={c.x} cy={c.y} r={3} fill="#ffffff" />
-              <text x={c.end ? c.x - 12 : c.x + 12} y={c.y + 5} textAnchor={c.end ? "end" : "start"} fontSize="20" fontWeight="600" fill="#2a2c33" fontFamily="Inter, sans-serif">{c.name}</text>
+              <circle cx={c.x} cy={c.y} r={6} fill="#d7141a" />
+              <circle cx={c.x} cy={c.y} r={2.5} fill="#ffffff" />
+              <text x={c.below ? c.x - 8 : c.end ? c.x - 12 : c.x + 12} y={c.below ? c.y + 26 : c.y + 6} textAnchor={c.end ? "end" : "start"} fontSize="19" fontWeight="600" fill="#2a2c33" fontFamily="Inter, sans-serif">{c.name}</text>
             </g>
           ))}
           {/* Atlanta hub */}
           <circle cx={hub.x} cy={hub.y} r={30} fill="#d7141a" opacity="0.15">
             <animate attributeName="r" values="18;42;18" dur="2.4s" repeatCount="indefinite" />
           </circle>
-          <circle cx={hub.x} cy={hub.y} r={13} fill="#d7141a" stroke="#fff" strokeWidth="4" />
-          <text x={hub.x - 22} y={hub.y + 44} fontSize="24" fontWeight="700" fill="#0c0c0e" fontFamily="Oswald, sans-serif">ATLANTA HQ</text>
+          <circle cx={hub.x} cy={hub.y} r={11} fill="#d7141a" stroke="#fff" strokeWidth="4" />
+          <text x={hub.x - 40} y={hub.y + 40} fontSize="20" fontWeight="700" fill="#0c0c0e" fontFamily="Oswald, sans-serif">ATLANTA HQ</text>
         </svg>
       </div>
     </div>
@@ -235,13 +236,16 @@ export function CoverageMap() {
 }
 
 /** Endless keyword ticker. Doubles the list so the loop is seamless. */
-export function Marquee({ items }: { items: string[] }) {
+export function Marquee({ items, size = "md", className = "py-4" }: { items: string[]; size?: "md" | "xl"; className?: string }) {
+  const text = size === "xl" ? "gap-10 px-10 text-[clamp(3rem,9vw,8.5rem)] font-bold leading-none tracking-tight" : "gap-6 px-6 text-xl font-semibold tracking-wider";
+  const dot = size === "xl" ? "h-5 w-5" : "h-2 w-2";
+  // The list is rendered twice and slides by exactly half its width, so the loop never jumps.
   return (
-    <div className="overflow-hidden bg-red-gradient py-4" aria-hidden="true">
+    <div className={`overflow-hidden bg-red-gradient ${className}`}>
       <div className="flex w-max animate-marquee">
         {[...items, ...items].map((t, i) => (
-          <span key={i} className="flex items-center gap-6 px-6 font-display text-xl font-semibold uppercase tracking-wider text-white">
-            {t}<span className="h-2 w-2 rotate-45 bg-white" />
+          <span key={i} aria-hidden={i >= items.length} className={`flex shrink-0 items-center whitespace-nowrap font-display uppercase text-white ${text}`}>
+            {t}<span className={`${dot} rotate-45 bg-white`} />
           </span>
         ))}
       </div>

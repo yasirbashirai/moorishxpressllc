@@ -44,7 +44,7 @@ export const posts: Post[] = [
       {
         heading: "What a 33,000 lb GVWR box truck means for your freight",
         paragraphs: [
-          "Moorish Xpress runs a 26 ft box truck rated at 33,000 lb GVWR, operated by a Class B CDL holder, alongside our 26 ft non-CDL box trucks rated at 26,000 lb GVWR. The CDL truck gives shippers and brokers an option for dense, heavy freight that would overload a standard box truck.",
+          "MOORISH XPRESS LLC runs a 26 ft box truck rated at 33,000 lb GVWR, operated by a Class B CDL holder, alongside our 26 ft non-CDL box trucks rated at 26,000 lb GVWR. The CDL truck gives shippers and brokers an option for dense, heavy freight that would overload a standard box truck.",
         ],
         list: [
           "Heavy palletized product like beverages, paper, tile or hardware",
@@ -93,7 +93,7 @@ export const posts: Post[] = [
       {
         heading: "Why a carrier-run dispatch service is different",
         paragraphs: [
-          "Moorish Xpress runs its own box trucks out of Atlanta. That means we see the same rates, the same brokers and the same problems you do. When we dispatch your truck, we think like an owner-operator because we are one.",
+          "MOORISH XPRESS LLC runs its own box trucks out of Atlanta. That means we see the same rates, the same brokers and the same problems you do. When we dispatch your truck, we think like an owner-operator because we are one.",
         ],
       },
       {
@@ -134,7 +134,7 @@ export const posts: Post[] = [
         ],
       },
       {
-        heading: "Working with Moorish Xpress",
+        heading: "Working with MOORISH XPRESS LLC",
         paragraphs: [
           "We dispatch hotshots and box trucks from Atlanta, with you approving every load. Fill in the dispatch sign-up form and we will set up a quick call to learn about your setup and lanes.",
         ],
@@ -171,9 +171,9 @@ export const posts: Post[] = [
         list: ["Delivery address and receiving hours", "Contact name and phone on site", "Any access limits like low clearance or gated entry", "Whether you want a call-ahead"],
       },
       {
-        heading: "Last-mile delivery with Moorish Xpress",
+        heading: "Last-mile delivery with MOORISH XPRESS LLC",
         paragraphs: [
-          "Every Moorish Xpress truck has a tuck-under liftgate and air-ride suspension. Last-mile drops are handled as part of the run, across metro Atlanta and as the final leg of our longer runs.",
+          "Every MOORISH XPRESS LLC truck has a tuck-under liftgate and air-ride suspension. Last-mile drops are handled as part of the run, across metro Atlanta and as the final leg of our longer runs.",
         ],
       },
     ],
@@ -194,7 +194,7 @@ export const posts: Post[] = [
       {
         heading: "What an asset-based carrier is",
         paragraphs: [
-          "An asset-based carrier owns or operates the trucks. When you book one, their truck and their driver haul your freight. Moorish Xpress is an asset-based box truck carrier based in Atlanta.",
+          "An asset-based carrier owns or operates the trucks. When you book one, their truck and their driver haul your freight. MOORISH XPRESS LLC is an asset-based box truck carrier based in Atlanta.",
         ],
       },
       {

@@ -1,7 +1,7 @@
 # Moorish Xpress, LLC: Website
 
 Conversion-focused website for **Moorish Xpress, LLC** (owner Jude Hood), an asset-based box truck carrier
-and box truck / hotshot dispatch service at 2920 Campbellton Rd SW, Atlanta, GA 30311.
+and box truck / hotshot dispatch service in Atlanta, GA 30311 (city-level location only, no street address on the site).
 Phone (678) 968-7511 · loads@moorishxpress.com · open 24/7 · tagline "When you need it there now".
 
 ## Stack

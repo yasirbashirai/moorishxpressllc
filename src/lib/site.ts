@@ -1,10 +1,10 @@
-// Single source of truth for Moorish Xpress business details and service content.
+// Single source of truth for MOORISH XPRESS LLC business details and service content.
 // Edit here and every page, the footer, schema and sitemap update together.
 // Content follows the client's "Website Development Requirements" brief (Nov 2026).
 
 export const site = {
-  name: "Moorish Xpress, LLC",
-  shortName: "Moorish Xpress",
+  name: "MOORISH XPRESS LLC",
+  shortName: "MOORISH XPRESS LLC",
   tagline: "When you need it there now",
   url: "https://moorishxpressllc.com",
   phone: "(678) 968-7511",
@@ -13,13 +13,12 @@ export const site = {
   owner: "Jude Hood",
   hours: "Open 24/7",
   address: {
-    street: "2920 Campbellton Rd SW",
     city: "Atlanta",
     region: "GA",
     zip: "30311",
     country: "US",
   },
-  mapsUrl: "https://maps.google.com/?q=2920+Campbellton+Rd+SW+Atlanta+GA+30311",
+  mapsUrl: "https://maps.google.com/?q=Atlanta,+GA+30311",
   // Official pages supplied by the client. Every icon opens in a new tab. (No Twitter/X.)
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61595701983981",
@@ -32,7 +31,7 @@ export const site = {
   bbb: {
     profileUrl: "https://www.bbb.org/us/ga/atlanta/profile/real-estate-investing/els-beys-investments-llc-0443-28164016/#sealclick",
     badgeSrc: "https://seal-atlanta.bbb.org/seals/black-seal-187-130-bbb-28164016.png",
-    badgeAlt: "Els & Beys Investments, LLC BBB Business Review",
+    badgeAlt: "BBB Accredited Business, BBB Rating A+",
     badgeWidth: 187,
     badgeHeight: 130,
   },
@@ -43,11 +42,12 @@ export const site = {
   googleReviewUrl: "",
 };
 
-export const fullAddress = `${site.address.street}, ${site.address.city}, ${site.address.region} ${site.address.zip}`;
+// Client asked for city-level location only (no street address anywhere on the site).
+export const fullAddress = `${site.address.city}, ${site.address.region} ${site.address.zip}`;
 
 /** Company description supplied by the client (used on About + footer). */
 export const companyDescription = [
-  "Moorish Xpress LLC is an Atlanta, Georgia–based freight transportation and truck dispatch company. We provide freight hauling services with our 26 ft box trucks and professional dispatch services for owner-operators and small trucking companies.",
+  "MOORISH XPRESS LLC is an Atlanta, Georgia–based freight transportation and truck dispatch company. We provide freight hauling services with our 26 ft box trucks and professional dispatch services for owner-operators and small trucking companies.",
   "We work with both freight brokers and shippers to meet their freight transportation needs while helping carriers find loads, coordinate trips and manage communication and paperwork. Our dispatch approach focuses on securing competitive rates, reducing empty miles and keeping trucks moving efficiently.",
   "We believe strong business relationships start with clear communication, attention to detail and consistent follow-through. Whether you have freight to move or need dispatch support, let's talk about your next load.",
 ];
@@ -100,6 +100,8 @@ export type Service = {
   metaDescription: string;
   image: string;
   imageAlt: string;
+  /** CSS object-position for cropped placements, so the truck cab is never cut off. */
+  imagePosition?: string;
   intro: string;
   points: string[];
   idealFor: string[];
@@ -116,11 +118,12 @@ export const services: Service[] = [
     keyword: "OTR box truck freight transportation",
     metaTitle: "OTR Box Truck Freight Transportation | Interstate Freight Carrier Atlanta GA",
     metaDescription:
-      "Over-the-road box truck freight from Atlanta, GA. Moorish Xpress hauls long-distance, interstate freight in 26 ft box trucks to the Midwest, the Northeast and the Southern states. Open 24/7.",
+      "Over-the-road box truck freight from Atlanta, GA. MOORISH XPRESS LLC hauls long-distance, interstate freight in 26 ft box trucks to the Midwest, the Northeast, the Southern states and the West Coast. Open 24/7.",
     image: "/images/moorish-red-truck-highway.jpg",
-    imageAlt: "Moorish Xpress 26 ft box truck with tuck-under liftgate hauling over-the-road freight on an interstate highway",
+    imagePosition: "left center",
+    imageAlt: "MOORISH XPRESS LLC 26 ft box truck with tuck-under liftgate hauling over-the-road freight on an interstate highway",
     intro:
-      "Our primary focus is over-the-road freight in 26 ft box trucks. When your freight needs to leave Georgia and arrive on time, we run long-distance, interstate lanes out of Atlanta into the Midwest, the Northeast and the Southern states, including Texas, Tennessee, the Carolinas, Oklahoma and Virginia.",
+      "Our primary focus is over-the-road freight in 26 ft box trucks. When your freight needs to leave Georgia and arrive on time, we run long-distance, interstate lanes out of Atlanta into the Midwest, the Northeast, the Southern states and the West Coast, including Texas, Tennessee, the Carolinas, Oklahoma, Virginia, California, Arizona, New Mexico, Oregon and Washington.",
     points: [
       "Dedicated 26 ft box truck: your freight is not waiting in a terminal for consolidation",
       "33,000 lb GVWR Class B CDL box truck for heavier loads, plus 26,000 lb GVWR non-CDL box trucks",
@@ -132,7 +135,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Which states do you run OTR?",
-        a: "We are based in Atlanta, Georgia and run lanes across the Midwest, the Northeast and the Southern states, including Texas, Tennessee, North Carolina, South Carolina, Oklahoma and Virginia. Send us your lane and we will confirm availability.",
+        a: "We are based in Atlanta, Georgia and run lanes nationwide: the Midwest, the Northeast, the Southern states and the West Coast, including Texas, Tennessee, North Carolina, South Carolina, Oklahoma, Virginia, California, Arizona, New Mexico, Oregon and Washington. Send us your lane and we will confirm availability.",
       },
       {
         q: "How much can your box trucks carry?",
@@ -149,8 +152,8 @@ export const services: Service[] = [
     metaTitle: "Palletized Freight Transportation Atlanta GA | Long Distance Pallet Shipping",
     metaDescription:
       "Palletized freight transportation from Atlanta, GA. 26 ft box trucks with a tuck-under liftgate and air-ride suspension move pallets for brokers, shippers, warehouses and distribution centers.",
-    image: "/images/moorish-red-truck-dock.jpg",
-    imageAlt: "Moorish Xpress 26 ft box truck backed into a warehouse loading dock for palletized freight",
+    image: "/images/palletized-pallet-jack-liftgate.jpg",
+    imageAlt: "Driver moving a shrink-wrapped pallet with a pallet jack to the liftgate of a MOORISH XPRESS LLC box truck",
     intro:
       "We move palletized commercial goods between factories, warehouses and distribution centers, short haul or long distance. From first-mile pickups at the supplier to last-mile delivery at the receiver, our 26 ft box trucks with tuck-under liftgates handle docks and ground-level locations alike.",
     points: [
@@ -212,7 +215,8 @@ export const services: Service[] = [
     metaDescription:
       "Long-distance transportation of U-Haul U-Box containers by 26 ft box truck from Atlanta, GA, subject to equipment suitability and load requirements.",
     image: "/images/moorish-box-truck.jpg",
-    imageAlt: "Moorish Xpress yellow 26 ft box truck at a warehouse, ready for long-distance U-Box transport",
+    imagePosition: "left center",
+    imageAlt: "MOORISH XPRESS LLC yellow 26 ft box truck at a warehouse, ready for long-distance U-Box transport",
     intro:
       "We transport U-Haul U-Box containers long distance in our 26 ft box trucks. Every move is subject to equipment suitability and load requirements, so we confirm the details with you before we book.",
     points: [
@@ -225,7 +229,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Are you part of U-Haul?",
-        a: "No. Moorish Xpress, LLC is an independent carrier and is not affiliated with U-Haul. We transport U-Box containers as a hauling service.",
+        a: "No. MOORISH XPRESS LLC is an independent carrier and is not affiliated with U-Haul. We transport U-Box containers as a hauling service.",
       },
       {
         q: "What do you need to quote a U-Box move?",
@@ -243,9 +247,9 @@ export const services: Service[] = [
     keyword: "professional freight dispatch services",
     metaTitle: "Professional Freight Dispatch Services | Box Truck & Hotshot Dispatch Atlanta GA",
     metaDescription:
-      "Professional freight dispatching for box trucks and hotshots. Moorish Xpress helps owner-operators and small trucking companies with load searching, broker communication, rate negotiation, scheduling and shipment coordination.",
+      "Professional freight dispatching for box trucks and hotshots. MOORISH XPRESS LLC helps owner-operators and small trucking companies with load searching, broker communication, rate negotiation, scheduling and shipment coordination.",
     image: "/images/jude-dispatch-desk.jpg",
-    imageAlt: "Jude Hood at the Moorish Xpress dispatch desk, reviewing loads and routes on three monitors",
+    imageAlt: "Jude Hood at the MOORISH XPRESS LLC dispatch desk, reviewing loads and routes on three monitors",
     intro:
       "We dispatch box trucks and hotshots. We are a box truck carrier ourselves, so we dispatch the way we would want to be dispatched. For independent owner-operators, small trucking companies and new and growing carriers, we find loads that fit your truck, your lanes and your schedule, and we handle the back-and-forth with brokers.",
     points: [
@@ -280,9 +284,9 @@ export const services: Service[] = [
     keyword: "truck dispatching and load coordination",
     metaTitle: "Freight Documentation and Load Coordination | Rate Cons, BOLs, PODs",
     metaDescription:
-      "Moorish Xpress manages rate confirmations, Bills of Lading, Proofs of Delivery and shipment updates as part of our transportation and dispatching services.",
+      "MOORISH XPRESS LLC manages rate confirmations, Bills of Lading, Proofs of Delivery and shipment updates as part of our transportation and dispatching services.",
     image: "/images/moorish-dispatch-office.jpg",
-    imageAlt: "Moorish Xpress dispatch office with load boards, route maps and schedules",
+    imageAlt: "MOORISH XPRESS LLC dispatch office with load boards, route maps and schedules",
     intro:
       "Paperwork is where loads get delayed and payments get stuck. As part of our transportation and dispatching services, we manage rate confirmations, Bills of Lading (BOLs), Proofs of Delivery (PODs) and shipment updates, so every load is documented from booking to payment.",
     points: [
@@ -315,13 +319,14 @@ export const regions = [
   { name: "South & Texas", states: ["TX", "OK", "LA", "AR"] },
   { name: "Mid-Atlantic & Northeast", states: ["VA", "MD", "PA", "NJ", "NY"] },
   { name: "Midwest", states: ["OH", "IN", "IL", "KY", "MI"] },
+  { name: "West Coast & Southwest", states: ["CA", "AZ", "NM", "OR", "WA"] },
 ];
 
 /** Home-page FAQs (also emitted as FAQPage schema). */
 export const homeFaqs = [
   {
     q: "Are you a carrier or a broker?",
-    a: "We are an asset-based carrier. Moorish Xpress operates its own 26 ft box trucks out of Atlanta, and we also offer dispatch services for other box truck and hotshot owner-operators.",
+    a: "We are an asset-based carrier. MOORISH XPRESS LLC operates its own 26 ft box trucks out of Atlanta, and we also offer dispatch services for other box truck and hotshot owner-operators.",
   },
   {
     q: "What is the difference between your CDL and non-CDL box trucks?",
@@ -345,12 +350,12 @@ export const homeFaqs = [
 export const faqGroups = [
   {
     id: "general",
-    title: "About Moorish Xpress",
+    title: "About MOORISH XPRESS LLC",
     items: [
       homeFaqs[0],
       {
         q: "Where are you located?",
-        a: "Our office is at 2920 Campbellton Rd SW, Atlanta, GA 30311. We haul freight from Atlanta, GA to the Midwest, the Northeast and the Southern states.",
+        a: "We are based in Atlanta, GA 30311. We haul freight nationwide from Atlanta, GA: the Midwest, the Northeast, the Southern states and the West Coast.",
       },
       homeFaqs[3],
     ],
@@ -366,7 +371,7 @@ export const faqGroups = [
       },
       {
         q: "Which areas do you cover?",
-        a: "We run long-distance, interstate lanes from Atlanta into the Midwest, the Northeast and the Southern states, including Texas, Tennessee, North Carolina, South Carolina, Oklahoma and Virginia.",
+        a: "We run long-distance, interstate lanes from Atlanta nationwide: the Midwest, the Northeast, the Southern states and the West Coast, including Los Angeles and San Francisco, CA, Phoenix, AZ, Portland, OR, and destinations in Washington and New Mexico.",
       },
       {
         q: "Do your trucks have liftgates?",

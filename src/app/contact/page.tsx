@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import SmartLink from "@/components/SmartLink";
 import JsonLd from "@/components/JsonLd";
 import { QuoteForm } from "@/components/forms";
 import { IconArrow, IconClock, IconHeadset, IconMail, IconMap, IconPhone } from "@/components/icons";
@@ -9,9 +9,9 @@ import { fullAddress, site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Contact Moorish Xpress | Box Truck Freight Quote Atlanta GA",
+  title: "Contact MOORISH XPRESS LLC | Box Truck Freight Quote Atlanta GA",
   description:
-    "Contact Moorish Xpress, LLC at 2920 Campbellton Rd SW, Atlanta, GA 30311. Call (678) 968-7511 or email loads@moorishxpress.com. Dispatch open 24/7.",
+    "Contact MOORISH XPRESS LLC in Atlanta, GA 30311. Call (678) 968-7511 or email loads@moorishxpress.com. Dispatch open 24/7.",
   alternates: { canonical: "/contact" },
 };
 
@@ -19,7 +19,7 @@ export default function ContactPage() {
   const cards = [
     { Icon: IconPhone, k: "Call dispatch 24/7", v: site.phone, href: site.phoneHref },
     { Icon: IconMail, k: "Email loads", v: site.email, href: `mailto:${site.email}` },
-    { Icon: IconMap, k: "Office", v: fullAddress, href: site.mapsUrl },
+    { Icon: IconMap, k: "Location", v: fullAddress, href: site.mapsUrl },
     { Icon: IconClock, k: "Hours", v: "Open 24 hours, 7 days a week" },
   ];
 
@@ -53,28 +53,26 @@ export default function ContactPage() {
               );
             })}
 
-            <Link href="/dispatch#signup" className="group flex items-center justify-between gap-4 rounded-xl bg-red-gradient p-6 text-white shadow-lg shadow-red/20 transition hover:shadow-red/40">
+            <SmartLink href="/dispatch#signup" className="group flex items-center justify-between gap-4 rounded-xl bg-red-gradient p-6 text-white shadow-lg shadow-red/20 transition hover:shadow-red/40">
               <span className="flex items-center gap-4">
                 <IconHeadset className="h-9 w-9" />
                 <span><span className="block font-display text-xl font-bold uppercase">Owner-operator?</span><span className="text-sm">Sign up for box truck or hotshot dispatch</span></span>
               </span>
               <IconArrow className="h-6 w-6 transition-transform group-hover:translate-x-1" />
-            </Link>
+            </SmartLink>
 
             <div className="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-line bg-white p-5">
               <span>
-                <span className="block text-xs uppercase tracking-widest text-steel">Follow Moorish Xpress</span>
+                <span className="block text-xs uppercase tracking-widest text-steel">Follow MOORISH XPRESS LLC</span>
                 <span className="font-semibold text-ink">Instagram · Facebook · LinkedIn</span>
               </span>
               <SocialLinks tone="light" size="lg" />
             </div>
 
-            <BbbBadge className="border border-line" />
-
             <div className="overflow-hidden rounded-xl border border-line">
               <iframe
-                title="Moorish Xpress location map"
-                src="https://www.google.com/maps?q=2920+Campbellton+Rd+SW,+Atlanta,+GA+30311&output=embed"
+                title="MOORISH XPRESS LLC location map"
+                src="https://www.google.com/maps?q=Atlanta,+GA+30311&z=11&output=embed"
                 className="h-64 w-full"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -84,6 +82,8 @@ export default function ContactPage() {
 
           <div id="quote" className="lg:col-span-3">
             <QuoteForm title="Request a freight quote" />
+            {/* Larger BBB badge directly below the quote form */}
+            <div className="mt-8 flex justify-center"><BbbBadge size="xl" /></div>
           </div>
         </div>
       </section>

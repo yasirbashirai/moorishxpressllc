@@ -55,7 +55,7 @@ export async function POST(req: Request) {
       auth: { user: SMTP_USER, pass: SMTP_PASS },
     });
     await transporter.sendMail({
-      from: `"Moorish Xpress Website" <${SMTP_USER}>`,
+      from: `"MOORISH XPRESS LLC Website" <${SMTP_USER}>`,
       to: LEADS_TO || "loads@moorishxpress.com",
       replyTo: lead.email,
       subject,

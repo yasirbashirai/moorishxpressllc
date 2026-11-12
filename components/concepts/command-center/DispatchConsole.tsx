@@ -24,10 +24,16 @@ export const cities = [
   { name: "Columbus, OH", lat: 39.96, lon: -82.99 },
   { name: "Indianapolis, IN", lat: 39.77, lon: -86.16 },
   { name: "Chicago, IL", lat: 41.88, lon: -87.63 },
+  { name: "Los Angeles, CA", lat: 34.05, lon: -118.24 },
+  { name: "San Francisco, CA", lat: 37.77, lon: -122.42 },
+  { name: "Phoenix, AZ", lat: 33.45, lon: -112.07 },
+  { name: "Albuquerque, NM", lat: 35.08, lon: -106.65 },
+  { name: "Portland, OR", lat: 45.52, lon: -122.68 },
+  { name: "Seattle, WA", lat: 47.61, lon: -122.33 },
 ];
 
 // Simple equirectangular projection into the 400 x 260 mini-map
-const proj = (lon: number, lat: number) => ({ x: ((lon + 99) / 27) * 380 + 10, y: ((43 - lat) / 16) * 240 + 10 });
+const proj = (lon: number, lat: number) => ({ x: ((lon + 125) / 53) * 380 + 10, y: ((50 - lat) / 24) * 240 + 10 });
 
 /** Great-circle miles x 1.2 road factor: a rough planning estimate, not a routed distance. */
 function roadMiles(a: { lat: number; lon: number }, b: { lat: number; lon: number }) {
@@ -75,7 +81,7 @@ export default function DispatchConsole() {
           <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
           <span className="h-3 w-3 rounded-full bg-[#28c840]" />
         </div>
-        <p className="font-display text-[0.72rem] font-medium uppercase tracking-[0.25em] text-steel">Moorish Xpress · Dispatch Console</p>
+        <p className="font-display text-[0.72rem] font-medium uppercase tracking-[0.25em] text-steel">MOORISH XPRESS LLC · Dispatch Console</p>
         <span className="flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-emerald-700">
           <span className="relative flex h-1.5 w-1.5"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" /><span className="relative h-1.5 w-1.5 rounded-full bg-emerald-500" /></span>
           24/7
@@ -147,10 +153,11 @@ export default function DispatchConsole() {
               />
               {/* Faint region labels for orientation */}
               {[
-                { t: "MIDWEST", x: 200, y: 40 },
-                { t: "NORTHEAST", x: 330, y: 22 },
-                { t: "SOUTHEAST", x: 290, y: 205 },
-                { t: "TEXAS & SOUTH", x: 40, y: 215 },
+                { t: "WEST COAST", x: 22, y: 150 },
+                { t: "MIDWEST", x: 235, y: 62 },
+                { t: "NORTHEAST", x: 325, y: 50 },
+                { t: "SOUTHEAST", x: 300, y: 235 },
+                { t: "TEXAS & SOUTH", x: 140, y: 245 },
               ].map((r) => (
                 <text key={r.t} x={r.x} y={r.y} fontSize="9" fontWeight="700" letterSpacing="2" fill="rgba(12,12,14,0.18)" fontFamily="Oswald, sans-serif">{r.t}</text>
               ))}

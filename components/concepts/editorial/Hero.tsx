@@ -86,7 +86,7 @@ export default function Hero() {
               animate={{ clipPath: "inset(0 0% 0 0)" }}
               transition={{ duration: 1.2, delay: 0.5, ease }}
             >
-              <Image src="/images/moorish-box-truck.jpg" alt="Moorish Xpress yellow 26 ft box truck with liftgate at an Atlanta warehouse" fill priority sizes="(min-width:1024px) 40vw, 100vw" className="scale-110 object-cover object-[30%_60%]" />
+              <Image src="/images/moorish-box-truck.jpg" alt="MOORISH XPRESS LLC yellow 26 ft box truck with liftgate at an Atlanta warehouse" fill priority sizes="(min-width:1024px) 40vw, 100vw" className="scale-110 object-cover object-[30%_60%]" />
             </motion.div>
             <motion.p style={{ x: tx }} className="absolute bottom-0 right-[10%] translate-y-1/2 bg-ink px-3 py-1.5 font-display text-[0.7rem] uppercase tracking-[0.3em] text-white sm:text-xs">
               Fig. 01 · Our truck · ATL
@@ -106,7 +106,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8, ease }}
           >
-            <strong className="font-semibold text-ink">Moorish Xpress, LLC</strong> is an asset-based box truck carrier in Atlanta. We haul OTR, palletized and partial truckload freight, and we dispatch box trucks and hotshots for owner-operators.
+            <strong className="font-semibold text-ink">MOORISH XPRESS LLC</strong> is an asset-based box truck carrier in Atlanta. We haul OTR, palletized and partial truckload freight, and we dispatch box trucks and hotshots for owner-operators.
           </motion.p>
           <motion.div
             className="flex flex-wrap items-center gap-3 lg:col-span-7 lg:justify-end"

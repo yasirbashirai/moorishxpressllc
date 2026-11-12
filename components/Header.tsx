@@ -5,13 +5,25 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { dispatchServices, nav, site } from "@/lib/site";
-import { IconClock, IconMail, IconMap, IconPhone } from "./icons";
-import { socials } from "./Social";
+import { IconPhone } from "./icons";
+import { Marquee } from "./interactive";
+import SmartLink from "./SmartLink";
+import { BbbBadge } from "./Social";
 
 /**
  * Sticky header: slim operations bar on top, main nav below.
  * Shrinks and gains a shadow on scroll; collapses into a drawer on mobile.
  */
+const topBar = [
+  "Dispatch open 24/7",
+  "Atlanta, GA",
+  "Nationwide coverage",
+  "Southeast · Midwest · Northeast · Texas & the South · West Coast",
+  site.tagline,
+  site.phone,
+  site.email,
+];
+
 export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -39,45 +51,26 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50">
       {/* Operations bar */}
-      <div className="hidden bg-red-gradient text-white md:block">
-        <div className="container-x flex h-9 items-center justify-between text-xs font-medium">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-80" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
-              </span>
-              Dispatch open 24/7
-            </span>
-            <span className="flex items-center gap-1.5"><IconMap className="h-3.5 w-3.5" />Atlanta, GA · Midwest, Northeast & Southern states</span>
-          </div>
-          <div className="flex items-center gap-6">
-            <span className="hidden items-center gap-1.5 lg:flex"><IconClock className="h-3.5 w-3.5" />{site.tagline}</span>
-            <a href={`mailto:${site.email}`} className="flex items-center gap-1.5 hover:text-white/75"><IconMail className="h-3.5 w-3.5" />{site.email}</a>
-            <span className="flex items-center gap-2.5 border-l border-white/25 pl-5">
-              {socials.map(({ href, label, Icon }) => (
-                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={`${site.shortName} on ${label} (opens in a new tab)`} className="hover:text-white/75">
-                  <Icon className="h-3.5 w-3.5" />
-                </a>
-              ))}
-            </span>
-          </div>
-        </div>
-      </div>
+      {/* Operations bar: loops like the homepage marquee, same text size */}
+      <Marquee items={topBar} className="py-2" />
 
       {/* Main navigation */}
       <div className={`border-b border-black/5 transition-all duration-300 ${scrolled ? "bg-white/95 shadow-xl shadow-black/10 backdrop-blur-xl" : "bg-white"}`}>
         <div className={`container-x flex items-center justify-between gap-4 transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
-          <Link href="/" aria-label={`${site.name} home`} className="shrink-0">
-            <Image
-              src="/images/logo-sm.png"
-              alt={`${site.name} logo`}
-              width={581}
-              height={453}
-              priority
-              className={`w-auto transition-all duration-300 ${scrolled ? "h-[3.25rem]" : "h-[4.25rem]"}`}
-            />
-          </Link>
+          <div className="flex shrink-0 items-center gap-3">
+            <Link href="/" aria-label={`${site.name} home`} className="shrink-0">
+              <Image
+                src="/images/logo-sm.png"
+                alt={`${site.name} logo`}
+                width={581}
+                height={453}
+                priority
+                className={`w-auto transition-all duration-300 ${scrolled ? "h-[3.25rem]" : "h-[4.25rem]"}`}
+              />
+            </Link>
+            {/* BBB badge next to the logo */}
+            <BbbBadge size="sm" />
+          </div>
 
           <nav className="hidden items-center gap-0 xl:flex" aria-label="Main">
             {nav.map((item) => (
@@ -97,9 +90,11 @@ export default function Header() {
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-blush"><IconPhone className="h-4 w-4 text-red" /></span>
               {site.phone}
             </a>
-            <Link href="/contact#quote" className="hidden rounded-md bg-red-gradient px-5 py-2.5 font-display text-sm font-semibold uppercase tracking-wider text-white shadow-lg shadow-red/30 transition hover:-translate-y-0.5 hover:shadow-red/50 sm:inline-flex">
+            {/* BBB badge immediately before the Get a Quote button */}
+            <span className="hidden sm:block"><BbbBadge size="sm" /></span>
+            <SmartLink href="/contact#quote" className="hidden rounded-md bg-red-gradient px-5 py-2.5 font-display text-sm font-semibold uppercase tracking-wider text-white shadow-lg shadow-red/30 transition hover:-translate-y-0.5 hover:shadow-red/50 sm:inline-flex">
               Get a Quote
-            </Link>
+            </SmartLink>
             <button
               type="button"
               onClick={() => setOpen((o) => !o)}
@@ -126,8 +121,8 @@ export default function Header() {
                 </Link>
               ))}
               <div className="mt-3 grid grid-cols-2 gap-3">
-                <Link href="/contact#quote" className="rounded-md bg-red-gradient px-4 py-3 text-center font-display font-semibold uppercase text-white">Get a Quote</Link>
-                <Link href="/dispatch#signup" className="rounded-md bg-white px-4 py-3 text-center font-display font-semibold uppercase text-red ring-2 ring-inset ring-red">Dispatch My Truck</Link>
+                <SmartLink href="/contact#quote" onClick={() => setOpen(false)} className="rounded-md bg-red-gradient px-4 py-3 text-center font-display font-semibold uppercase text-white">Get a Quote</SmartLink>
+                <SmartLink href="/dispatch#signup" onClick={() => setOpen(false)} className="rounded-md bg-white px-4 py-3 text-center font-display font-semibold uppercase text-red ring-2 ring-inset ring-red">Dispatch My Truck</SmartLink>
               </div>
             </nav>
           </div>

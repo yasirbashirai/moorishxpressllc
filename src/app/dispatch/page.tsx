@@ -44,11 +44,12 @@ export default function DispatchPage() {
         title={<>Box truck & hotshot <span className="text-red">dispatch</span> that keeps you loaded.</>}
         intro="Dispatch is an equal half of our business. We are a box truck carrier that also dispatches for independent owner-operators, small trucking companies and new carriers. We find the loads, negotiate the rates and handle the paperwork, so you can focus on driving."
         image="/images/jude-dispatch-desk.jpg"
-        imageAlt="Moorish Xpress yellow 26 ft box trucks on the highway, kept moving by our dispatch desk"
+        imageAlt="Jude Hood at the MOORISH XPRESS LLC dispatch desk"
+        bright
         crumbs={[{ href: "/", label: "Home" }, { href: "/dispatch", label: "Dispatch Services" }]}
       >
         <Button href="#signup">Dispatch My Truck</Button>
-        <Button href="tel:+16789687511" variant="ghost">Call {site.phone}</Button>
+        <Button href={site.phoneHref} variant="ghost">Call {site.phone}</Button>
       </PageHero>
 
       {/* Two dispatch services */}
@@ -72,9 +73,9 @@ export default function DispatchPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {dispatchServices.map((s, i) => (
               <Reveal key={s.slug} delay={i * 100}>
-                <Link href={`/services/${s.slug}`} className="group relative block h-[28rem] overflow-hidden rounded-2xl bg-red-deep">
-                  <Image src={s.image} alt={s.imageAlt} fill sizes="(min-width:768px) 50vw, 100vw" className="object-cover opacity-80 transition duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-red-deep via-red-deep/70 to-red-deep/10" />
+                <Link href={`/services/${s.slug}`} className="group relative block h-[28rem] overflow-hidden rounded-2xl bg-ink">
+                  <Image src={s.image} alt={s.imageAlt} fill sizes="(min-width:768px) 50vw, 100vw" className="object-cover transition duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(12,12,14,0.9)_0%,rgba(12,12,14,0.7)_40%,transparent_72%)]" />
                   <div className="absolute inset-x-0 bottom-0 p-8">
                     <p className="eyebrow text-white/90">{s.keyword}</p>
                     <h3 className="mt-2 text-3xl font-bold uppercase leading-tight text-white">{s.title}</h3>

@@ -31,7 +31,7 @@ export default function TrackingCard() {
       <div className="flex items-center justify-between">
         <div>
           <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-steel">Shipment · example</p>
-          <p className="mt-1 font-display text-2xl font-semibold uppercase text-ink">ATL → CLT</p>
+          <p className="mt-1 font-display text-2xl font-semibold text-ink">Atlanta, GA to Charlotte, NC</p>
         </div>
         <span className="rounded-full bg-blush px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-red">Demo</span>
       </div>

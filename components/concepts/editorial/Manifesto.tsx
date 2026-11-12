@@ -37,7 +37,7 @@ export default function Manifesto() {
     <section ref={ref} className={`relative overflow-hidden bg-white py-24 sm:py-36 ${s.grain}`}>
       <div className="mx-auto max-w-[110rem] px-4 sm:px-8">
         <div data-tag className="flex items-center gap-4 font-display text-sm uppercase tracking-[0.3em] text-red">
-          <span className="h-1 w-12 bg-red" />The Moorish Xpress standard
+          <span className="h-1 w-12 bg-red" />The MOORISH XPRESS LLC standard
         </div>
         <p className="mt-10 font-display text-[9vw] font-bold uppercase leading-[0.95] text-ink sm:text-[6.2vw] lg:text-[5.2vw]">
           {text.split(" ").map((w, i) => (

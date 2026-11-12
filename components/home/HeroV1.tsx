@@ -4,7 +4,7 @@ import { IconLift, IconPhone, IconTruck } from "@/components/icons";
 import { Button } from "@/components/ui";
 import { site } from "@/lib/site";
 
-const keywords = ["OTR box truck freight", "Palletized freight", "Partial truckload", "U-Box transportation", "Box truck dispatch", "Hotshot dispatch", "Load coordination", "Atlanta, GA"];
+const keywords = ["OTR box truck freight", "Palletized freight", "Partial truckload", "U-Box transportation", "Box truck dispatch", "Hotshot dispatch", "Load coordination", "Nationwide from Atlanta, GA"];
 
 const fade =
   "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 14%, black 34%), linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)";
@@ -31,7 +31,7 @@ export default function HeroV1() {
         <div className="absolute inset-y-0 left-[calc(max(0px,(100vw-80rem)/2)+2rem+(min(100vw,80rem)-4rem-3rem)*5/12+3rem-5rem)] hidden aspect-[1672/941] lg:block" style={bannerMask}>
           <Image
             src="/images/hero-fleet-highway-rtl.jpg"
-            alt="Moorish Xpress yellow 26 ft box trucks with tuck-under liftgates driving on the highway at sunrise"
+            alt="MOORISH XPRESS LLC yellow 26 ft box trucks with tuck-under liftgates driving on the highway at sunrise"
             fill
             priority
             sizes="70vw"
@@ -47,7 +47,7 @@ export default function HeroV1() {
               When you need it <span className="text-red-gradient">there now.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed lg:text-base text-graphite">
-              Moorish Xpress, LLC is an Atlanta, Georgia-based freight transportation and truck dispatch company. We haul OTR and palletized freight in our 26 ft box trucks for brokers and shippers, and we dispatch box trucks and hotshots for owner-operators and small trucking companies.
+              MOORISH XPRESS LLC is an Atlanta, Georgia-based freight transportation and truck dispatch company. We haul OTR and palletized freight in our 26 ft box trucks for brokers and shippers, and we dispatch box trucks and hotshots for owner-operators and small trucking companies.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button href="#quote" className="lg:px-5 lg:py-3.5 lg:text-sm">Get a Freight Quote</Button>

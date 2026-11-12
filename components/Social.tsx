@@ -1,7 +1,7 @@
 import { site } from "@/lib/site";
 import { IconFacebook, IconInstagram, IconLinkedin } from "./icons";
 
-/** Official Moorish Xpress social pages (no Twitter/X). Each opens in a new tab. */
+/** Official MOORISH XPRESS LLC social pages (no Twitter/X). Each opens in a new tab. */
 export const socials = [
   { href: site.social.instagram, label: "Instagram", Icon: IconInstagram },
   { href: site.social.facebook, label: "Facebook", Icon: IconFacebook },
@@ -36,26 +36,24 @@ export function SocialLinks({ tone = "dark", size = "md", className = "" }: { to
 }
 
 /**
- * Official BBB badge linked to the company's BBB business profile.
- * Renders nothing until the client supplies the badge file + profile URL in site.ts,
- * so the site never shows an unofficial or inaccurate BBB status.
+ * BBB badge supplied by the client. Display-only: no link, no "profile" wording.
  */
-export function BbbBadge({ className = "" }: { className?: string }) {
-  const { profileUrl, badgeSrc, badgeAlt, badgeWidth, badgeHeight } = site.bbb;
-  if (!profileUrl || !badgeSrc) return null;
-  // Plain <img> on purpose: BBB requires its seal served unmodified from its own server.
+export function BbbBadge({ size = "md", className = "" }: { size?: "xs" | "sm" | "md" | "lg" | "xl"; className?: string }) {
+  const { badgeSrc, badgeAlt, badgeWidth, badgeHeight } = site.bbb;
+  if (!badgeSrc) return null;
+  const h = { xs: "h-9", sm: "h-11 sm:h-[3.25rem]", md: "h-20", lg: "h-24", xl: "h-36" }[size];
+  // Per the client: the badge is display-only (no link). The seal image from BBB has
+  // "Click for Profile" printed in its bottom-right corner, so that corner is covered in white.
   return (
-    <a
-      href={profileUrl}
-      target="_blank"
-      rel="nofollow noopener"
-      className={`inline-block rounded-lg bg-white p-2 ring-1 ring-black/10 transition hover:-translate-y-0.5 ${className}`}
-    >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={badgeSrc} alt={badgeAlt} width={badgeWidth} height={badgeHeight} style={{ border: 0 }} className="h-16 w-auto" />
-    </a>
+    <span className={`relative inline-block shrink-0 overflow-hidden rounded-lg bg-white ring-1 ring-black/10 ${size === "xs" || size === "sm" ? "p-1" : "p-2"} ${className}`}>
+      <span className="relative block">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={badgeSrc} alt={badgeAlt} width={badgeWidth} height={badgeHeight} style={{ border: 0 }} className={`${h} w-auto max-w-none`} />
+        <span aria-hidden="true" className="absolute bottom-0 right-0 h-[19%] w-[51%] bg-white" />
+      </span>
+    </span>
   );
 }
 
 /** True once the BBB badge has been configured (used to hide wrapper sections). */
-export const hasBbb = Boolean(site.bbb.profileUrl && site.bbb.badgeSrc);
+export const hasBbb = Boolean(site.bbb.badgeSrc);

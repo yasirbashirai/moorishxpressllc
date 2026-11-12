@@ -66,7 +66,7 @@ export function truckFit(weightLbs: number) {
 /* need to quote without a back-and-forth phone call.                  */
 /* ------------------------------------------------------------------ */
 
-const serviceOptions = ["OTR / long distance", "Palletized freight", "Partial truckload (PTL)", "U-Haul U-Box transport", "Not sure yet"];
+const serviceOptions = ["OTR / long distance", "Palletized freight", "Partial truckload (PTL)", "Last-Mile Freight", "Local Freight", "Not sure yet"];
 
 export function QuoteForm({ title = "Get a freight quote", dark = false }: { title?: string; dark?: boolean }) {
   const [step, setStep] = useState(0);
@@ -280,12 +280,11 @@ export function DispatchForm() {
         </Field>
         <Field name="d-authority" text="Authority status">
           <select id="d-authority" name="authority" className={input}>
-            <option>Active MC authority</option>
-            <option>New authority (under 6 months)</option>
-            <option>Authority pending</option>
+            <option>Active MC Authority</option>
+            <option>New Authority (under 6 months)</option>
           </select>
         </Field>
-        <Field name="d-mc" text="MC / DOT number"><input id="d-mc" name="mc" placeholder="Optional" className={input} /></Field>
+        <Field name="d-mc" text="MC / DOT number"><input id="d-mc" name="mc" required className={input} /></Field>
         <Field name="d-base" text="Home base (city, state)"><input id="d-base" name="from" placeholder="e.g. Atlanta, GA" className={input} /></Field>
       </div>
       <div className="mt-4">

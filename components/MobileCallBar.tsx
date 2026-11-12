@@ -1,4 +1,4 @@
-import Link from "next/link";
+import SmartLink from "./SmartLink";
 import { site } from "@/lib/site";
 import { IconPhone } from "./icons";
 
@@ -9,9 +9,9 @@ export default function MobileCallBar() {
       <a href={site.phoneHref} className="flex items-center justify-center gap-2 py-4 font-display font-semibold uppercase tracking-wide text-ink">
         <IconPhone className="h-5 w-5 text-red" /> Call 24/7
       </a>
-      <Link href="/contact#quote" className="bg-red-gradient py-4 text-center font-display font-semibold uppercase tracking-wide text-white">
+      <SmartLink href="/contact#quote" className="bg-red-gradient py-4 text-center font-display font-semibold uppercase tracking-wide text-white">
         Get a Quote
-      </Link>
+      </SmartLink>
     </div>
   );
 }

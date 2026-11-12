@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { carrierServices, dispatchServices, fullAddress, moreLinks, nav, site } from "@/lib/site";
 import { IconClock, IconMail, IconMap, IconPhone } from "./icons";
+import { Marquee } from "./interactive";
+import SmartLink from "./SmartLink";
 import { BbbBadge, SocialLinks } from "./Social";
 
 /** Site footer: brand, services, company links and contact details. */
@@ -17,7 +19,7 @@ export default function Footer() {
           </p>
           <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-steel">Follow us</p>
           <SocialLinks tone="light" className="mt-3" />
-          <BbbBadge className="mt-6" />
+          <div className="mt-6"><BbbBadge size="lg" /></div>
           {(site.usdot || site.mc) && (
             <p className="mt-5 text-xs uppercase tracking-wider text-steel">
               {site.usdot && <>USDOT {site.usdot}</>}{site.usdot && site.mc && " · "}{site.mc && <>MC {site.mc}</>}
@@ -54,20 +56,22 @@ export default function Footer() {
           <ul className="mt-5 space-y-4 text-sm">
             <li><a href={site.phoneHref} className="flex items-center gap-3 font-display text-2xl font-semibold text-ink hover:text-red"><IconPhone className="h-5 w-5 text-red" />{site.phone}</a></li>
             <li><a href={`mailto:${site.email}`} className="flex items-center gap-3 hover:text-red"><IconMail className="h-5 w-5 text-red" />{site.email}</a></li>
-            <li><a href={site.mapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-red"><IconMap className="h-5 w-5 shrink-0 text-red" />{fullAddress}</a></li>
+            <li className="flex items-start gap-3"><IconMap className="h-5 w-5 shrink-0 text-red" />{fullAddress}</li>
             <li className="flex items-center gap-3"><IconClock className="h-5 w-5 text-red" />Open 24 hours, 7 days a week</li>
           </ul>
-          <Link href="/contact#quote" className="mt-7 inline-flex rounded-md bg-red-gradient px-6 py-3 font-display font-semibold uppercase tracking-wider text-white transition hover:-translate-y-0.5">
+          <SmartLink href="/contact#quote" className="mt-7 inline-flex rounded-md bg-red-gradient px-6 py-3 font-display font-semibold uppercase tracking-wider text-white transition hover:-translate-y-0.5">
             Request a Quote
-          </Link>
+          </SmartLink>
         </div>
       </div>
 
+      {/* Bottom red band: tagline across the full width, everything loops like the homepage marquee */}
       <div className="bg-red-gradient">
-        <div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/85 sm:flex-row">
-          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p className="font-display uppercase tracking-[0.2em] text-white">{site.tagline}</p>
-        </div>
+        <Marquee size="xl" items={[site.tagline, site.tagline]} className="pb-2 pt-6 !bg-none" />
+        <Marquee
+          items={[`© ${new Date().getFullYear()} ${site.name}. All rights reserved.`, "Atlanta, GA 30311", site.phone, site.email, "Open 24/7"]}
+          className="pb-5 pt-2 !bg-none"
+        />
       </div>
     </footer>
   );

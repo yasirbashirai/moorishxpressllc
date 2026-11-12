@@ -42,7 +42,7 @@ export default function HomePageV1() {
               When you need it <span className="text-red-gradient">there</span> <span className="text-gold-gradient">now.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75">
-              Moorish Xpress, LLC is an asset-based box truck carrier in Atlanta, Georgia. We haul OTR, palletized and partial truckload freight for shippers and brokers, and we dispatch box trucks and hotshots for owner-operators.
+              MOORISH XPRESS LLC is an asset-based box truck carrier in Atlanta, Georgia. We haul OTR, palletized and partial truckload freight for shippers and brokers, and we dispatch box trucks and hotshots for owner-operators.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Button href="/contact#quote">Get a Freight Quote</Button>
@@ -64,7 +64,7 @@ export default function HomePageV1() {
             <div className="animate-drive relative">
               <div className="absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-red via-transparent to-gold opacity-70 blur-md" />
               <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-coal">
-                <Image src="/images/moorish-box-truck.jpg" alt="Moorish Xpress yellow 26 ft box truck with tuck-under liftgate parked at an Atlanta warehouse dock" width={1122} height={395} priority className="h-72 w-full object-cover object-left sm:h-96" />
+                <Image src="/images/moorish-box-truck.jpg" alt="MOORISH XPRESS LLC yellow 26 ft box truck with tuck-under liftgate parked at an Atlanta warehouse dock" width={1122} height={395} priority className="h-72 w-full object-cover object-left sm:h-96" />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-5 pt-16">
                   <p className="font-display text-sm uppercase tracking-[0.25em] text-gold">Our fleet · Atlanta, GA</p>
                 </div>
@@ -253,10 +253,10 @@ export default function HomePageV1() {
         <div className="container-x grid items-center gap-14 lg:grid-cols-2">
           <Reveal className="relative order-2 lg:order-1">
             <div className="absolute -inset-6 -z-10 rotate-2 rounded-3xl bg-hazard opacity-20" />
-            <Image src="/images/flyer-lets-talk-freight.jpg" alt="Moorish Xpress flyer: Let's connect, let's talk freight. 26 ft box trucks, 33,000 lb GVWR" width={1122} height={1402} className="mx-auto w-full max-w-md -rotate-2 rounded-2xl shadow-2xl transition duration-500 hover:rotate-0" />
+            <Image src="/images/flyer-lets-talk-freight.jpg" alt="MOORISH XPRESS LLC flyer: Let's connect, let's talk freight. 26 ft box trucks, 33,000 lb GVWR" width={1122} height={1402} className="mx-auto w-full max-w-md -rotate-2 rounded-2xl shadow-2xl transition duration-500 hover:rotate-0" />
           </Reveal>
           <Reveal delay={100} className="order-1 lg:order-2">
-            <SectionHeading eyebrow="Why Moorish Xpress" title={<>Let&apos;s connect. <span className="text-red">Let&apos;s talk freight.</span></>} intro="We are a growing Atlanta carrier, and we earn every load the same way: by doing what we say." />
+            <SectionHeading eyebrow="Why MOORISH XPRESS LLC" title={<>Let&apos;s connect. <span className="text-red">Let&apos;s talk freight.</span></>} intro="We are a growing Atlanta carrier, and we earn every load the same way: by doing what we say." />
             <ul className="mt-8 space-y-5">
               {[
                 { Icon: IconTruck, t: "Asset-based, not a broker", d: "We own and run our trucks. When you book us, our truck hauls your freight." },

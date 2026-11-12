@@ -15,11 +15,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Box Truck Freight & Dispatch Services Atlanta GA | Moorish Xpress",
-    template: "%s | Moorish Xpress",
+    default: "Box Truck Freight & Dispatch Services Atlanta GA | MOORISH XPRESS LLC",
+    template: "%s | MOORISH XPRESS LLC",
   },
   description:
-    "Moorish Xpress, LLC is an Atlanta, GA freight transportation and truck dispatch company. OTR, palletized and partial truckload freight in 26 ft box trucks, plus box truck and hotshot dispatch. Open 24/7.",
+    "MOORISH XPRESS LLC is an Atlanta, GA freight transportation and truck dispatch company. OTR, palletized and partial truckload freight in 26 ft box trucks, plus box truck and hotshot dispatch. Open 24/7.",
   keywords: [
     // Client-supplied SEO keywords (Website Development Requirements, Nov 2026)
     "26 ft box truck freight services",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: site.name,
-    images: [{ url: "/images/og-share.jpg", width: 1200, height: 630, alt: "Moorish Xpress, LLC: When you need it there now" }],
+    images: [{ url: "/images/og-share.jpg", width: 1200, height: 630, alt: "MOORISH XPRESS LLC: When you need it there now" }],
   },
   twitter: { card: "summary_large_image", images: ["/images/og-share.jpg"] },
   alternates: { canonical: "/" },

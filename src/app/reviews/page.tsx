@@ -9,9 +9,9 @@ import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Customer Reviews | Moorish Xpress Box Truck Carrier Atlanta",
+  title: "Customer Reviews | MOORISH XPRESS LLC Box Truck Carrier Atlanta",
   description:
-    "Read and share reviews of Moorish Xpress, an Atlanta box truck carrier and dispatch service. Worked with us? Tell us how we did.",
+    "Read and share reviews of MOORISH XPRESS LLC, an Atlanta box truck carrier and dispatch service. Worked with us? Tell us how we did.",
   alternates: { canonical: "/reviews" },
 };
 

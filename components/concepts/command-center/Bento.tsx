@@ -49,24 +49,24 @@ function Tile({ slug, i }: { slug: string; i: number }) {
           my.set((e.clientY - r.top) / r.height);
         }}
         onPointerLeave={() => { mx.set(0.5); my.set(0.5); }}
-        className="group relative h-full overflow-hidden rounded-[1.4rem] bg-red-deep shadow-[0_24px_60px_-28px_rgba(161,12,17,0.55)]"
+        className="group relative h-full overflow-hidden rounded-[1.4rem] bg-ink shadow-[0_24px_60px_-28px_rgba(12,12,14,0.45)]"
       >
         <Link href={`/services/${s.slug}`} className="absolute inset-0 z-30" aria-label={s.title} />
         <motion.div style={{ x: imgX, y: imgY }} className="absolute -inset-6">
-          <Image src={s.image} alt={s.imageAlt} fill sizes={big ? "(min-width:1024px) 66vw, 100vw" : "(min-width:1024px) 33vw, 100vw"} className="object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-70" />
+          <Image src={s.image} alt={s.imageAlt} fill sizes={big ? "(min-width:1024px) 66vw, 100vw" : "(min-width:1024px) 33vw, 100vw"} style={{ objectPosition: s.imagePosition }} className="object-cover transition duration-700 group-hover:scale-105" />
         </motion.div>
-        <div className={`absolute inset-0 ${wide ? "bg-gradient-to-r from-red-deep/90 via-red-deep/60 to-transparent" : "bg-gradient-to-t from-red-deep/90 via-red-deep/45 to-transparent"}`} />
+        <div className={`absolute inset-0 ${wide ? "bg-[linear-gradient(to_right,rgba(12,12,14,0.82)_0%,rgba(12,12,14,0.55)_32%,transparent_58%)]" : "bg-[linear-gradient(to_top,rgba(12,12,14,0.88)_0%,rgba(12,12,14,0.6)_30%,transparent_62%)]"}`} />
         <motion.div style={{ background: glare }} className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
         <div className="absolute left-5 top-5 z-20 flex items-center gap-2">
-          <span className={`rounded-full px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.18em] backdrop-blur-md ${dispatch ? "bg-white text-red" : "bg-white/15 text-white ring-1 ring-white/25"}`}>
+          <span className={`rounded-full px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.18em] backdrop-blur-md ${dispatch ? "bg-white text-red" : "bg-ink/55 text-white ring-1 ring-white/30"}`}>
             {dispatch ? "Dispatch" : "Freight"}
           </span>
         </div>
 
         <div className={`absolute inset-x-0 bottom-0 z-20 p-6 sm:p-7 ${wide ? "lg:max-w-xl" : ""}`} style={{ transform: "translateZ(40px)" }}>
           <h3 className={`font-display font-bold uppercase leading-[0.95] text-white ${big ? "text-4xl sm:text-5xl" : "text-3xl"}`}>{s.title}</h3>
-          <p className={`mt-3 text-sm leading-relaxed text-white/75 ${big || wide ? "max-w-md text-base" : ""}`}>{s.short}</p>
+          <p className={`mt-3 text-sm leading-relaxed text-white/90 ${big || wide ? "max-w-md text-base" : ""}`}>{s.short}</p>
           <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 font-display text-xs font-semibold uppercase tracking-wider text-red transition group-hover:bg-red group-hover:text-white">
             Explore <span className="transition-transform group-hover:translate-x-1">→</span>
           </span>

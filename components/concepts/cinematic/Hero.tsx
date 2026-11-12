@@ -104,7 +104,7 @@ export default function Hero() {
           <motion.div style={reduce ? undefined : { x: truckX }} className="relative">
             <div className="absolute -inset-6 bg-[radial-gradient(closest-side,rgba(255,193,7,0.35),transparent)] blur-2xl" />
             <div className={`relative overflow-hidden ${s.truckClip}`}>
-              <Image src="/images/moorish-box-truck.jpg" alt="Moorish Xpress yellow box truck with tuck-under liftgate" width={1122} height={395} priority className="h-[22rem] w-full scale-110 object-cover object-[20%_50%] sm:h-[28rem]" />
+              <Image src="/images/moorish-box-truck.jpg" alt="MOORISH XPRESS LLC yellow box truck with tuck-under liftgate" width={1122} height={395} priority className="h-[22rem] w-full scale-110 object-cover object-[20%_50%] sm:h-[28rem]" />
               <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-transparent to-[#d7141a]/20" />
             </div>
             <div className="absolute -bottom-5 left-4 flex gap-3 sm:left-10">

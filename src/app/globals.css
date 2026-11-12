@@ -3,7 +3,7 @@
 /* Components live outside src/, so tell Tailwind to scan them */
 @source "../../components";
 
-/* ---------- Brand tokens (Moorish Xpress business colours: WHITE + RED) ----------
+/* ---------- Brand tokens (MOORISH XPRESS LLC business colours: WHITE + RED) ----------
    Per the client's requirements PDF, the business colours are white and red.
    The gold/blue main logo is for door decals only, so it is NOT used as a site colour.
    The old "gold" tokens are kept as aliases of red so nothing renders yellow. */

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const s = getService((await params).slug);
   if (!s) return {};
   return {
-    title: { absolute: `${s.metaTitle} | Moorish Xpress` },
+    title: { absolute: `${s.metaTitle} | MOORISH XPRESS LLC` },
     description: s.metaDescription,
     alternates: { canonical: `/services/${s.slug}` },
     openGraph: { title: s.metaTitle, description: s.metaDescription, images: [s.image] },
@@ -44,7 +44,7 @@ export default async function ServicePage({ params }: Props) {
     serviceType: s.keyword,
     description: s.metaDescription,
     provider: { "@id": `${site.url}/#business` },
-    areaServed: ["Georgia", "Southern United States", "Texas", "Tennessee", "North Carolina", "South Carolina", "Oklahoma", "Virginia", "Midwest United States", "Northeast United States"],
+    areaServed: ["Georgia", "Southern United States", "Texas", "Tennessee", "North Carolina", "South Carolina", "Oklahoma", "Virginia", "Midwest United States", "Northeast United States", "California", "Arizona", "New Mexico", "Oregon", "Washington"],
     url: `${site.url}/services/${s.slug}`,
   };
 
@@ -60,17 +60,19 @@ export default async function ServicePage({ params }: Props) {
         intro={s.short}
         image={s.image}
         imageAlt={s.imageAlt}
+        imagePosition={s.imagePosition}
+        bright
         crumbs={[{ href: "/", label: "Home" }, parent, { href: `/services/${s.slug}`, label: s.title }]}
       >
         {isDispatch ? (
           <>
             <Button href="#signup">Dispatch My Truck</Button>
-            <Button href={`tel:+16789687511`} variant="ghost">Call {site.phone}</Button>
+            <Button href={site.phoneHref} variant="ghost">Call {site.phone}</Button>
           </>
         ) : (
           <>
             <Button href="#quote">Get a Quote</Button>
-            <Button href={`tel:+16789687511`} variant="ghost">Call {site.phone}</Button>
+            <Button href={site.phoneHref} variant="ghost">Call {site.phone}</Button>
           </>
         )}
       </PageHero>
@@ -79,7 +81,7 @@ export default async function ServicePage({ params }: Props) {
         <div className="container-x grid gap-14 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <Reveal>
-              <h2 className="text-4xl font-bold uppercase leading-tight">{s.title} with Moorish Xpress</h2>
+              <h2 className="text-4xl font-bold uppercase leading-tight">{s.title} with MOORISH XPRESS LLC</h2>
               <p className="mt-5 text-lg leading-relaxed text-steel">{s.intro}</p>
             </Reveal>
             <Reveal delay={80}>
@@ -125,7 +127,7 @@ export default async function ServicePage({ params }: Props) {
             {others.map((o) => (
               <Link key={o.slug} href={`/services/${o.slug}`} className="group overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
                 <div className="relative h-40">
-                  <Image src={o.image} alt={o.imageAlt} fill sizes="(min-width:768px) 33vw, 100vw" className="object-cover" />
+                  <Image src={o.image} alt={o.imageAlt} fill sizes="(min-width:768px) 33vw, 100vw" style={{ objectPosition: o.imagePosition }} className="object-cover" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold uppercase">{o.title}</h3>

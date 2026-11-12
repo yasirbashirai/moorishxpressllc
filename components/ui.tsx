@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SmartLink from "./SmartLink";
 import { IconArrow } from "./icons";
 
 /** Primary (solid red), secondary (white with red outline), ghost and dark buttons. */
@@ -22,13 +23,13 @@ export function Button({
     dark: "bg-white text-red shadow-lg shadow-black/10 hover:bg-blush",
   }[variant];
   return (
-    <Link
+    <SmartLink
       href={href}
       className={`group inline-flex items-center justify-center gap-2 rounded-md px-7 py-4 font-display text-base font-semibold uppercase tracking-wider transition duration-300 hover:-translate-y-0.5 ${styles} ${className}`}
     >
       {children}
       <IconArrow className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-    </Link>
+    </SmartLink>
   );
 }
 
@@ -86,23 +87,23 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden bg-white text-ink">
       {image && (
-        <div className="absolute inset-y-0 right-0 hidden w-[58%] overflow-hidden lg:block">
+        <div className="absolute inset-y-0 right-0 hidden w-1/2 overflow-hidden lg:block">
           <Image
             src={image}
             alt={imageAlt || ""}
             fill
             priority
-            sizes="60vw"
+            sizes="50vw"
             style={{ objectPosition: imagePosition }}
-            className="animate-kenburns object-cover"
+            className="object-cover"
           />
           {/* Fade the photo into the white text side */}
-          <div className={`absolute inset-0 bg-gradient-to-r from-white ${bright ? "via-white/10 to-transparent" : "via-white/40 to-white/5"}`} />
+          <div className={`absolute inset-0 ${bright ? "bg-[linear-gradient(to_right,#fff_0%,rgba(255,255,255,0.55)_3%,transparent_9%)]" : "bg-[linear-gradient(to_right,#fff_0%,rgba(255,255,255,0.7)_8%,transparent_22%)]"}`} />
         </div>
       )}
       <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-red/10 blur-[120px]" />
       <div className="container-x relative py-16 sm:py-24">
-        <div className="max-w-2xl">
+        <div className={image ? "max-w-2xl lg:max-w-[46%]" : "max-w-2xl"}>
           <nav className="flex flex-wrap gap-2 text-sm text-steel" aria-label="Breadcrumb">
             {crumbs.map((c, i) => (
               <span key={c.href} className="flex gap-2">
@@ -112,7 +113,7 @@ export function PageHero({
             ))}
           </nav>
           <p className="eyebrow mt-8 flex items-center gap-3 text-red"><span className="h-0.5 w-8 bg-current" />{eyebrow}</p>
-          <h1 className="mt-4 text-5xl font-bold uppercase leading-[1.02] text-ink sm:text-6xl lg:text-[4.2rem]">{title}</h1>
+          <h1 className={`mt-4 text-5xl font-bold uppercase leading-[1.02] text-ink sm:text-6xl ${image ? "lg:text-[3.5rem]" : "lg:text-[4.2rem]"}`}>{title}</h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-graphite">{intro}</p>
           {children && <div className="mt-9 flex flex-wrap gap-4">{children}</div>}
         </div>
