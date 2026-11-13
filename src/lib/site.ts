@@ -119,9 +119,9 @@ export const services: Service[] = [
     metaTitle: "OTR Box Truck Freight Transportation | Interstate Freight Carrier Atlanta GA",
     metaDescription:
       "Over-the-road box truck freight from Atlanta, GA. MOORISH XPRESS LLC hauls long-distance, interstate freight in 26 ft box trucks to the Midwest, the Northeast, the Southern states and the West Coast. Open 24/7.",
-    image: "/images/moorish-red-truck-highway.jpg",
-    imagePosition: "left center",
-    imageAlt: "MOORISH XPRESS LLC 26 ft box truck with tuck-under liftgate hauling over-the-road freight on an interstate highway",
+    image: "/images/box-truck-26ft-liftgate-rear.jpg",
+    imagePosition: "center",
+    imageAlt: "26 ft box truck with tuck-under liftgate, ready for over-the-road freight",
     intro:
       "Our primary focus is over-the-road freight in 26 ft box trucks. When your freight needs to leave Georgia and arrive on time, we run long-distance, interstate lanes out of Atlanta into the Midwest, the Northeast, the Southern states and the West Coast, including Texas, Tennessee, the Carolinas, Oklahoma, Virginia, California, Arizona, New Mexico, Oregon and Washington.",
     points: [

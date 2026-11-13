@@ -67,10 +67,11 @@ export default function Footer() {
 
       {/* Bottom red band: tagline across the full width, everything loops like the homepage marquee */}
       <div className="bg-red-gradient">
-        <Marquee size="xl" items={[site.tagline, site.tagline]} className="pb-2 pt-6 !bg-none" />
+        <Marquee size="xl" items={Array(8).fill(site.tagline)} className="pb-1 pt-3 !bg-none" />
         <Marquee
-          items={[`© ${new Date().getFullYear()} ${site.name}. All rights reserved.`, "Atlanta, GA 30311", site.phone, site.email, "Open 24/7"]}
-          className="pb-5 pt-2 !bg-none"
+          size="sm"
+          items={Array(3).fill([`© ${new Date().getFullYear()} ${site.name}. All rights reserved.`, "Atlanta, GA 30311", site.phone, site.email, "Open 24/7"]).flat()}
+          className="pb-2.5 pt-1 !bg-none"
         />
       </div>
     </footer>

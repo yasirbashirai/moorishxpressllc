@@ -46,7 +46,7 @@ export default function AboutPage() {
           <Reveal className="relative">
             <div className="absolute -left-4 -top-4 h-full w-full rounded-3xl bg-hazard opacity-20" />
             <div className="relative aspect-[5/4] overflow-hidden rounded-3xl">
-              <Image src="/images/moorish-red-truck-highway.jpg" alt="MOORISH XPRESS LLC 26 ft box truck on a long-distance freight run" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover object-[35%_center]" />
+              <Image src="/images/box-truck-26ft-side.jpg" alt="26 ft box truck used for MOORISH XPRESS LLC freight runs" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover object-center" />
             </div>
             {/* Founder card with Jude's photo */}
             <div className="absolute -bottom-6 -right-2 flex items-center gap-4 rounded-2xl bg-red-gradient p-5 pr-7 text-white shadow-2xl shadow-red/30 sm:-right-6">

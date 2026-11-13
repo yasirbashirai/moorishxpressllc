@@ -236,9 +236,9 @@ export function CoverageMap() {
 }
 
 /** Endless keyword ticker. Doubles the list so the loop is seamless. */
-export function Marquee({ items, size = "md", className = "py-4" }: { items: string[]; size?: "md" | "xl"; className?: string }) {
-  const text = size === "xl" ? "gap-5 px-5 text-[clamp(1.5rem,4.5vw,4.25rem)] font-bold leading-none tracking-tight" : "gap-6 px-6 text-xl font-semibold tracking-wider";
-  const dot = size === "xl" ? "h-2.5 w-2.5" : "h-2 w-2";
+export function Marquee({ items, size = "md", className = "py-4" }: { items: string[]; size?: "sm" | "md" | "xl"; className?: string }) {
+  const text = size === "xl" ? "gap-3 px-3 text-[clamp(0.85rem,2.25vw,2.125rem)] font-bold leading-none tracking-tight" : size === "sm" ? "gap-4 px-4 text-xs font-semibold tracking-wider" : "gap-6 px-6 text-xl font-semibold tracking-wider";
+  const dot = size === "md" ? "h-2 w-2" : "h-1.5 w-1.5";
   // The list is rendered twice and slides by exactly half its width, so the loop never jumps.
   return (
     <div className={`overflow-hidden bg-red-gradient ${className}`}>
