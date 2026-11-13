@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | MOORISH XPRESS LLC",
   },
   description:
-    "MOORISH XPRESS LLC is an Atlanta, GA freight transportation and truck dispatch company. OTR, palletized and partial truckload freight in 26 ft box trucks, plus box truck and hotshot dispatch. Open 24/7.",
+    "MOORISH XPRESS LLC is an Atlanta, GA freight transportation and truck dispatch company. OTR, palletized and partial truckload freight in 26 ft box trucks, plus dispatch for box trucks, hotshots, flatbeds, reefers and dry vans. Open 24/7.",
   keywords: [
     // Client-supplied SEO keywords (Website Development Requirements, Nov 2026)
     "26 ft box truck freight services",
@@ -45,6 +45,9 @@ export const metadata: Metadata = {
     "box truck dispatching services",
     "hotshot dispatch services",
     "dispatch services for 26 ft box trucks and hotshots",
+    "flatbed dispatch services",
+    "reefer dispatch services",
+    "dry van dispatch services",
     "freight load booking and dispatch services",
     "truck dispatching and load coordination",
     "OTR freight dispatch services",

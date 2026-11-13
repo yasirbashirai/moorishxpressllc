@@ -119,7 +119,7 @@ export default function HomePage() {
         <div className="container-x">
           <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
             <FadeIn><Head eyebrow="Services" title={<>Freight + dispatch. <span className="text-red-gradient">Equal priority.</span></>} /></FadeIn>
-            <FadeIn delay={0.1}><p className="max-w-sm text-steel">Four ways we haul your freight with our own 26 ft box trucks, and two ways we keep owner-operators and small fleets loaded, organized and moving.</p></FadeIn>
+            <FadeIn delay={0.1}><p className="max-w-sm text-steel">We haul your freight with our 26 ft box trucks and we keep owner-operators moving with dispatch support, from finding loads and negotiating rates to coordinating pickups and deliveries.</p></FadeIn>
           </div>
           <div className="mt-12"><Bento /></div>
         </div>
@@ -176,7 +176,7 @@ export default function HomePage() {
           <div className="grid items-end gap-8 lg:grid-cols-2">
             <FadeIn><Head dark eyebrow="For owner-operators" title={<>A dispatch desk <span className="bg-[linear-gradient(120deg,#ffffff,#ffd9d9)] bg-clip-text text-transparent">that drives too.</span></>} /></FadeIn>
             <FadeIn delay={0.1}>
-              <p className="text-lg leading-relaxed text-white/85">We run 26 ft box trucks ourselves, so we dispatch box trucks and hotshots like an owner-operator would: loads that fit, rates that pay, paperwork handled, and you approve every load.</p>
+              <p className="text-lg leading-relaxed text-white/85">We run 26 ft box trucks ourselves, so we dispatch box trucks, hotshots, flatbeds, reefers and dry vans like an owner-operator would: loads that fit, rates that pay, paperwork handled, and you approve every load.</p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link href="/services/box-truck-dispatch" className="rounded-full border border-white/40 px-4 py-2 text-sm font-semibold text-white transition hover:border-white hover:bg-white hover:text-red">Professional freight dispatching →</Link>
                 <Link href="/services/freight-documentation-load-coordination" className="rounded-full border border-white/40 px-4 py-2 text-sm font-semibold text-white transition hover:border-white hover:bg-white hover:text-red">Freight documentation →</Link>

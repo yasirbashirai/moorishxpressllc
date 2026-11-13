@@ -245,30 +245,30 @@ export const services: Service[] = [
     title: "Professional Freight Dispatching Services",
     short: "Dispatch support for owner-operators and small trucking companies, including load searching, broker communication, rate negotiation, scheduling, and shipment coordination.",
     keyword: "professional freight dispatch services",
-    metaTitle: "Professional Freight Dispatch Services | Box Truck & Hotshot Dispatch Atlanta GA",
+    metaTitle: "Professional Freight Dispatch Services | Truck Dispatch Atlanta GA",
     metaDescription:
-      "Professional freight dispatching for box trucks and hotshots. MOORISH XPRESS LLC helps owner-operators and small trucking companies with load searching, broker communication, rate negotiation, scheduling and shipment coordination.",
+      "Professional freight dispatching for box trucks, hotshots, flatbeds, reefers and dry vans. MOORISH XPRESS LLC helps owner-operators and small trucking companies with load searching, broker communication, rate negotiation, scheduling and shipment coordination.",
     image: "/images/jude-dispatch-desk.jpg",
     imageAlt: "Jude Hood at the MOORISH XPRESS LLC dispatch desk, reviewing loads and routes on three monitors",
     intro:
-      "We dispatch box trucks and hotshots. We are a box truck carrier ourselves, so we dispatch the way we would want to be dispatched. For independent owner-operators, small trucking companies and new and growing carriers, we find loads that fit your truck, your lanes and your schedule, and we handle the back-and-forth with brokers.",
+      "We dispatch box trucks, hotshots, flatbeds, reefers and dry vans. We are a box truck carrier ourselves, so we dispatch the way we would want to be dispatched. For independent owner-operators, small trucking companies and new and growing carriers, we find loads that fit your truck, your lanes and your schedule, and we handle the back-and-forth with brokers.",
     points: [
-      "Dispatch for 26 ft box trucks and hotshots",
+      "Dispatch for box trucks, hotshots, flatbeds, reefers and dry vans",
       "Load searching across load boards and broker relationships",
       "Rate negotiation aimed at competitive rates and fewer empty miles",
       "Broker communication, setup packets and rate confirmations",
       "Scheduling, route planning and shipment coordination",
       "One dispatcher who knows your truck and your goals",
     ],
-    idealFor: ["Box truck and hotshot owner-operators", "Small trucking companies and fleets", "New and growing carriers"],
+    idealFor: ["Owner-operators running box trucks, hotshots, flatbeds, reefers and dry vans", "Small trucking companies and fleets", "New and growing carriers"],
     faqs: [
       {
         q: "Do you force loads on drivers?",
         a: "No. You approve every load before it is booked. Our job is to bring good options and negotiate, not to push you into lanes you do not want.",
       },
       {
-        q: "Do you dispatch hotshots?",
-        a: "Yes. We dispatch box trucks and hotshots. Tell us your truck, trailer and weight limits and we will only bring you loads that fit your setup.",
+        q: "What equipment types do you dispatch?",
+        a: "We dispatch box trucks, hotshots, flatbeds, reefers and dry vans. Tell us your truck, trailer and weight limits and we will only bring you loads that fit your setup.",
       },
       {
         q: "What do I need to get started?",
@@ -326,7 +326,7 @@ export const regions = [
 export const homeFaqs = [
   {
     q: "Are you a carrier or a broker?",
-    a: "We are an asset-based carrier. MOORISH XPRESS LLC operates its own 26 ft box trucks out of Atlanta, and we also offer dispatch services for other box truck and hotshot owner-operators.",
+    a: "We are an asset-based carrier. MOORISH XPRESS LLC operates its own 26 ft box trucks out of Atlanta, and we also offer dispatch services for owner-operators running box trucks, hotshots, flatbeds, reefers and dry vans.",
   },
   {
     q: "What is the difference between your CDL and non-CDL box trucks?",
@@ -342,7 +342,7 @@ export const homeFaqs = [
   },
   {
     q: "Do you only dispatch box trucks?",
-    a: "We dispatch box trucks and hotshots. If you run another equipment type, reach out and we will tell you honestly if we are a fit.",
+    a: "No. We dispatch box trucks, hotshots, flatbeds, reefers and dry vans.",
   },
 ];
 
@@ -409,7 +409,7 @@ export const faqGroups = [
       homeFaqs[4],
       {
         q: "Who do you dispatch for?",
-        a: "Independent owner-operators, small trucking companies, and new and growing carriers running box trucks or hotshots.",
+        a: "Independent owner-operators, small trucking companies, and new and growing carriers running box trucks, hotshots, flatbeds, reefers and dry vans.",
       },
       {
         q: "What does your dispatch service include?",

@@ -55,8 +55,9 @@ export default function Header() {
       <Marquee items={topBar} className="py-2" />
 
       {/* Main navigation */}
-      <div className={`border-b border-black/5 transition-all duration-300 ${scrolled ? "bg-white/95 shadow-xl shadow-black/10 backdrop-blur-xl" : "bg-white"}`}>
-        <div className={`container-x flex items-center justify-between gap-4 transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
+      <div className={`border-b border-black/5 bg-white transition-shadow duration-300 ${scrolled ? "shadow-xl shadow-black/10" : ""}`}>
+        {/* Full-width bar with a FIXED height: a header that changes height while scrolling makes the nav flicker */}
+        <div className="flex h-20 w-full items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
           <div className="flex shrink-0 items-center gap-3">
             <Link href="/" aria-label={`${site.name} home`} className="shrink-0">
               <Image
@@ -65,7 +66,7 @@ export default function Header() {
                 width={581}
                 height={453}
                 priority
-                className={`w-auto transition-all duration-300 ${scrolled ? "h-[3.25rem]" : "h-[4.25rem]"}`}
+                className="h-[4.25rem] w-auto"
               />
             </Link>
             {/* BBB badge next to the logo */}
@@ -77,22 +78,23 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative whitespace-nowrap px-2.5 py-2 font-display text-[0.92rem] font-medium uppercase tracking-wide transition-colors 2xl:px-3.5 ${isActive(item.href) ? "text-red" : "text-ink/80 hover:text-red"}`}
+                className={`relative whitespace-nowrap px-2 py-2 font-display text-[0.88rem] min-[1440px]:text-[0.92rem] font-medium uppercase tracking-wide transition-colors min-[1440px]:px-3.5 ${isActive(item.href) ? "text-red" : "text-ink/80 hover:text-red"}`}
               >
                 {item.label}
-                {isActive(item.href) && <span className="absolute inset-x-2.5 -bottom-0.5 h-0.5 bg-red-gradient 2xl:inset-x-3.5" />}
+                {isActive(item.href) && <span className="absolute inset-x-2 -bottom-0.5 h-0.5 bg-red-gradient min-[1440px]:inset-x-3.5" />}
               </Link>
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
-            <a href={site.phoneHref} className="hidden items-center gap-2 font-display text-lg font-semibold text-ink 2xl:flex">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-blush"><IconPhone className="h-4 w-4 text-red" /></span>
+          <div className="flex shrink-0 items-center gap-2 min-[1440px]:gap-3">
+            {/* Phone number: always one line, never wraps or stacks */}
+            <a href={site.phoneHref} className="hidden shrink-0 items-center gap-2 whitespace-nowrap font-display text-base font-semibold text-ink md:flex min-[1440px]:text-lg">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blush"><IconPhone className="h-4 w-4 text-red" /></span>
               {site.phone}
             </a>
             {/* BBB badge immediately before the Get a Quote button */}
             <span className="hidden sm:block"><BbbBadge size="sm" /></span>
-            <SmartLink href="/contact#quote" className="hidden rounded-md bg-red-gradient px-5 py-2.5 font-display text-sm font-semibold uppercase tracking-wider text-white shadow-lg shadow-red/30 transition hover:-translate-y-0.5 hover:shadow-red/50 sm:inline-flex">
+            <SmartLink href="/contact#quote" className="hidden shrink-0 whitespace-nowrap rounded-md bg-red-gradient px-4 py-2.5 min-[1440px]:px-5 font-display text-sm font-semibold uppercase tracking-wider text-white shadow-lg shadow-red/30 transition hover:-translate-y-0.5 hover:shadow-red/50 sm:inline-flex">
               Get a Quote
             </SmartLink>
             <button

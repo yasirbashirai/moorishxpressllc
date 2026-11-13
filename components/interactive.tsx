@@ -26,8 +26,8 @@ const audiences = [
     id: "drive",
     tab: "I own a truck",
     Icon: IconHeadset,
-    title: "Box truck & hotshot owner-operators",
-    text: "You want steady loads at fair rates without spending your day on load boards and broker calls. We are a box truck carrier too, so we dispatch with a driver's point of view.",
+    title: "Owner-operators & small fleets",
+    text: "You want steady loads at fair rates without spending your day on load boards and broker calls. We dispatch box trucks, hotshots, flatbeds, reefers and dry vans. We are a carrier too, so we dispatch with a driver's point of view.",
     bullets: ["Loads that fit your truck and lanes", "Rate negotiation on every load", "Broker setup and paperwork handled", "You approve every load, always"],
     cta: { href: "/dispatch#signup", label: "Dispatch My Truck" },
     variant: "gold" as const,
@@ -237,8 +237,8 @@ export function CoverageMap() {
 
 /** Endless keyword ticker. Doubles the list so the loop is seamless. */
 export function Marquee({ items, size = "md", className = "py-4" }: { items: string[]; size?: "md" | "xl"; className?: string }) {
-  const text = size === "xl" ? "gap-10 px-10 text-[clamp(3rem,9vw,8.5rem)] font-bold leading-none tracking-tight" : "gap-6 px-6 text-xl font-semibold tracking-wider";
-  const dot = size === "xl" ? "h-5 w-5" : "h-2 w-2";
+  const text = size === "xl" ? "gap-5 px-5 text-[clamp(1.5rem,4.5vw,4.25rem)] font-bold leading-none tracking-tight" : "gap-6 px-6 text-xl font-semibold tracking-wider";
+  const dot = size === "xl" ? "h-2.5 w-2.5" : "h-2 w-2";
   // The list is rendered twice and slides by exactly half its width, so the loop never jumps.
   return (
     <div className={`overflow-hidden bg-red-gradient ${className}`}>

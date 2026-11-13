@@ -56,7 +56,7 @@ export default function ContactPage() {
             <SmartLink href="/dispatch#signup" className="group flex items-center justify-between gap-4 rounded-xl bg-red-gradient p-6 text-white shadow-lg shadow-red/20 transition hover:shadow-red/40">
               <span className="flex items-center gap-4">
                 <IconHeadset className="h-9 w-9" />
-                <span><span className="block font-display text-xl font-bold uppercase">Owner-operator?</span><span className="text-sm">Sign up for box truck or hotshot dispatch</span></span>
+                <span><span className="block font-display text-xl font-bold uppercase">Owner-operator?</span><span className="text-sm">Sign up for truck dispatch</span></span>
               </span>
               <IconArrow className="h-6 w-6 transition-transform group-hover:translate-x-1" />
             </SmartLink>

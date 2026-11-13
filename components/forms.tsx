@@ -234,7 +234,7 @@ export function QuoteForm({ title = "Get a freight quote", dark = false }: { tit
 }
 
 /* ------------------------------------------------------------------ */
-/* Dispatch sign-up for owner-operators (box trucks and hotshots).     */
+/* Dispatch sign-up for owner-operators (all equipment types).           */
 /* ------------------------------------------------------------------ */
 
 export function DispatchForm() {
@@ -263,7 +263,7 @@ export function DispatchForm() {
     <form onSubmit={submit} className="relative rounded-xl bg-white p-6 shadow-2xl shadow-black/30 sm:p-8">
       <Honeypot />
       <h3 className="text-2xl font-bold uppercase text-ink">Dispatch sign-up</h3>
-      <p className="mt-1 text-sm text-steel">Box truck and hotshot owner-operators. Takes 1 minute.</p>
+      <p className="mt-1 text-sm text-steel">Box trucks, hotshots, flatbeds, reefers and dry vans. Takes 1 minute.</p>
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <Field name="d-name" text="Your name"><input id="d-name" name="name" required autoComplete="name" className={input} /></Field>
         <Field name="d-company" text="Company / carrier name"><input id="d-company" name="company" className={input} /></Field>
@@ -271,11 +271,11 @@ export function DispatchForm() {
         <Field name="d-email" text="Email"><input id="d-email" name="email" type="email" required autoComplete="email" className={input} /></Field>
         <Field name="d-equipment" text="Equipment">
           <select id="d-equipment" name="equipment" className={input}>
-            <option>26 ft box truck (non-CDL)</option>
-            <option>Box truck (CDL, over 26,000 lb GVWR)</option>
-            <option>Box truck (under 26 ft)</option>
-            <option>Hotshot (CDL)</option>
-            <option>Hotshot (non-CDL)</option>
+            <option>Box Truck</option>
+            <option>Hotshot</option>
+            <option>Flatbed</option>
+            <option>Reefer</option>
+            <option>Dry Van</option>
           </select>
         </Field>
         <Field name="d-authority" text="Authority status">

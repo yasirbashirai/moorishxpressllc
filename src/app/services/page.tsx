@@ -90,8 +90,8 @@ export default function ServicesPage() {
           <div className="grid items-center gap-8 rounded-3xl border border-red/10 bg-blush p-8 sm:p-12 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <p className="eyebrow text-red-deep">Also from MOORISH XPRESS LLC</p>
-              <h2 className="mt-2 text-4xl font-bold uppercase text-ink">Own a box truck or hotshot? We dispatch too.</h2>
-              <p className="mt-3 text-graphite">Professional freight dispatching, plus freight documentation and load coordination, for box trucks and hotshots: loads, rates and paperwork handled by a carrier that runs the same lanes.</p>
+              <h2 className="mt-2 text-4xl font-bold uppercase text-ink">Own a truck? We dispatch too.</h2>
+              <p className="mt-3 text-graphite">Professional freight dispatching, plus freight documentation and load coordination, for box trucks, hotshots, flatbeds, reefers and dry vans: loads, rates and paperwork handled by a carrier that runs the same lanes.</p>
             </div>
             <div className="lg:text-right"><Button href="/dispatch">See Dispatch Services</Button></div>
           </div>

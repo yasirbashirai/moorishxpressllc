@@ -8,7 +8,7 @@ import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "FAQ | Box Truck Freight & Dispatch Questions | MOORISH XPRESS LLC",
   description:
-    "Answers about MOORISH XPRESS LLC freight transportation and dispatch services: equipment, coverage, carrier packets, partial truckload, U-Box transport and box truck and hotshot dispatch.",
+    "Answers about MOORISH XPRESS LLC freight transportation and dispatch services: equipment, coverage, carrier packets, partial truckload, U-Box transport and dispatch for box trucks, hotshots, flatbeds, reefers and dry vans.",
   alternates: { canonical: "/faq" },
 };
 

@@ -11,9 +11,9 @@ import { dispatchServices, site } from "@/lib/site";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Truck Dispatching Services for Owner-Operators | Box Truck & Hotshot Dispatch Atlanta GA",
+  title: "Truck Dispatching Services for Owner-Operators | Box Truck, Hotshot, Flatbed, Reefer & Dry Van Dispatch",
   description:
-    "Professional freight dispatch services for owner-operators and small trucking companies. Box truck and hotshot dispatch from Atlanta, GA: load sourcing, rate negotiation, broker communication and paperwork.",
+    "Professional freight dispatch services for owner-operators and small trucking companies. Dispatch for box trucks, hotshots, flatbeds, reefers and dry vans from Atlanta, GA: load sourcing, rate negotiation, broker communication and paperwork.",
   alternates: { canonical: "/dispatch" },
 };
 
@@ -26,8 +26,11 @@ const includes = [
   { Icon: IconCheck, t: "Carrier perspective", d: "We run our own 26 ft box trucks, so we know what a good load looks like from the driver's seat." },
 ];
 
+// Equipment types we dispatch (client list, November 2026)
+const equipmentTypes = ["Box Trucks", "Hotshots", "Flatbeds", "Reefers", "Dry Vans"];
+
 const faqs = [
-  { q: "What equipment do you dispatch?", a: "Box trucks (26 ft and smaller, CDL and non-CDL) and hotshots. If you run something else, ask and we will tell you honestly if we are a fit." },
+  { q: "What equipment do you dispatch?", a: "Box trucks, hotshots, flatbeds, reefers and dry vans. Tell us your truck, trailer and weight limits and we will only bring you loads that fit your setup." },
   { q: "Do I need my own authority?", a: "Yes, you need an active MC/DOT authority and insurance. If your authority is new, we can still help you build broker relationships." },
   { q: "Is there a contract?", a: "We keep it simple. We go over our dispatch fee and terms with you upfront before we book your first load." },
   { q: "How do I get started?", a: "Fill in the dispatch sign-up form or call " + site.phone + ". We will set up a quick call to learn about your truck and lanes." },
@@ -41,8 +44,8 @@ export default function DispatchPage() {
 
       <PageHero
         eyebrow="Professional freight dispatch services"
-        title={<>Box truck & hotshot <span className="text-red">dispatch</span> that keeps you loaded.</>}
-        intro="Dispatch is an equal half of our business. We are a box truck carrier that also dispatches for independent owner-operators, small trucking companies and new carriers. We find the loads, negotiate the rates and handle the paperwork, so you can focus on driving."
+        title={<>Truck <span className="text-red">dispatch</span> that keeps you loaded.</>}
+        intro="Dispatch is an equal half of our business. We are a box truck carrier that also dispatches box trucks, hotshots, flatbeds, reefers and dry vans for independent owner-operators, small trucking companies and new carriers. We find the loads, negotiate the rates and handle the paperwork, so you can focus on driving."
         image="/images/jude-dispatch-desk.jpg"
         imageAlt="Jude Hood at the MOORISH XPRESS LLC dispatch desk"
         bright
@@ -56,8 +59,19 @@ export default function DispatchPage() {
       <section className="py-24">
         <div className="container-x">
           <Reveal>
-            <SectionHeading eyebrow="Dispatch services" title={<>Built for <span className="text-red">box trucks and hotshots.</span></>} intro="Load sourcing, freight rate negotiation, broker communication, route and shipment coordination, and freight documentation support." />
+            <SectionHeading eyebrow="Dispatch services" title={<>Built for <span className="text-red">every truck you run.</span></>} intro="Load sourcing, freight rate negotiation, broker communication, route and shipment coordination, and freight documentation support." />
           </Reveal>
+          {/* Equipment types we dispatch */}
+          <div className="mt-8">
+            <p className="eyebrow text-steel">Equipment we dispatch</p>
+            <ul className="mt-3 flex flex-wrap gap-3">
+              {equipmentTypes.map((e) => (
+                <li key={e} className="inline-flex items-center gap-2 rounded-full border border-red/25 bg-blush px-5 py-2.5 font-display text-lg font-semibold uppercase tracking-wide text-ink">
+                  <IconCheck className="h-5 w-5 text-red" />{e}
+                </li>
+              ))}
+            </ul>
+          </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
               { t: "Independent owner-operators", d: "Help finding loads, negotiating rates, coordinating pickups and deliveries, and managing dispatch paperwork." },

@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="lg:col-span-4">
           <Image src="/images/logo-sm.png" alt={`${site.name} logo`} width={581} height={453} className="h-28 w-auto" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed">
-            Atlanta, Georgia-based freight transportation and truck dispatch company. We haul freight in our 26 ft box trucks for brokers and shippers, and we dispatch box trucks and hotshots for owner-operators and small trucking companies.
+            Atlanta, Georgia-based freight transportation and truck dispatch company. We haul freight in our 26 ft box trucks for brokers and shippers, and we dispatch box trucks, hotshots, flatbeds, reefers and dry vans for owner-operators and small trucking companies.
           </p>
           <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-steel">Follow us</p>
           <SocialLinks tone="light" className="mt-3" />

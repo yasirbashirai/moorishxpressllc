@@ -44,10 +44,10 @@ export default function BrokersShippersPage() {
         eyebrow="Brokers & shippers"
         title={<>Your Atlanta-Based <span className="text-red">Box Truck Carrier.</span></>}
         intro="Freight brokers, direct shippers, manufacturers, warehouses, distribution centers and logistics companies count on us for reliable 26 ft box truck transportation. We haul with our own trucks."
-        image="/images/moorish-red-truck-dock.jpg"
-        imageAlt="MOORISH XPRESS LLC red box truck backed up to a warehouse loading dock"
+        image="/images/moorish-26ft-red-box-truck.jpg"
+        imageAlt="MOORISH XPRESS LLC 26 ft box truck with red cab and white box"
         bright
-        imagePosition="left center"
+        imagePosition="center bottom"
         crumbs={[{ href: "/", label: "Home" }, { href: "/brokers-shippers", label: "Brokers & Shippers" }]}
       >
         <Button href="#quote">Send Us a Load</Button>
