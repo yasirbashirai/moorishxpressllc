@@ -25,10 +25,10 @@ export default function ServicesPage() {
         eyebrow="Freight transportation services"
         title={<>26 ft box truck freight <span className="text-red">from Atlanta</span>, done right.</>}
         intro="We are an asset-based carrier for freight brokers, direct shippers, manufacturers, warehouses, distribution centers and logistics companies. Our own 26 ft box trucks haul your freight from Atlanta, GA to the Midwest, the Northeast, the Southern states and the West Coast, with a tuck-under liftgate and air-ride suspension on every truck."
-        image="/images/box-truck-fleet-lineup.jpg"
+        image="/images/box-truck-26ft-freight-hero-front.jpg"
         bright
-        imagePosition="left center"
-        imageAlt="Fleet of 26 ft box trucks lined up and ready to haul freight"
+        imagePosition="center"
+        imageAlt="White 26 ft box truck ready to haul freight from Atlanta, GA"
         crumbs={[{ href: "/", label: "Home" }, { href: "/services", label: "Freight Services" }]}
       >
         <Button href="#quote">Get a Quote</Button>
