@@ -49,6 +49,11 @@ export default function DispatchPage() {
         image="/images/jude-dispatch-desk.jpg"
         imageAlt="Jude Hood at the MOORISH XPRESS LLC dispatch desk"
         bright
+        video={{
+          src: "/videos/dispatch-services.mp4",
+          poster: "/videos/dispatch-services-poster.webp",
+          label: "Inside our dispatch office",
+        }}
         crumbs={[{ href: "/", label: "Home" }, { href: "/dispatch", label: "Dispatch Services" }]}
       >
         <Button href="#signup">Dispatch My Truck</Button>

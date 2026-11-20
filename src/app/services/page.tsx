@@ -29,6 +29,11 @@ export default function ServicesPage() {
         bright
         imagePosition="center"
         imageAlt="White 26 ft box truck ready to haul freight from Atlanta, GA"
+        video={{
+          src: "/videos/freight-services.mp4",
+          poster: "/videos/freight-services-poster.webp",
+          label: "Freight in motion",
+        }}
         crumbs={[{ href: "/", label: "Home" }, { href: "/services", label: "Freight Services" }]}
       >
         <Button href="#quote">Get a Quote</Button>

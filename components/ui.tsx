@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SmartLink from "./SmartLink";
+import HeroVideo, { type HeroVideoProps } from "./HeroVideo";
 import { IconArrow } from "./icons";
 
 /** Primary (solid red), secondary (white with red outline), ghost and dark buttons. */
@@ -62,6 +63,7 @@ export function SectionHeading({
  * Light hero for inner pages, with breadcrumb.
  * White + red brand: text sits on white on the left, the photo fills the right
  * side and fades into the white. `bright` keeps the photo fully visible (About page).
+ * Videos use a responsive two-column layout to preserve their full frame and end card.
  */
 export function PageHero({
   eyebrow,
@@ -73,6 +75,7 @@ export function PageHero({
   children,
   bright = false,
   imagePosition = "center",
+  video,
 }: {
   eyebrow: string;
   title: React.ReactNode;
@@ -83,10 +86,11 @@ export function PageHero({
   children?: React.ReactNode;
   bright?: boolean;
   imagePosition?: string;
+  video?: HeroVideoProps;
 }) {
   return (
     <section className="relative overflow-hidden bg-white text-ink">
-      {image && (
+      {image && !video && (
         <div className="absolute inset-y-0 right-0 hidden w-1/2 overflow-hidden lg:block">
           <Image
             src={image}
@@ -102,8 +106,8 @@ export function PageHero({
         </div>
       )}
       <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-red/10 blur-[120px]" />
-      <div className="container-x relative py-16 sm:py-24">
-        <div className={image ? "max-w-2xl lg:max-w-[46%]" : "max-w-2xl"}>
+      <div className={`container-x relative py-16 sm:py-24 ${video ? "grid items-center gap-10 lg:grid-cols-2 lg:gap-12" : ""}`}>
+        <div className={image && !video ? "max-w-2xl lg:max-w-[46%]" : "max-w-2xl"}>
           <nav className="flex flex-wrap gap-2 text-sm text-steel" aria-label="Breadcrumb">
             {crumbs.map((c, i) => (
               <span key={c.href} className="flex gap-2">
@@ -117,9 +121,10 @@ export function PageHero({
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-graphite">{intro}</p>
           {children && <div className="mt-9 flex flex-wrap gap-4">{children}</div>}
         </div>
+        {video && <HeroVideo {...video} />}
       </div>
       {/* Mobile: photo below the text */}
-      {image && (
+      {image && !video && (
         <div className="relative aspect-[16/9] w-full lg:hidden">
           <Image src={image} alt="" fill sizes="100vw" style={{ objectPosition: imagePosition }} className="object-cover" />
         </div>
